@@ -202,7 +202,7 @@
 
     <!-- Set the base URL of where the online version is hosted to have links in other formats -->
     <!-- Change this if/when the book moves to a Reed-hosted URL. -->
-      <baseurl href="https://kyleormsby.github.io/math-th/"/>
+      <baseurl href="https://mrobinso314.github.io/MathTHClone/"/>
 
     <!-- Control behavior of online WeBWorK, per type: -->
       <webwork
