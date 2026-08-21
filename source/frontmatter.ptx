@@ -2,6 +2,7 @@
 <!-- This frontmatter division will contain all content before the -->
 <!-- first chapter. -->
 
+
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <bibinfo>
     <!-- TODO: add the student authors as additional <author> blocks. -->
@@ -10,13 +11,16 @@
     </author>
   </bibinfo>
 
+
   <!-- This displays the title page information -->
   <titlepage>
     <titlepage-items/>
   </titlepage>
 
+
   <preface xml:id="preface-about">
     <title>About the Math Trailhead</title>
+
 
     <p>
       The <em>Math Trailhead</em> is a self-paced review of the algebra,
@@ -24,6 +28,7 @@
       It is organized by topic rather than by course, so you can start
       wherever you feel shaky and work outward from there.
     </p>
+
 
     <p>
       If you would like a suggestion for where to begin: headed for
@@ -39,6 +44,7 @@
       of <xref ref="quantitative_reasoning" text="title"/>.
     </p>
 
+
     <p>
       Every exercise here is a live <term>WeBWorK</term> problem. Enter an
       answer and submit it for immediate feedback, and use the option to
@@ -46,6 +52,7 @@
       the same idea. Nothing you type is recorded or reported to anyone:
       this is a place to practice, not an assignment.
     </p>
+
 
     <p>
       Corrections and suggestions are welcome. If a problem renders
@@ -55,8 +62,10 @@
     </p>
   </preface>
 
+
   <acknowledgement xml:id="acknowledgements">
     <title>Acknowledgments</title>
+
 
     <p>
       <em>Math Trailhead</em> owes its existence to Caleb Fishman Miller
@@ -65,6 +74,7 @@
       and building them into the PreTeXt source this site is generated
       from. Their work is the foundation of everything here.
     </p>
+
 
     <p>
       Nearly every exercise in this book is drawn from the
@@ -77,13 +87,16 @@
     </p>
   </acknowledgement>
 
+
   <preface xml:id="preface-contents">
     <title>Contents</title>
+
 
     <p>
       The chapters are independent of one another, and so are the sections
       within them. Start wherever you like.
     </p>
+
 
     <p>
     <ul>
@@ -176,12 +189,137 @@
     </p>
   </preface>
 
+
   <preface xml:id="math-111">
     <title>Math 111</title>
 
 
-    <p>Coming soon.</p>
+
+
+    <p>
+      This 24-exercise sequence reviews the skills that matter most at the start of
+      calculus. Work from top to bottom for a broad readiness check, or jump to a
+      topic that needs attention. Use <q>Randomize</q> after checking a response to
+      practice the same idea with new values.
+    </p>
+
+    <p><em>Algebra and equations</em></p>
+
+    <exercise xml:id="math111-rational-arithmetic">
+      <title>Rational-number arithmetic</title>
+      <webwork source="Library/Utah/Intermediate_Algebra/set14_Review/s14p1.pg"/>
+    </exercise>
+    <exercise xml:id="math111-linear-graph">
+      <title>Read and describe a linear graph</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/setLinesReview/from-graph-ratl-inter.pg"/>
+    </exercise>
+    <exercise xml:id="math111-linear-system">
+      <title>Solve a system of equations</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_4.1/OpenStax_IA_4.1_30.pg"/>
+    </exercise>
+    <exercise xml:id="math111-factoring">
+      <title>Factor a quadratic polynomial</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/Prerequisite_Review/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_1_5_F.pg"/>
+    </exercise>
+
+    <p><em>Inequalities and domains</em></p>
+
+    <exercise xml:id="math111-interval-notation">
+      <title>Write a domain restriction in interval notation</title>
+      <webwork source="Contrib/Mizzou/Algebra/real_numbers_interval_notation/conv_to_int_set_01.pg"/>
+    </exercise>
+    <exercise xml:id="math111-absolute-inequality">
+      <title>Solve an absolute-value inequality</title>
+      <webwork source="Contrib/Mizzou/College_Algebra/Inequalities_Absolute_Value/Ineq4.pg"/>
+    </exercise>
+    <exercise xml:id="math111-polynomial-inequality">
+      <title>Solve a factored polynomial inequality</title>
+      <webwork source="Contrib/Mizzou/College_Algebra/Inequalities_Polynomial/Factored.pg"/>
+    </exercise>
+
+    <p><em>Functions and graphs</em></p>
+
+    <exercise xml:id="math111-function-notation">
+      <title>Evaluate expressions in function notation</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/3.1/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_1_27.pg"/>
+    </exercise>
+    <exercise xml:id="math111-piecewise">
+      <title>Evaluate and interpret a piecewise function</title>
+      <webwork source="Library/LoyolaChicago/Precalc/Chap2Sec2/Connally3-2-Piecewise-function-ineq.pg"/>
+    </exercise>
+    <exercise xml:id="math111-transformations">
+      <title>Recognize graph transformations</title>
+      <webwork source="Library/ASU-topics/setTransformationFunctions/jj1.pg"/>
+    </exercise>
+    <exercise xml:id="math111-composition">
+      <title>Compose functions</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/3.4/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_4_11.pg"/>
+    </exercise>
+    <exercise xml:id="math111-inverse">
+      <title>Restrict a domain and find an inverse</title>
+      <webwork source="Contrib/CCCS/PreCalculus/3.7/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_7_14.pg"/>
+    </exercise>
+    <exercise xml:id="math111-difference-quotient">
+      <title>Simplify a difference quotient</title>
+      <webwork source="Library/Wiley/setAnton_Section_0.2/Question52.pg"/>
+    </exercise>
+
+    <p><em>Polynomial and rational functions</em></p>
+
+    <exercise xml:id="math111-polynomial-sign">
+      <title>Connect polynomial roots with its graph</title>
+      <webwork source="Library/Rochester/setAlgebra23PolynomialZeros/describe_graph.pg"/>
+    </exercise>
+    <exercise xml:id="math111-rational-asymptotes">
+      <title>Find a rational function's domain and asymptotes</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/5.6/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_5_6_13.pg"/>
+    </exercise>
+
+    <p><em>Exponents and logarithms</em></p>
+
+    <exercise xml:id="math111-integer-exponents">
+      <title>Simplify integer exponents</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/IntegerExponents/divide-medium.pg"/>
+    </exercise>
+    <exercise xml:id="math111-rational-exponents">
+      <title>Simplify rational exponents</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/RationalExponents/combine-rational-exponents-multiply.pg"/>
+    </exercise>
+    <exercise xml:id="math111-exponential-model">
+      <title>Recover an exponential function from values</title>
+      <webwork source="Contrib/Piedmont/OnlineMATH1113/Test3/3.pg"/>
+    </exercise>
+    <exercise xml:id="math111-log-equation">
+      <title>Solve a logarithmic equation exactly</title>
+      <webwork source="Library/Wiley/setAnton_Section_0.5/Question23.pg"/>
+    </exercise>
+
+    <p><em>Trigonometry</em></p>
+
+    <exercise xml:id="math111-radians">
+      <title>Convert degree measures to radians</title>
+      <webwork source="Contrib/METU-NCC/MAT100/23a_Degree-radian.pg"/>
+    </exercise>
+    <exercise xml:id="math111-sinusoid">
+      <title>Read a sinusoidal function and its graph</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/GraphingSineCosine/function-graphing.pg"/>
+    </exercise>
+    <exercise xml:id="math111-unit-circle">
+      <title>Evaluate trigonometric functions exactly</title>
+      <webwork source="Library/LoyolaChicago/Precalc/Chap6Sec6/Q08-old.pg"/>
+    </exercise>
+    <exercise xml:id="math111-inverse-trig">
+      <title>Find the domain and range of an inverse-trig function</title>
+      <webwork source="Library/UCSB/Stewart5_1_6/Stewart5_1_6_75.pg"/>
+    </exercise>
+    <exercise xml:id="math111-trig-identity">
+      <title>Simplify using a trigonometric identity</title>
+      <webwork source="Library/Rochester/setTrig07Identity/p5.pg"/>
+    </exercise>
   </preface>
 
 
+
+
 </frontmatter>
+
