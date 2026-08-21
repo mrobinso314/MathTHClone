@@ -321,5 +321,112 @@
 
 
 
+  <preface xml:id="math-141">
+    <title>Math 141</title>
+
+
+    <p>
+      This 15-exercise sequence reviews quantitative reasoning, algebra, and
+      function skills useful at the start of Math 141. The exercises are grouped
+      in the requested order, and each can be randomized for additional practice.
+    </p>
+
+
+    <p><em>Percentages and proportions</em></p>
+
+
+    <exercise xml:id="math141-percent-application">
+      <title>Find a percentage of a quantity</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_10.pg"/>
+    </exercise>
+    <exercise xml:id="math141-proportion-numerator">
+      <title>Solve a proportion for an unknown numerator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_1.pg"/>
+    </exercise>
+    <exercise xml:id="math141-proportion-denominator">
+      <title>Solve a proportion for an unknown denominator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_2.pg"/>
+    </exercise>
+
+
+    <p><em>Tables and graphs</em></p>
+
+
+    <exercise xml:id="math141-percent-table">
+      <title>Complete a percent, fraction, and decimal table</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_Table_1.pg"/>
+    </exercise>
+    <exercise xml:id="math141-mean-median">
+      <title>Find the mean and median</title>
+      <webwork source="Contrib/PCC/BasicMath/MeanMedianMode/MeanMedianMode120.pg"/>
+    </exercise>
+
+
+    <p><em>Fractions</em></p>
+
+
+    <exercise xml:id="math141-add-fractions">
+      <title>Add and reduce fractions</title>
+      <webwork source="Library/ma112DB/set1_2/add_fractions.pg"/>
+    </exercise>
+    <exercise xml:id="math141-fraction-expressions">
+      <title>Evaluate expressions with fractional inputs</title>
+      <webwork source="Library/NewHampshire/unh_schoolib/Fractions/frabrs302.pg"/>
+    </exercise>
+
+
+    <p><em>Lines in the plane</em></p>
+
+
+    <exercise xml:id="math141-slope-intercept">
+      <title>Find slope and the vertical intercept</title>
+      <webwork source="Library/PCC/BasicAlgebra/SlopeAndY-InterceptCalculations/FindSlopeYIntercept110.pg"/>
+    </exercise>
+    <exercise xml:id="math141-match-lines">
+      <title>Match line equations with their graphs</title>
+      <webwork source="Contrib/Fitchburg/Algebra/lines/choice-of-lines.pg"/>
+    </exercise>
+    <exercise xml:id="math141-linear-profit">
+      <title>Interpret a linear profit model</title>
+      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-7s.pg"/>
+    </exercise>
+
+
+    <p><em>Functions</em></p>
+
+
+    <exercise xml:id="math141-cost-function">
+      <title>Interpret a cost function</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_331.pg"/>
+    </exercise>
+    <exercise xml:id="math141-function-inputs">
+      <title>Evaluate a function at numeric and symbolic inputs</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg"/>
+    </exercise>
+    <exercise xml:id="math141-quadratic-function">
+      <title>Evaluate a quadratic function</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions2.pg"/>
+    </exercise>
+
+
+    <p><em>Modeling</em></p>
+
+
+    <exercise xml:id="math141-context-model">
+      <title>Interpret a function in context</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setIntroductiontoFunctions/FunctionInContext10.pg"/>
+    </exercise>
+
+
+    <p><em>Polynomial functions</em></p>
+
+
+    <exercise xml:id="math141-polynomial-expression">
+      <title>Expand and simplify a polynomial expression</title>
+      <webwork source="Library/FortLewis/Algebra/4-2-Functions-and-expressions/MCH1-4-2-14-Functions-and-expressions.pg"/>
+    </exercise>
+  </preface>
+
+
 </frontmatter>
 
