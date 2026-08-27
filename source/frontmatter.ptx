@@ -194,10 +194,10 @@
     <title>Math 111</title>
 
     <p>
-      This 16-exercise sequence reviews the algebra and trigonometry skills most
-      useful when beginning calculus. Open an exercise to begin, and use
-      <q>Randomize</q> after checking a response to practice the same idea with
-      new values.
+      This set of exercises is to help you assess your own algebra background
+      knowledge before beginning Math 111. For more algebra practice resources,
+      as well as links to study and review materials, checkout the complete
+      <url href="https://github.com/kyleormsby/math-th">Reed Math Trailhead</url>.
     </p>
 
     <paragraphs xml:id="math111-working-with-functions">
@@ -322,10 +322,10 @@
     <title>Stat 141</title>
 
     <p>
-      This 15-exercise sequence reviews the numerical, algebraic, and function
-      skills most useful when beginning statistics. Open an exercise to begin,
-      and use <q>Randomize</q> after checking a response to practice the same
-      idea with new values.
+      This set of exercises is to help you assess your own algebra background
+      knowledge before beginning Stat 141. For more algebra practice resources,
+      as well as links to study and review materials, checkout the complete
+      <url href="https://github.com/kyleormsby/math-th">Reed Math Trailhead</url>.
     </p>
 
     <paragraphs xml:id="stat141-quantitative-reasoning">
