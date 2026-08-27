@@ -43,6 +43,13 @@
 
 <xsl:import href="./core/pretext-html.xsl"/>
 
+<!-- The curated course pages are intended as self-contained exercise sets. -->
+<!-- Suppress their previous, up, and next controls without affecting the   -->
+<!-- navigation on the rest of the Math Trailhead.                           -->
+<xsl:template
+    match="preface[@xml:id = 'math-111' or @xml:id = 'stat-141']"
+    mode="primary-navigation-treebuttons"/>
+
 <xsl:template name="extra-js-footer">
     <script>
         <xsl:text>
@@ -261,7 +268,27 @@
         mo.observe(document.body, { childList: true, subtree: true });
     }
 
+    function hideCuratedPageFooterNavigation() {
+        if (!document.querySelector("#math-111, #stat-141")) { return; }
+        var footerNavigation = document.getElementById("ptx-content-footer");
+        if (footerNavigation) { footerNavigation.hidden = true; }
+    }
+
+    function renumberCuratedCheckpoints() {
+        var pages = document.querySelectorAll("#math-111, #stat-141");
+        for (var i = 0; i !== pages.length; i += 1) {
+            var checkpoints = pages[i].querySelectorAll(
+                "details.exercise > summary > .heading .codenumber"
+            );
+            for (var j = 0; j !== checkpoints.length; j += 1) {
+                checkpoints[j].textContent = String(j + 1);
+            }
+        }
+    }
+
     function start() {
+        hideCuratedPageFooterNavigation();
+        renumberCuratedCheckpoints();
         watchForRenders();
 
         var buttons = document.querySelectorAll("div.problem-buttons button.webwork-button");
