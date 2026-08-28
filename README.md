@@ -8,9 +8,9 @@ A self-paced precalculus and college algebra review built in
 
 ## Status
 
-Working prototype. 475 WeBWorK exercises across five chapters (Functions,
-Exponents and Logarithms, Trigonometry, Polynomials and Rational Functions,
-Algebra), imported from the
+Working prototype. Hundreds of WeBWorK exercises across the core review
+chapters, plus curated Math 111 and Stat 141 course-readiness diagnostics,
+imported from the
 [Moodle course](https://moodle.reed.edu/course/view.php?id=6466).
 
 Known gaps, carried over from the import:
@@ -29,9 +29,12 @@ copies of the problems ourselves rather than referencing the OPL. See
 
 ## How it is organized
 
-Section introductions and the overall structure live in
-[`source/main.ptx`](source/main.ptx). The individual pages within each
-section are under [`source/activities`](source/activities).
+Chapter introductions and the overall book structure live in
+[`source/main.ptx`](source/main.ptx). Front-matter pages live in
+[`source/frontmatter.ptx`](source/frontmatter.ptx), while individual content
+pages are grouped by chapter under [`source/activities`](source/activities).
+The Math 111 and Stat 141 diagnostic sections are in
+[`source/activities/diagnostics`](source/activities/diagnostics).
 
 Every exercise is a `<webwork source="Contrib/CCCS/..."/>` reference into the
 Open Problem Library. No `.pg` files live in this repository; the problems
