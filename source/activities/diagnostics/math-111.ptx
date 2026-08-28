@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="math-111">
+  <title>Math 111</title>
+
+  <introduction>
+    <p>
+      This set of exercises is to help you assess your own algebra background
+      knowledge before beginning Math 111. For more algebra practice resources,
+      as well as links to study and review materials, checkout the complete
+      <url href="https://kyleormsby.github.io/math-th/">Reed Math Trailhead</url>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="math111-working-with-functions">
+    <title>Working with Functions</title>
+
+    <p><em>Evaluating and Interpreting Functions</em></p>
+
+    <!-- From Functions, exercise 11. -->
+    <exercise xml:id="math111-functions-11">
+      <title>Evaluate a Function at Given Inputs</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg"/>
+    </exercise>
+    <!-- From Functions, exercise 20. -->
+    <exercise xml:id="math111-functions-20">
+      <title>Evaluate a Piecewise-Defined Function</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/3.2/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_2_49.pg"/>
+    </exercise>
+
+    <p><em>Composing Functions</em></p>
+
+    <!-- From Composition and Decomposition, exercise 1. -->
+    <exercise xml:id="math111-composition-1">
+      <title>Compose Two Functions</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/3.4/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_4_11.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="math111-linear-equations">
+    <title>Linear Equations</title>
+
+    <p><em>Equations and Graphs of Lines</em></p>
+
+    <!-- From Lines in the Plane, exercise 1. -->
+    <exercise xml:id="math111-lines-1">
+      <title>Find a Line Through Two Points</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/Equations_of_Lines/Equation_of_Lines_2.pg"/>
+    </exercise>
+    <!-- From Lines in the Plane, exercise 2. -->
+    <exercise xml:id="math111-lines-2">
+      <title>Write a Line from Its Slope and a Point</title>
+      <webwork source="Contrib/Fitchburg/Algebra/lines/line-1.pg"/>
+    </exercise>
+    <!-- From Lines in the Plane, exercise 4. -->
+    <exercise xml:id="math111-lines-4">
+      <title>Read and Model a Line from Its Graph</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/setLinesReview/from-graph-ratl-inter.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="math111-polynomial-rational-expressions">
+    <title>Polynomial and Rational Expressions</title>
+
+    <p><em>Simplifying Polynomials</em></p>
+
+    <!-- From Polynomial Functions, exercise 5. -->
+    <exercise xml:id="math111-polynomials-5">
+      <title>Expand and Simplify a Polynomial Expression</title>
+      <webwork source="Library/FortLewis/Algebra/4-2-Functions-and-expressions/MCH1-4-2-14-Functions-and-expressions.pg"/>
+    </exercise>
+
+    <p><em>Factoring Polynomials</em></p>
+
+    <!-- From Factoring, exercise 12. -->
+    <exercise xml:id="math111-factoring-12">
+      <title>Factor a Quadratic Polynomial</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/Prerequisite_Review/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_1_5_F.pg"/>
+    </exercise>
+
+    <p><em>Zeros and Intercepts</em></p>
+
+    <!-- From Polynomial Roots, exercise 1. -->
+    <exercise xml:id="math111-roots-1">
+      <title>Find the Intercepts of a Polynomial</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/5.2/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_5_2_25.pg"/>
+    </exercise>
+
+    <p><em>Rational Equations and Functions</em></p>
+
+    <!-- From Rational Functions, exercise 4. -->
+    <exercise xml:id="math111-rational-4">
+      <title>Solve a Rational Equation</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_7.4/CCD_CCCS_Openstax_IntAlg_IA-2017-000-LC_7_4_203.pg"/>
+    </exercise>
+    <!-- From Rational Functions, exercise 15. -->
+    <exercise xml:id="math111-rational-15">
+      <title>Find a Removable Discontinuity</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/5.6/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_5_6_75.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="math111-exponents-logarithms">
+    <title>Exponents and Logarithms</title>
+
+    <p><em>Exponent Rules</em></p>
+
+    <!-- From Exponents, exercise 1. -->
+    <exercise xml:id="math111-exponents-1">
+      <title>Apply the Power and Product Rules</title>
+      <webwork source="Contrib/Mizzou/Algebra/exponents_integers/exp_ints_02.pg"/>
+    </exercise>
+    <!-- From Exponents, exercise 10. -->
+    <exercise xml:id="math111-exponents-10">
+      <title>Simplify an Exponential Expression</title>
+      <webwork source="Contrib/Mizzou/Algebra/exponents_integers/exp_ints_14.pg"/>
+    </exercise>
+
+    <p><em>Logarithm Basics</em></p>
+
+    <!-- From Logarithms, exercise 4. -->
+    <exercise xml:id="math111-logarithms-4">
+      <title>Evaluate Basic Logarithms</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/6.3/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_6_3_51.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="math111-trigonometry">
+    <title>Trigonometry</title>
+
+    <p><em>Exact Values and Right Triangles</em></p>
+
+    <!-- From Evaluating Trigonometric Functions, exercise 1. -->
+    <exercise xml:id="math111-trig-1">
+      <title>Find Exact Cosine Values on the Unit Circle</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/UnitCircle/unit-circle-cosine.pg"/>
+    </exercise>
+    <!-- From Evaluating Trigonometric Functions, exercise 7. -->
+    <exercise xml:id="math111-trig-7">
+      <title>Solve a Right Triangle</title>
+      <webwork source="Library/Rochester/setTrig03FunctionsRightAngle/p8.pg"/>
+    </exercise>
+  </subsection>
+</section>

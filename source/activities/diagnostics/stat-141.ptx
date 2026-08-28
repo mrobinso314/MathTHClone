@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="stat-141">
+  <title>Stat 141</title>
+
+  <introduction>
+    <p>
+      This set of exercises is to help you assess your own algebra background
+      knowledge before beginning Stat 141. For more algebra practice resources,
+      as well as links to study and review materials, checkout the complete
+      <url href="https://kyleormsby.github.io/math-th/">Reed Math Trailhead</url>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="stat141-quantitative-reasoning">
+    <title>Quantitative Reasoning</title>
+
+    <p><em>Percentages and Proportions</em></p>
+
+    <!-- From Percentages and Proportions, exercise 4. -->
+    <exercise xml:id="stat141-percent-application">
+      <title>Calculate a Percentage of a Quantity</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_10.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 9. -->
+    <exercise xml:id="stat141-proportion-numerator">
+      <title>Solve a Proportion with an Unknown Numerator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_1.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 10. -->
+    <exercise xml:id="stat141-proportion-denominator">
+      <title>Solve a Proportion with an Unknown Denominator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_2.pg"/>
+    </exercise>
+
+    <p><em>Tables and Summary Statistics</em></p>
+
+    <!-- From Reading Tables and Graphs, exercise 3. -->
+    <exercise xml:id="stat141-percent-table">
+      <title>Convert Among Percents, Fractions, and Decimals</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_Table_1.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 6. -->
+    <exercise xml:id="stat141-mean-median">
+      <title>Calculate the Mean and Median</title>
+      <webwork source="Contrib/PCC/BasicMath/MeanMedianMode/MeanMedianMode120.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="stat141-algebraic-foundations">
+    <title>Algebraic Foundations</title>
+
+    <p><em>Fractions and Fractional Expressions</em></p>
+
+    <!-- From Fractions, exercise 1. -->
+    <exercise xml:id="stat141-add-fractions">
+      <title>Add and Simplify Fractions</title>
+      <webwork source="Library/ma112DB/set1_2/add_fractions.pg"/>
+    </exercise>
+    <!-- From Fractions, exercise 3. -->
+    <exercise xml:id="stat141-fraction-expressions">
+      <title>Evaluate Expressions with Fractional Inputs</title>
+      <webwork source="Library/NewHampshire/unh_schoolib/Fractions/frabrs302.pg"/>
+    </exercise>
+
+    <p><em>Linear Equations and Graphs</em></p>
+
+    <!-- From Lines in the Plane, exercise 13. -->
+    <exercise xml:id="stat141-slope-intercept">
+      <title>Find a Line's Slope and Vertical Intercept</title>
+      <webwork source="Library/PCC/BasicAlgebra/SlopeAndY-InterceptCalculations/FindSlopeYIntercept110.pg"/>
+    </exercise>
+    <!-- From Lines in the Plane, exercise 19. -->
+    <exercise xml:id="stat141-match-lines">
+      <title>Match Linear Equations to Their Graphs</title>
+      <webwork source="Contrib/Fitchburg/Algebra/lines/choice-of-lines.pg"/>
+    </exercise>
+    <!-- From Lines in the Plane, exercise 21. -->
+    <exercise xml:id="stat141-linear-profit">
+      <title>Interpret a Linear Profit Model</title>
+      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-7s.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="stat141-functions-modeling">
+    <title>Functions and Modeling</title>
+
+    <p><em>Evaluating and Interpreting Functions</em></p>
+
+    <!-- From Functions, exercise 10. -->
+    <exercise xml:id="stat141-cost-function">
+      <title>Interpret a Cost Function</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_331.pg"/>
+    </exercise>
+    <!-- From Functions, exercise 11. -->
+    <exercise xml:id="stat141-function-inputs">
+      <title>Evaluate a Function at Numeric and Symbolic Inputs</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg"/>
+    </exercise>
+    <!-- From Functions, exercise 12. -->
+    <exercise xml:id="stat141-quadratic-function">
+      <title>Evaluate a Quadratic Function</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions2.pg"/>
+    </exercise>
+
+    <p><em>Modeling in Context</em></p>
+
+    <!-- From Modeling, exercise 2. -->
+    <exercise xml:id="stat141-context-model">
+      <title>Interpret a Function in Context</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setIntroductiontoFunctions/FunctionInContext10.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="stat141-polynomial-expressions">
+    <title>Polynomial Expressions</title>
+
+    <p><em>Simplifying Polynomials</em></p>
+
+    <!-- From Polynomial Functions, exercise 5. -->
+    <exercise xml:id="stat141-polynomial-expression">
+      <title>Expand and Simplify a Polynomial Expression</title>
+      <webwork source="Library/FortLewis/Algebra/4-2-Functions-and-expressions/MCH1-4-2-14-Functions-and-expressions.pg"/>
+    </exercise>
+  </subsection>
+</section>

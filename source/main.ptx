@@ -15,6 +15,20 @@
     <!-- standalone review resource, not a course site. The template syllabus is -->
     <!-- still at source/syllabus/syllabus.ptx, unused, if it is ever wanted.    -->
 
+    <chapter xml:id="diagnostics">
+      <title>Course Readiness Diagnostics</title>
+
+      <introduction>
+        <p>
+          Choose the diagnostic for the course you are preparing to begin. Each
+          diagnostic is a short, curated selection from the complete Math Trailhead.
+        </p>
+      </introduction>
+
+      <xi:include href="./activities/diagnostics/math-111.ptx"/>
+      <xi:include href="./activities/diagnostics/stat-141.ptx"/>
+    </chapter>
+
     <chapter xml:id="quantitative_reasoning">
       <title>Quantitative Reasoning</title>
 
