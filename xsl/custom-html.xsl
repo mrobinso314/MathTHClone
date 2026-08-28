@@ -43,11 +43,11 @@
 
 <xsl:import href="./core/pretext-html.xsl"/>
 
-<!-- The curated course pages are intended as self-contained exercise sets. -->
-<!-- Suppress their previous, up, and next controls without affecting the   -->
+<!-- The diagnostic course sections are intended as self-contained exercise -->
+<!-- sets. Suppress their previous, up, and next controls without affecting  -->
 <!-- navigation on the rest of the Math Trailhead.                           -->
 <xsl:template
-    match="preface[@xml:id = 'math-111' or @xml:id = 'stat-141']"
+    match="section[@xml:id = 'math-111' or @xml:id = 'stat-141']"
     mode="primary-navigation-treebuttons"/>
 
 <xsl:template name="extra-js-footer">
