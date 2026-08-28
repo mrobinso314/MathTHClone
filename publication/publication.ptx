@@ -14,8 +14,9 @@
     <!-- Level at which are html files generated (chapter/section/etc): -->
       <chunking level="2" />
 
-    <!-- The course pages use the linear previous/next navigation and the      -->
-    <!-- dedicated Contents page, so the persistent sidebar TOC is disabled.  -->
+    <!-- The dedicated Contents page provides global navigation, so the        -->
+    <!-- persistent sidebar TOC is disabled. The diagnostic course pages also -->
+    <!-- suppress their linear navigation controls in xsl/custom-html.xsl.     -->
       <tableofcontents level="0" />
 
     <!-- Visibility of exercise components where they first appear.          -->
