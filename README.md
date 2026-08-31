@@ -32,9 +32,13 @@ copies of the problems ourselves rather than referencing the OPL. See
 Chapter introductions and the overall book structure live in
 [`source/main.ptx`](source/main.ptx). Front-matter pages live in
 [`source/frontmatter.ptx`](source/frontmatter.ptx), while individual content
-pages are grouped by chapter under [`source/activities`](source/activities).
+pages are grouped by chapter under [`source/activities]]source/activities).
 The Math 111 and Stat 141 diagnostic sections are in
 [`source/activities/diagnostics`](source/activities/diagnostics).
+
+The separate blank lesson book is in [`lessons`](lessons). Its first section,
+[`Function Review`](lessons/sections/function-review.ptx), is intentionally
+empty and is published beneath the main site at `/lessons/`.
 
 Every exercise is a `<webwork source="Contrib/CCCS/..."/>` reference into the
 Open Problem Library. No `.pg` files live in this repository; the problems
@@ -45,7 +49,8 @@ are rendered at read time by whichever WeBWorK server is named in
 
 ```bash
 pretext build course   # build the HTML
-pretext view course    # serve it and open a browser
+pretext build lessons  # build the separate lesson book
+pretext view course   # serve it and open a browser
 ```
 
 The build needs network access to the WeBWorK server to generate problem
