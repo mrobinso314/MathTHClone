@@ -3,17 +3,19 @@
 
 <project ptx-version="2">
   <targets>
-    <!-- Main course for html or pdf -->
-    <!-- No deploy-dir: with a single deployable target the CLI stages this      -->
-    <!-- target's output at the root of the site, so the book lands at           -->
-    <!-- https://<host>/ instead of https://<host>/course/ behind an             -->
-    <!-- auto-generated landing page. If you later want to publish the PDF or    -->
-    <!-- the slide decks alongside the book, give each target a deploy-dir       -->
-    <!-- again and PreTeXt will build the landing page for you.                  -->
+    <!-- Main course for html or pdf. The explicit root deploy directory keeps   -->
+    <!-- all existing course URLs unchanged while additional documents are       -->
+    <!-- published in their own subdirectories.                                  -->
     <!-- The custom xsl auto-activates WeBWorK problems as they scroll into    -->
     <!-- view, instead of making readers click "Activate" on each one.         -->
     <target name="course" source="main.ptx" format="html"
-            publication="publication.ptx" xsl="custom-html.xsl" />
+            publication="publication.ptx" xsl="custom-html.xsl"
+            deploy-dir="." />
+
+    <!-- A separate, intentionally minimal book for lesson materials. -->
+    <target name="lessons" source="../lessons/main.ptx" format="html"
+            publication="publication.ptx" xsl="custom-html.xsl"
+            deploy-dir="lessons" />
     <target name="print" source="main.ptx" format="pdf"
             output-filename="course.pdf" publication="publication.ptx" />
 

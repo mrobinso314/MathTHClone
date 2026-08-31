@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Reuse the macros and document-wide settings from Math Trailhead. -->
+  <xi:include href="../source/docinfo.ptx" />
+
+  <book>
+    <title>Lessons</title>
+
+    <chapter xml:id="lessons">
+      <title>Lessons</title>
+
+      <xi:include href="./sections/function-review.ptx" />
+    </chapter>
+  </book>
+</pretext>
