@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="econ-201">
+  <title>Econ 201</title>
+
+  <introduction>
+    <p>
+      This set of exercises is to help you assess your own algebra background
+      knowledge before beginning Econ 201. For more algebra practice resources,
+      as well as links to study and review materials, checkout the complete
+      <url href="https://kyleormsby.github.io/math-th/">Reed Math Trailhead</url>.
+    </p>
+  </introduction>
+
+  <subsection xml:id="econ201-quantitative-reasoning">
+    <title>Quantitative Reasoning</title>
+
+    <p><em>Percentages and Proportions</em></p>
+
+    <!-- From Percentages and Proportions, exercise 1. -->
+    <exercise xml:id="econ201-percent-to-decimal">
+      <title>Convert a Percent to a Decimal</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_1.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 2. -->
+    <exercise xml:id="econ201-decimal-to-percent">
+      <title>Convert a Decimal to a Percent</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_9.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 3. -->
+    <exercise xml:id="econ201-percent-to-fraction">
+      <title>Convert a Percent to a Fraction</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_5.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 4. -->
+    <exercise xml:id="econ201-percent-of-quantity">
+      <title>Calculate a Percentage of a Quantity</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_10.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 5. -->
+    <exercise xml:id="econ201-percent-in-context">
+      <title>Calculate a Percentage in Context</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_20.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 6. -->
+    <exercise xml:id="econ201-sale-price">
+      <title>Calculate a Sale Price</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_30.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 7. -->
+    <exercise xml:id="econ201-markup-price">
+      <title>Calculate a Price after Markup</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_100.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 8. -->
+    <exercise xml:id="econ201-ratio-as-fraction">
+      <title>Write a Ratio as a Reduced Fraction</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Ratios_1.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 9. -->
+    <exercise xml:id="econ201-proportion-numerator">
+      <title>Solve a Proportion with an Unknown Numerator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_1.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 10. -->
+    <exercise xml:id="econ201-proportion-denominator">
+      <title>Solve a Proportion with an Unknown Denominator</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportions_2.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 11. -->
+    <exercise xml:id="econ201-dosage-proportion">
+      <title>Use a Proportion to Calculate a Dosage</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportion_Application_1.pg"/>
+    </exercise>
+    <!-- From Percentages and Proportions, exercise 12. -->
+    <exercise xml:id="econ201-recipe-proportion">
+      <title>Scale a Recipe with a Proportion</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportion_Application_3.pg"/>
+    </exercise>
+
+    <p><em>Rates and Unit Conversion</em></p>
+
+    <!-- From Rates and Unit Conversion, exercise 1. -->
+    <exercise xml:id="econ201-feet-inches">
+      <title>Convert between Feet and Inches</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican10.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 2. -->
+    <exercise xml:id="econ201-miles-feet">
+      <title>Convert between Miles and Feet</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican120.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 3. -->
+    <exercise xml:id="econ201-tons-pounds">
+      <title>Convert between Tons and Pounds</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican170.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 4. -->
+    <exercise xml:id="econ201-kilometers-meters">
+      <title>Convert between Kilometers and Meters</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetric10.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 5. -->
+    <exercise xml:id="econ201-meters-centimeters">
+      <title>Convert between Meters and Centimeters</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetric100.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 6. -->
+    <exercise xml:id="econ201-speed-to-metric">
+      <title>Convert a Speed to Metric Units</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionSpeed10.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 7. -->
+    <exercise xml:id="econ201-speed-to-us-customary">
+      <title>Convert a Speed to U.S. Customary Units</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionSpeed20.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 8. -->
+    <exercise xml:id="econ201-unit-rate-cost">
+      <title>Use a Unit Rate to Calculate Cost</title>
+      <webwork source="Contrib/PCC/BasicMath/Proportion/MTH20Proportion40.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 9. -->
+    <exercise xml:id="econ201-fuel-use-cost">
+      <title>Calculate Fuel Use and Cost</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportion_Application_7.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 10. -->
+    <exercise xml:id="econ201-context-length-conversion">
+      <title>Convert U.S. Customary Lengths in Context</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmericanApplication10.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 11. -->
+    <exercise xml:id="econ201-context-metric-conversion">
+      <title>Compare Metric Lengths</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetricApplication10.pg"/>
+    </exercise>
+    <!-- From Rates and Unit Conversion, exercise 12. -->
+    <exercise xml:id="econ201-time-conversion">
+      <title>Convert between Hours and Minutes</title>
+      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionTimeApplication10.pg"/>
+    </exercise>
+
+    <p><em>Reading Tables and Graphs</em></p>
+
+    <!-- From Reading Tables and Graphs, exercise 1. -->
+    <exercise xml:id="econ201-measures-of-center">
+      <title>Analyze Changes in Measures of Center</title>
+      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-9s.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 2. -->
+    <exercise xml:id="econ201-pricing-table">
+      <title>Interpret a Pricing Table</title>
+      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-5s.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 3. -->
+    <exercise xml:id="econ201-percent-table">
+      <title>Complete a Percent, Fraction, and Decimal Table</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Percents/Convert_Percents_Table_1.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 4. -->
+    <exercise xml:id="econ201-two-way-table">
+      <title>Calculate Probabilities from a Two-Way Table</title>
+      <webwork source="Library/NAU/setProbability/Ind_Table.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 5. -->
+    <exercise xml:id="econ201-rate-from-graph">
+      <title>Interpret a Rate from a Graph</title>
+      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-6s.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 6. -->
+    <exercise xml:id="econ201-mean-median">
+      <title>Calculate the Mean and Median</title>
+      <webwork source="Contrib/PCC/BasicMath/MeanMedianMode/MeanMedianMode120.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 7. -->
+    <exercise xml:id="econ201-mean-median-mode">
+      <title>Calculate the Mean, Median, and Mode</title>
+      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Stats/mean_median_mode_3.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 8. -->
+    <exercise xml:id="econ201-pie-chart-1">
+      <title>Calculate a Category Count from a Pie Chart</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_110.pg"/>
+    </exercise>
+    <!-- From Reading Tables and Graphs, exercise 9. -->
+    <exercise xml:id="econ201-pie-chart-2">
+      <title>Use a Pie Chart to Find a Category Total</title>
+      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_120.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="econ201-algebraic-foundations">
+    <title>Algebraic Foundations</title>
+
+    <p><em>Fractions and Fractional Expressions</em></p>
+
+    <!-- From Stat 141, checkpoint 6. -->
+    <exercise xml:id="econ201-add-fractions">
+      <title>Add and Simplify Fractions</title>
+      <webwork source="Library/ma112DB/set1_2/add_fractions.pg"/>
+    </exercise>
+    <!-- From Stat 141, checkpoint 7. -->
+    <exercise xml:id="econ201-fraction-expressions">
+      <title>Evaluate Expressions with Fractional Inputs</title>
+      <webwork source="Library/NewHampshire/unh_schoolib/Fractions/frabrs302.pg"/>
+    </exercise>
+
+    <p><em>Linear Equations and Graphs</em></p>
+
+    <!-- From Math 111, checkpoint 4. -->
+    <exercise xml:id="econ201-line-two-points">
+      <title>Find a Line Through Two Points</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/Equations_of_Lines/Equation_of_Lines_2.pg"/>
+    </exercise>
+    <!-- From Math 111, checkpoint 5. -->
+    <exercise xml:id="econ201-line-slope-point">
+      <title>Write a Line from Its Slope and a Point</title>
+      <webwork source="Contrib/Fitchburg/Algebra/lines/line-1.pg"/>
+    </exercise>
+    <!-- From Math 111, checkpoint 6. -->
+    <exercise xml:id="econ201-line-from-graph">
+      <title>Read and Model a Line from Its Graph</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/setLinesReview/from-graph-ratl-inter.pg"/>
+    </exercise>
+    <!-- From Stat 141, checkpoint 8. -->
+    <exercise xml:id="econ201-slope-intercept">
+      <title>Find a Line's Slope and Vertical Intercept</title>
+      <webwork source="Library/PCC/BasicAlgebra/SlopeAndY-InterceptCalculations/FindSlopeYIntercept110.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="econ201-functions-modeling">
+    <title>Functions and Modeling</title>
+
+    <p><em>Evaluating Functions</em></p>
+
+    <!-- Selected as Math 111 checkpoint 1 and Stat 141 checkpoint 12. -->
+    <exercise xml:id="econ201-function-inputs">
+      <title>Evaluate a Function at Numeric and Symbolic Inputs</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg"/>
+    </exercise>
+    <!-- From Stat 141, checkpoint 13. -->
+    <exercise xml:id="econ201-quadratic-function">
+      <title>Evaluate a Quadratic Function</title>
+      <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions2.pg"/>
+    </exercise>
+
+    <p><em>Modeling in Context</em></p>
+
+    <!-- From Stat 141, checkpoint 14. -->
+    <exercise xml:id="econ201-context-model">
+      <title>Interpret a Function in Context</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setIntroductiontoFunctions/FunctionInContext10.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="econ201-polynomial-expressions">
+    <title>Polynomial Expressions</title>
+
+    <!-- From Stat 141, checkpoint 15. -->
+    <exercise xml:id="econ201-polynomial-expression">
+      <title>Expand and Simplify a Polynomial Expression</title>
+      <webwork source="Library/FortLewis/Algebra/4-2-Functions-and-expressions/MCH1-4-2-14-Functions-and-expressions.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="econ201-exponents-logarithms">
+    <title>Exponents and Logarithms</title>
+
+    <p><em>Exponent Rules</em></p>
+
+    <!-- From Math 111, checkpoint 12. -->
+    <exercise xml:id="econ201-exponent-rules">
+      <title>Apply the Power and Product Rules</title>
+      <webwork source="Contrib/Mizzou/Algebra/exponents_integers/exp_ints_02.pg"/>
+    </exercise>
+    <!-- From Math 111, checkpoint 13. -->
+    <exercise xml:id="econ201-exponential-expression">
+      <title>Simplify an Exponential Expression</title>
+      <webwork source="Contrib/Mizzou/Algebra/exponents_integers/exp_ints_14.pg"/>
+    </exercise>
+
+    <p><em>Logarithm Basics</em></p>
+
+    <!-- From Math 111, checkpoint 14. -->
+    <exercise xml:id="econ201-basic-logarithms">
+      <title>Evaluate Basic Logarithms</title>
+      <webwork source="Contrib/CCCS/CollegeAlgebra/6.3/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_6_3_51.pg"/>
+    </exercise>
+  </subsection>
+</section>
