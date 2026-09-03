@@ -47,7 +47,7 @@
 <!-- sets. Suppress their previous, up, and next controls without affecting  -->
 <!-- navigation on the rest of the Math Trailhead.                           -->
 <xsl:template
-    match="section[@xml:id = 'math-111' or @xml:id = 'stat-141']"
+    match="section[@xml:id = 'math-111' or @xml:id = 'stat-141' or @xml:id = 'econ-201']"
     mode="primary-navigation-treebuttons"/>
 
 <xsl:template name="extra-js-footer">
@@ -269,13 +269,13 @@
     }
 
     function hideCuratedPageFooterNavigation() {
-        if (!document.querySelector("#math-111, #stat-141")) { return; }
+        if (!document.querySelector("#math-111, #stat-141, #econ-201")) { return; }
         var footerNavigation = document.getElementById("ptx-content-footer");
         if (footerNavigation) { footerNavigation.hidden = true; }
     }
 
     function renumberCuratedCheckpoints() {
-        var pages = document.querySelectorAll("#math-111, #stat-141");
+        var pages = document.querySelectorAll("#math-111, #stat-141, #econ-201");
         for (var i = 0; i !== pages.length; i += 1) {
             var checkpoints = pages[i].querySelectorAll(
                 "details.exercise > summary > .heading .codenumber"
