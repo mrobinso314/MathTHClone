@@ -9,7 +9,7 @@ A self-paced precalculus and college algebra review built in
 ## Status
 
 Working prototype. Hundreds of WeBWorK exercises across the core review
-chapters, plus curated Math 111 and Stat 141 course-readiness diagnostics,
+chapters, plus curated Math 111, Stat 141, and Econ 201 course-readiness diagnostics,
 imported from the
 [Moodle course](https://moodle.reed.edu/course/view.php?id=6466).
 
@@ -33,7 +33,7 @@ Chapter introductions and the overall book structure live in
 [`source/main.ptx`](source/main.ptx). Front-matter pages live in
 [`source/frontmatter.ptx`](source/frontmatter.ptx), while individual content
 pages are grouped by chapter under [`source/activities`](source/activities).
-The Math 111 and Stat 141 diagnostic sections are in
+The Math 111, Stat 141, and Econ 201 diagnostic sections are in
 [`source/activities/diagnostics`](source/activities/diagnostics).
 
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
