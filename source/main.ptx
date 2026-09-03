@@ -27,6 +27,7 @@
 
       <xi:include href="./activities/diagnostics/math-111.ptx"/>
       <xi:include href="./activities/diagnostics/stat-141.ptx"/>
+      <xi:include href="./activities/diagnostics/econ-201.ptx"/>
     </chapter>
 
     <chapter xml:id="quantitative_reasoning">
