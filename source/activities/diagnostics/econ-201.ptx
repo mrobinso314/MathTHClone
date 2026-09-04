@@ -78,80 +78,12 @@
       <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportion_Application_3.pg"/>
     </exercise>
 
-    <p><em>Rates and Unit Conversion</em></p>
-
-    <!-- From Rates and Unit Conversion, exercise 1. -->
-    <exercise xml:id="econ201-feet-inches">
-      <title>Convert between Feet and Inches</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican10.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 2. -->
-    <exercise xml:id="econ201-miles-feet">
-      <title>Convert between Miles and Feet</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican120.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 3. -->
-    <exercise xml:id="econ201-tons-pounds">
-      <title>Convert between Tons and Pounds</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmerican170.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 4. -->
-    <exercise xml:id="econ201-kilometers-meters">
-      <title>Convert between Kilometers and Meters</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetric10.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 5. -->
-    <exercise xml:id="econ201-meters-centimeters">
-      <title>Convert between Meters and Centimeters</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetric100.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 6. -->
-    <exercise xml:id="econ201-speed-to-metric">
-      <title>Convert a Speed to Metric Units</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionSpeed10.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 7. -->
-    <exercise xml:id="econ201-speed-to-us-customary">
-      <title>Convert a Speed to U.S. Customary Units</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionSpeed20.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 8. -->
-    <exercise xml:id="econ201-unit-rate-cost">
-      <title>Use a Unit Rate to Calculate Cost</title>
-      <webwork source="Contrib/PCC/BasicMath/Proportion/MTH20Proportion40.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 9. -->
-    <exercise xml:id="econ201-fuel-use-cost">
-      <title>Calculate Fuel Use and Cost</title>
-      <webwork source="Contrib/CCCS/QuantitativeLiteracy/Ratios_and_Conversions/Proportion_Application_7.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 10. -->
-    <exercise xml:id="econ201-context-length-conversion">
-      <title>Convert U.S. Customary Lengths in Context</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionAmericanApplication10.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 11. -->
-    <exercise xml:id="econ201-context-metric-conversion">
-      <title>Compare Metric Lengths</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionMetricApplication10.pg"/>
-    </exercise>
-    <!-- From Rates and Unit Conversion, exercise 12. -->
-    <exercise xml:id="econ201-time-conversion">
-      <title>Convert between Hours and Minutes</title>
-      <webwork source="Contrib/PCC/BasicMath/UnitConversion/UnitConversionTimeApplication10.pg"/>
-    </exercise>
-
     <p><em>Reading Tables and Graphs</em></p>
 
     <!-- From Reading Tables and Graphs, exercise 1. -->
     <exercise xml:id="econ201-measures-of-center">
       <title>Analyze Changes in Measures of Center</title>
       <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-9s.pg"/>
-    </exercise>
-    <!-- From Reading Tables and Graphs, exercise 2. -->
-    <exercise xml:id="econ201-pricing-table">
-      <title>Interpret a Pricing Table</title>
-      <webwork source="Library/NewHampshire/NECAP/grade8/gr8-2005/n8-2005-5s.pg"/>
     </exercise>
     <!-- From Reading Tables and Graphs, exercise 3. -->
     <exercise xml:id="econ201-percent-table">
@@ -177,16 +109,6 @@
     <exercise xml:id="econ201-mean-median-mode">
       <title>Calculate the Mean, Median, and Mode</title>
       <webwork source="Contrib/CCCS/QuantitativeLiteracy/Stats/mean_median_mode_3.pg"/>
-    </exercise>
-    <!-- From Reading Tables and Graphs, exercise 8. -->
-    <exercise xml:id="econ201-pie-chart-1">
-      <title>Calculate a Category Count from a Pie Chart</title>
-      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_110.pg"/>
-    </exercise>
-    <!-- From Reading Tables and Graphs, exercise 9. -->
-    <exercise xml:id="econ201-pie-chart-2">
-      <title>Use a Pie Chart to Find a Category Total</title>
-      <webwork source="Contrib/PCC/BasicMath/Percent/MTH20PercentApplicationType1_120.pg"/>
     </exercise>
   </subsection>
 
@@ -252,16 +174,6 @@
     <exercise xml:id="econ201-context-model">
       <title>Interpret a Function in Context</title>
       <webwork source="Contrib/CUNY/CityTech/Precalculus/setIntroductiontoFunctions/FunctionInContext10.pg"/>
-    </exercise>
-  </subsection>
-
-  <subsection xml:id="econ201-polynomial-expressions">
-    <title>Polynomial Expressions</title>
-
-    <!-- From Stat 141, checkpoint 15. -->
-    <exercise xml:id="econ201-polynomial-expression">
-      <title>Expand and Simplify a Polynomial Expression</title>
-      <webwork source="Library/FortLewis/Algebra/4-2-Functions-and-expressions/MCH1-4-2-14-Functions-and-expressions.pg"/>
     </exercise>
   </subsection>
 
