@@ -46,6 +46,8 @@
   <webwork source="Contrib/Mizzou/College_Algebra/Inequalities_Rational/Ratl5.pg"/>
   </exercise>
   <exercise> <!--13-->
-  <webwork source="Contrib/Mizzou/College_Algebra/Inequalities_Rational/Ratl6.pg"/>
+  <!-- Pin a known-good seed: the default shifts whenever earlier exercises change, -->
+  <!-- and this problem fails to compile for some randomly generated versions.       -->
+  <webwork source="Contrib/Mizzou/College_Algebra/Inequalities_Rational/Ratl6.pg" seed="223"/>
   </exercise>
 </worksheet>
