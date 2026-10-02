@@ -46,11 +46,13 @@
 
 
     <p>
-      Every exercise here is a live <term>WeBWorK</term> problem. Enter an
+      Most exercises here are live <term>WeBWorK</term> problems. Enter an
       answer and submit it for immediate feedback, and use the option to
       generate a new version of a problem when you want more practice with
       the same idea. Nothing you type is recorded or reported to anyone:
       this is a place to practice, not an assignment.
+      The Reed Algebra Lessons also include written checkpoints with solutions
+      you can reveal after trying them.
     </p>
 
 
@@ -194,6 +196,12 @@
           <li><p><xref ref="identities" text="title"/></p></li>
         </ul>
         </p>
+      </li>
+      <li>
+        <p><xref ref="reed-algebra-lessons" text="title"/></p>
+        <p><ul>
+          <li><p><xref ref="reed-trigonometry" text="title"/></p></li>
+        </ul></p>
       </li>
     </ul>
     </p>

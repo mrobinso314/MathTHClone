@@ -292,5 +292,14 @@
       <xi:include href="./activities/trigonometry/inverse_trig_functions.ptx"/>
       <xi:include href="./activities/trigonometry/identities.ptx"/>
     </chapter>
+    <chapter xml:id="reed-algebra-lessons">
+      <title>Reed Algebra Lessons</title>
+      <introduction>
+        <p>These lessons develop ideas through explanations, worked examples,
+        and practice drawn from the Math Trailhead. Each section can be read
+        on its own.</p>
+      </introduction>
+      <xi:include href="./activities/reed-algebra-lessons/trigonometry.ptx"/>
+    </chapter>
   </book>
 </pretext>

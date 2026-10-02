@@ -1,7 +1,7 @@
 # Math Trailhead
 
 A self-paced precalculus and college algebra review built in
-[PreTeXt](https://pretextbook.org), with every exercise a live
+[PreTeXt](https://pretextbook.org), with most exercises presented as live
 [WeBWorK](https://webwork.maa.org) problem.
 
 **Live site:** https://kyleormsby.github.io/math-th/
@@ -36,11 +36,18 @@ pages are grouped by chapter under [`source/activities`](source/activities).
 The Math 111, Stat 141, and Econ 201 diagnostic sections are in
 [`source/activities/diagnostics`](source/activities/diagnostics).
 
+The **Reed Algebra Lessons** chapter is part of the main book. Its
+[`Trigonometry`](source/activities/reed-algebra-lessons/trigonometry.ptx)
+section is a self-contained lesson on the unit circle, the Pythagorean
+identity, and the family `A cos(wx + T)`, using existing WeBWorK exercises
+alongside written checkpoints. Its illustrations live in
+[`assets/reed-algebra-lessons`](assets/reed-algebra-lessons).
+
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
 [`Function Review`](lessons/sections/function-review.ptx), is intentionally
 empty and is published beneath the main site at `/lessons/`.
 
-Every exercise is a `<webwork source="Contrib/CCCS/..."/>` reference into the
+Interactive exercises use `<webwork source="Contrib/CCCS/..."/>` references into the
 Open Problem Library. No `.pg` files live in this repository; the problems
 are rendered at read time by whichever WeBWorK server is named in
 [`publication/publication.ptx`](publication/publication.ptx).

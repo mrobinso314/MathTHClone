@@ -43,6 +43,12 @@
 
 <xsl:import href="./core/pretext-html.xsl"/>
 
+<!-- Keep instruction and practice visible while reading the Reed lesson.
+     Written-checkpoint solutions retain the usual reveal controls. -->
+<xsl:template match="example[ancestor::section[@xml:id = 'reed-trigonometry']] | exercise[ancestor::section[@xml:id = 'reed-trigonometry']] | example[ancestor::section[@xml:id = 'reed-trigonometry']]/solution" mode="is-hidden">
+    <xsl:text>false</xsl:text>
+</xsl:template>
+
 <!-- The diagnostic course sections are intended as self-contained exercise -->
 <!-- sets. Suppress their previous, up, and next controls without affecting  -->
 <!-- navigation on the rest of the Math Trailhead.                           -->

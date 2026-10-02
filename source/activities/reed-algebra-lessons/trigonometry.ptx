@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="reed-trigonometry">
+  <title>Trigonometry</title>
+  <introduction>
+    <p>A point traveling around a circle creates a repeating wave when we record
+    one of its coordinates. This connects the geometry of the unit circle to the
+    family of functions</p>
+    <p><md>f(x)=A\cos(wx+T).</md></p>
+    <p>By the end of this lesson, you will be able to read sine and cosine from
+    the unit circle, explain why <m>\sin^2\theta+\cos^2\theta=1</m>, and use
+    <m>A</m>, <m>w</m>, and <m>T</m> to describe and sketch a cosine wave.
+    You need the Pythagorean theorem, coordinates, and basic algebra; no previous
+    trigonometry lesson is required.</p>
+    <p>Work with pencil and paper as you read. The interactive exercises are
+    selected from the Math Trailhead's existing trigonometry worksheets.
+    Enter exact answers such as <c>pi/3</c> and <c>sqrt(3)/2</c> unless a problem
+    requests decimals. Use radians unless a degree symbol appears.</p>
+  </introduction>
+
+  <subsection xml:id="reed-trig-circle">
+    <title>The unit circle: angles become coordinates</title>
+    <p>The <term>unit circle</term> has center <m>(0,0)</m> and radius
+    <m>1</m>. Start at <m>(1,0)</m> and turn through an angle <m>\theta</m>.
+    Positive angles turn counterclockwise; negative angles turn clockwise.
+    The angle determines a point on the circle.</p>
+    <p>An angle in <term>radians</term> is the signed distance traveled along a
+    circle divided by its radius. On the unit circle, the size of the angle
+    equals the arc length. One full turn is <m>2\pi</m> radians because the
+    circumference is <m>2\pi</m>. Therefore</p>
+    <p><md>360^\circ=2\pi\text{ radians},\qquad
+    180^\circ=\pi\text{ radians},\qquad
+    90^\circ=\frac{\pi}{2}\text{ radians}.</md></p>
+    <p>To convert degrees to radians, multiply by <m>\pi/180</m>; to convert
+    radians to degrees, multiply by <m>180/\pi</m>. For example,
+    <m>120^\circ=2\pi/3</m> radians and <m>-\pi/4=-45^\circ</m>.</p>
+    <p>We define <term>cosine</term> to be the horizontal coordinate and
+    <term>sine</term> to be the vertical coordinate:</p>
+    <p><md>Q=(\cos\theta,\sin\theta).</md></p>
+    <figure xml:id="reed-trig-circle-figure">
+      <caption>The radius has length 1. Its horizontal and vertical components
+      are cosine and sine.</caption>
+      <image source="reed-algebra-lessons/unit-circle.svg" width="85%">
+        <shortdescription>A unit circle with a radius to a point in the first quadrant.
+        The horizontal leg is labeled cosine theta, the vertical leg sine theta,
+        and the radius 1. The four axis intercepts are labeled with coordinates
+        and angles 0, pi over 2, pi, and 3 pi over 2.</shortdescription>
+      </image>
+    </figure>
+    <p>In the first quadrant, this agrees with right-triangle trigonometry:
+    cosine is adjacent side divided by hypotenuse and sine is opposite side
+    divided by hypotenuse. Here the hypotenuse is <m>1</m>. The coordinate
+    definition continues to work in every quadrant, including points on the axes.</p>
+    <table>
+      <title>Five landmarks in one turn</title>
+      <tabular halign="center">
+        <row header="yes"><cell><m>\theta</m></cell><cell><m>0</m></cell><cell><m>\pi/2</m></cell><cell><m>\pi</m></cell><cell><m>3\pi/2</m></cell><cell><m>2\pi</m></cell></row>
+        <row><cell><m>\cos\theta</m></cell><cell>1</cell><cell>0</cell><cell><m>-1</m></cell><cell>0</cell><cell>1</cell></row>
+        <row><cell><m>\sin\theta</m></cell><cell>0</cell><cell>1</cell><cell>0</cell><cell><m>-1</m></cell><cell>0</cell></row>
+      </tabular>
+    </table>
+    <p>Signs come from coordinates: in quadrant I both are positive; in II
+    cosine is negative and sine positive; in III both are negative; in IV
+    cosine is positive and sine negative. Also, each coordinate lies between
+    <m>-1</m> and <m>1</m>.</p>
+    <p>You can reconstruct the familiar exact values. At <m>\pi/4</m>, the
+    triangle's legs have the same length <m>a</m>, so
+    <m>2a^2=1</m> gives <m>a=\sqrt{2}/2</m>. Bisect an equilateral triangle
+    of side <m>1</m>: the short leg is <m>1/2</m>, the hypotenuse is
+    <m>1</m>, and the long leg is <m>\sqrt{3}/2</m>. This gives the
+    <m>\pi/6</m> and <m>\pi/3</m> values.</p>
+    <table>
+      <title>First-quadrant values to reconstruct</title>
+      <tabular halign="center">
+        <row header="yes"><cell>Angle</cell><cell><m>\cos\theta</m></cell><cell><m>\sin\theta</m></cell></row>
+        <row><cell><m>\pi/6=30^\circ</m></cell><cell><m>\sqrt{3}/2</m></cell><cell><m>1/2</m></cell></row>
+        <row><cell><m>\pi/4=45^\circ</m></cell><cell><m>\sqrt{2}/2</m></cell><cell><m>\sqrt{2}/2</m></cell></row>
+        <row><cell><m>\pi/3=60^\circ</m></cell><cell><m>1/2</m></cell><cell><m>\sqrt{3}/2</m></cell></row>
+      </tabular>
+    </table>
+    <p>A <term>reference angle</term> is the acute angle from a point's radius
+    to the horizontal axis. Reflect a first-quadrant point to obtain other
+    quadrants, keeping coordinate magnitudes and changing their signs.
+    For example, <m>5\pi/6</m> is in quadrant II with reference angle
+    <m>\pi/6</m>, so its point is <m>(-\sqrt{3}/2,1/2)</m>.</p>
+    <p>Adding or subtracting <m>2\pi</m> makes one extra full turn and returns
+    to the same point. Thus <m>-\pi/6</m> and <m>11\pi/6</m> have the same
+    sine and cosine. This is why both functions repeat every <m>2\pi</m>.</p>
+    <exercise xml:id="reed-trig-degrees">
+      <title>Convert degrees to radians</title>
+      <!-- Reused from degrees_radians.ptx. -->
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/AngleMeasure-Radians/convert-degrees2rads-med.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-radians">
+      <title>Convert radians to degrees</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/AngleMeasure-Radians/convert-rads2degrees-med.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-quadrants">
+      <title>Use coordinate signs to identify quadrants</title>
+      <!-- Reused from evaluating_trig_functions.ptx. -->
+      <webwork source="Library/Rochester/setTrig02FunctionsUnitCircle/srw5_2_47.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-cosine-values">
+      <title>Read exact cosine values</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/UnitCircle/unit-circle-cosine.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-sine-values">
+      <title>Read exact sine values</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/UnitCircle/unit-circle-sine.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="reed-trig-identity">
+    <title>One circle, one identity</title>
+    <p>Every point <m>(u,v)</m> on the unit circle is one unit from the
+    origin. The Pythagorean theorem says <m>u^2+v^2=1</m>. Substitute
+    <m>u=\cos\theta</m> and <m>v=\sin\theta</m>:</p>
+    <p><md>\boxed{\cos^2\theta+\sin^2\theta=1.}</md></p>
+    <p>That is the whole derivation. The notation <m>\sin^2\theta</m>
+    means <m>(\sin\theta)^2</m>, not <m>\sin(\theta^2)</m>. In other
+    quadrants, the triangle's side lengths are the absolute values of the
+    coordinates. Squaring removes the signs, so the same identity holds for
+    every angle, including the axis points.</p>
+    <example>
+      <title>Recover a missing coordinate</title>
+      <statement><p>If <m>\cos\theta=-3/5</m> and <m>\theta</m> is in
+      quadrant II, find <m>\sin\theta</m>.</p></statement>
+      <solution>
+        <p>The identity gives</p>
+        <p><md>\sin^2\theta=1-\frac{9}{25}=\frac{16}{25}.</md></p>
+        <p>So <m>\sin\theta=\pm4/5</m>. Quadrant II has positive vertical
+        coordinate, hence <m>\sin\theta=4/5</m>. The identity determines
+        the magnitude; the quadrant determines the sign.</p>
+      </solution>
+    </example>
+    <exercise xml:id="reed-trig-identity-check">
+      <title>Explain the identity</title>
+      <statement><p>Draw a unit circle and explain the identity in one sentence.
+      Then find <m>\cos\theta</m> when <m>\sin\theta=-5/13</m> and
+      <m>\theta</m> is in quadrant III. Finally, simplify
+      <m>1-\sin^2\theta</m>.</p></statement>
+      <solution><p>The squared coordinates of a point on a circle of radius
+      <m>1</m> sum to <m>1</m>. Here
+      <m>\cos^2\theta=1-25/169=144/169</m>; quadrant III makes cosine
+      negative, so <m>\cos\theta=-12/13</m>. For every angle,
+      <m>1-\sin^2\theta=\cos^2\theta</m>.</p></solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="reed-trig-waves">
+    <title>From a circle to a wave</title>
+    <p>Now let the angle vary and graph its horizontal coordinate against the
+    angle. This produces <m>y=\cos x</m>. As the point goes around the circle,
+    its horizontal coordinate follows the pattern
+    <m>1,0,-1,0,1</m> at the five landmarks above. Plotting the vertical
+    coordinate instead gives <m>y=\sin x</m>, with pattern
+    <m>0,1,0,-1,0</m>.</p>
+    <figure>
+      <caption>Cosine and sine record two coordinates of the same circular
+      motion. Both repeat after one full turn.</caption>
+      <image source="reed-algebra-lessons/sine-cosine.svg" width="100%">
+        <shortdescription>Graphs of cosine and sine from zero to two pi with values
+        marked at every quarter turn. Cosine starts at one; sine starts at zero
+        and rises. Both return to their initial values after two pi.</shortdescription>
+      </image>
+    </figure>
+    <p>The <term>midline</term> is the line halfway between the maximum and
+    minimum; here it is <m>y=0</m>. The <term>amplitude</term> is the distance
+    from the midline to a peak; here it is <m>1</m>. The <term>period</term>
+    is the length of the shortest positive horizontal shift that repeats the
+    entire graph; here it is <m>2\pi</m>. A maximum and the next minimum are
+    only half a period apart.</p>
+    <p>Sine has the same shape as cosine, shifted right by a quarter turn:</p>
+    <p><md>\sin x=\cos\left(x-\frac{\pi}{2}\right).</md></p>
+    <p>To see this on the circle, rotate <m>(u,v)</m> clockwise by a quarter
+    turn. Its coordinates become <m>(v,-u)</m>, so the new horizontal
+    coordinate is the old vertical coordinate. This also lets us describe
+    sine waves using the cosine family.</p>
+    <exercise xml:id="reed-trig-circle-rotations">
+      <title>Practice turns and reflections on the circle</title>
+      <!-- Reused from sine_cosine.ptx. -->
+      <webwork source="Library/LoyolaChicago/Precalc/Chap6Sec3/Q40.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="reed-trig-parameters">
+    <title>What A, w, and T do</title>
+    <p>In <m>f(x)=A\cos(wx+T)</m>, call the angle inside cosine
+    <m>\theta=wx+T</m>. Starting with an input <m>x</m>, first compute this
+    angle, then read its horizontal coordinate on the unit circle, then
+    multiply that coordinate by <m>A</m>. The parameter <m>w</m> is often
+    written as the Greek letter <m>\omega</m>. We use <m>P</m> for the
+    period: <m>T</m> here is an angle, not the period.</p>
+    <paragraphs>
+      <title>A controls vertical size and reflection</title>
+      <p>Multiplying by <m>A</m> multiplies every height by <m>A</m>. Thus
+      <m>3\cos x</m> ranges from <m>-3</m> to <m>3</m>, and
+      <m>\tfrac12\cos x</m> ranges from <m>-1/2</m> to <m>1/2</m>.
+      A negative <m>A</m> also reflects the graph across the horizontal axis:
+      <m>-3\cos x</m> begins at <m>-3</m> rather than <m>3</m>.
+      Amplitude is a distance, so it is <m>|A|</m>, never negative.</p>
+    </paragraphs>
+    <exercise xml:id="reed-trig-amplitude-read">
+      <title>Read amplitude from a graph</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/GraphingSineCosine/identify-amplitude.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-amplitude-match">
+      <title>Match amplitudes and reflections</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setTrigonometry_-_Graphing_Amplitude/matching-amplitudes.pg"/>
+    </exercise>
+    <paragraphs>
+      <title>w controls how quickly the angle changes</title>
+      <p>Increasing <m>x</m> by <m>\Delta x</m> changes the angle by
+      <m>w\Delta x</m>. A complete turn requires an angular change of size
+      <m>2\pi</m>. For <m>A\ne0</m> and <m>w\ne0</m>,</p>
+      <p><md>|w|P=2\pi,\qquad \boxed{P=\frac{2\pi}{|w|}.}</md></p>
+      <p>For example, <m>\cos(2x)</m> makes a full turn while <m>x</m>
+      increases by only <m>\pi</m>; its graph is horizontally compressed.
+      The graph of <m>\cos(x/2)</m> needs <m>4\pi</m> units for a turn and
+      is horizontally stretched. Larger <m>|w|</m> means a shorter period.</p>
+      <p>If <m>w&lt;0</m>, the angle decreases as <m>x</m> increases, so the
+      point travels clockwise. The period still uses <m>|w|</m>. Reflecting
+      the circle across the horizontal axis shows
+      <m>\cos(-\theta)=\cos\theta</m>, so
+      <m>\cos(-2x)=\cos(2x)</m>. With a nonzero phase angle, keep track of
+      that sign too: <m>\cos(-2x+T)=\cos(2x-T)</m>.</p>
+    </paragraphs>
+    <exercise xml:id="reed-trig-period-match">
+      <title>Match graphs by their periods</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setTrigonometry_-_Graphing_Period/matching-period.pg"/>
+    </exercise>
+    <paragraphs>
+      <title>T controls the starting angle</title>
+      <p>At <m>x=0</m>, the angle is <m>T</m>, so <m>f(0)=A\cos T</m>.
+      To locate the horizontal shift, factor out <m>w</m>:</p>
+      <p><md>w x+T=w\left(x+\frac{T}{w}\right)=w(x-h),
+      \qquad \boxed{h=-\frac{T}{w}.}</md></p>
+      <p>The graph of <m>A\cos(w(x-h))</m> is the graph of
+      <m>A\cos(wx)</m> shifted right by <m>h</m> if <m>h&gt;0</m>, or left
+      by <m>|h|</m> if <m>h&lt;0</m>. Equivalently, solve <m>w x+T=0</m>
+      to find where the original angle-zero point has moved.</p>
+      <p>For example, <m>\cos(2x+\pi/2)=\cos(2(x+\pi/4))</m>
+      shifts <m>\cos(2x)</m> left by <m>\pi/4</m>, not <m>\pi/2</m>.
+      The plus sign describes a head start around the circle. The graph reaches
+      a given angle earlier, which explains the shift to the left when
+      <m>w&gt;0</m>.</p>
+      <p>Changing <m>T</m> does not change amplitude or period. Adding
+      <m>2\pi k</m> to <m>T</m>, for any integer <m>k</m>, gives the same
+      function; horizontal shifts that differ by whole periods are equivalent.
+      If you change <m>w</m> while keeping <m>T</m> fixed, both the period
+      and the shift <m>-T/w</m> generally change.</p>
+    </paragraphs>
+    <table>
+      <title>The nonconstant family at a glance</title>
+      <tabular>
+        <row header="yes"><cell>Feature</cell><cell><m>A\cos(wx+T)</m>, with <m>A,w\ne0</m></cell></row>
+        <row><cell>Amplitude</cell><cell><m>|A|</m></cell></row>
+        <row><cell>Midline and range</cell><cell><m>y=0</m>; <m>[-|A|,|A|]</m></cell></row>
+        <row><cell>Period</cell><cell><m>P=2\pi/|w|</m></cell></row>
+        <row><cell>Horizontal shift</cell><cell><m>h=-T/w</m></cell></row>
+        <row><cell>Value at zero</cell><cell><m>A\cos T</m></cell></row>
+      </tabular>
+    </table>
+    <p>Two exceptions deserve their own check: if <m>A=0</m>, then
+    <m>f(x)=0</m>; if <m>w=0</m>, then <m>f(x)=A\cos T</m> is constant.
+    Constant functions have no smallest positive period. In particular, do not
+    divide by <m>w</m> when <m>w=0</m>.</p>
+    <exercise xml:id="reed-trig-shift-check">
+      <title>Read the inside carefully</title>
+      <statement><p>For <m>g(x)=-2\cos(3x-\pi)</m>, find the amplitude,
+      period, horizontal shift, and <m>g(0)</m>. Explain why its amplitude is
+      not negative and its shift is not <m>\pi</m>.</p></statement>
+      <solution><p>The amplitude is <m>2</m>, the period is <m>2\pi/3</m>,
+      and <m>3x-\pi=3(x-\pi/3)</m> gives a shift right by
+      <m>\pi/3</m>. Also <m>g(0)=-2\cos(-\pi)=2</m>. The minus sign
+      reflects the graph; amplitude is a positive distance. The phase angle
+      must be divided by the coefficient of <m>x</m> to find the shift.</p></solution>
+    </exercise>
+    <exercise xml:id="reed-trig-phase-graphs">
+      <title>Write equations for shifted cosine graphs</title>
+      <webwork source="Contrib/CUNY/CityTech/Precalculus/setTrigonometry_-_Graphing_Phase_Shift/short-answer-phaseshift-cosine.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="reed-trig-put-together">
+    <title>Build a graph, then read an equation from a graph</title>
+    <p>For <m>w&gt;0</m>, the five quarter-turn landmarks occur at
+    <m>x=h,h+P/4,h+P/2,h+3P/4,h+P</m>. Their heights are
+    <m>A,0,-A,0,A</m>. This works even when <m>A&lt;0</m>: the first point
+    is then a minimum. Join the landmarks with a smooth wave and repeat.</p>
+    <example xml:id="reed-trig-worked-wave">
+      <title>Sketch <m>f(x)=3\cos(2x+\pi/2)</m></title>
+      <statement><p>Find its amplitude, period, and shift, and sketch one cycle.</p></statement>
+      <solution>
+        <p>Here <m>A=3</m>, <m>w=2</m>, and <m>T=\pi/2</m>. The
+        amplitude is <m>3</m>, <m>P=\pi</m>, and <m>h=-\pi/4</m>.
+        Each quarter period has length <m>\pi/4</m>.</p>
+        <table>
+          <title>Follow the angle inside cosine</title>
+          <tabular halign="center">
+            <row header="yes"><cell><m>x</m></cell><cell><m>-\pi/4</m></cell><cell><m>0</m></cell><cell><m>\pi/4</m></cell><cell><m>\pi/2</m></cell><cell><m>3\pi/4</m></cell></row>
+            <row><cell><m>2x+\pi/2</m></cell><cell><m>0</m></cell><cell><m>\pi/2</m></cell><cell><m>\pi</m></cell><cell><m>3\pi/2</m></cell><cell><m>2\pi</m></cell></row>
+            <row><cell><m>f(x)</m></cell><cell><m>3</m></cell><cell><m>0</m></cell><cell><m>-3</m></cell><cell><m>0</m></cell><cell><m>3</m></cell></row>
+          </tabular>
+        </table>
+        <p>The graph starts this cycle at a maximum, falls through the midline,
+        reaches a minimum, and returns to the maximum. As a check,
+        <m>f(0)=3\cos(\pi/2)=0</m>.</p>
+      </solution>
+    </example>
+    <figure>
+      <caption>One cycle of <m>3\cos(2x+\pi/2)</m>. The peak has moved
+      left to <m>-\pi/4</m>, and consecutive peaks are <m>\pi</m> apart.</caption>
+      <image source="reed-algebra-lessons/transformed-cosine.svg" width="100%">
+        <shortdescription>A cosine wave through the five points negative pi over four,
+        three; zero, zero; pi over four, negative three; pi over two, zero; and
+        three pi over four, three. Amplitude three and period pi are marked.</shortdescription>
+      </image>
+    </figure>
+    <example>
+      <title>Choose parameters from a graph</title>
+      <statement><p>A cosine-shaped wave has maximum <m>2</m>, minimum
+      <m>-2</m>, and consecutive maxima at <m>x=1</m> and <m>x=5</m>.
+      Find an equation.</p></statement>
+      <solution><p>The midline is <m>0</m> and the amplitude is
+      <m>(2-(-2))/2=2</m>. Choose <m>A=2</m>. The period is
+      <m>5-1=4</m>, so choose <m>w=2\pi/4=\pi/2</m>. Place a peak at
+      <m>h=1</m>:</p>
+      <p><md>f(x)=2\cos\left(\frac{\pi}{2}(x-1)\right)
+      =2\cos\left(\frac{\pi}{2}x-\frac{\pi}{2}\right).</md></p>
+      <p>Thus one choice is <m>T=-\pi/2</m>. Check that the minimum lies
+      halfway between the two maxima, at <m>x=3</m>.</p></solution>
+    </example>
+    <exercise xml:id="reed-trig-graph-match">
+      <title>Combine amplitude and period</title>
+      <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/GraphingSineCosine/function-graphing.pg"/>
+    </exercise>
+    <paragraphs>
+      <title>A useful extension: move the midline</title>
+      <p>Some Trailhead problems include a vertical translation:
+      <m>f(x)=D+A\cos(wx+T)</m>. The added <m>D</m> moves the midline
+      to <m>y=D</m>; the maximum and minimum become <m>D+|A|</m> and
+      <m>D-|A|</m>. Amplitude, period, and horizontal shift stay the same.
+      For instance, <m>4+2\cos(3x)</m> has midline <m>4</m>, range
+      <m>[2,6]</m>, and period <m>2\pi/3</m>.</p>
+      <p>The same transformation rules apply to <m>D+A\sin(w(x-h))</m>.
+      For <m>w&gt;0</m>, its quarter-cycle heights, starting at <m>x=h</m>, are
+      <m>D,D+A,D,D-A,D</m>. If you convert it to cosine using the
+      quarter-turn identity, its phase angle is <m>T=-wh-\pi/2</m>.</p>
+    </paragraphs>
+    <exercise xml:id="reed-trig-complete-features">
+      <title>Extension: describe a shifted sine wave</title>
+      <webwork source="Contrib/CCCS/PreCalculus/08.1/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_8_1_22.pg"/>
+    </exercise>
+    <exercise xml:id="reed-trig-exit-check">
+      <title>Check your understanding</title>
+      <statement>
+        <p><ol>
+          <li><p>Sketch one cycle of <m>2\cos(x/2-\pi/2)</m> by listing
+          its five quarter-turn points. State its amplitude, period, and shift.</p></li>
+          <li><p>A wave with midline <m>0</m> has amplitude <m>4</m>,
+          period <m>6</m>, and a maximum at <m>x=-1</m>. Write one
+          equation in the form <m>A\cos(wx+T)</m>.</p></li>
+          <li><p>A classmate says <m>\cos^2(2x)+\sin^2(2x)=2</m>
+          because the angle doubles. Explain the mistake using the circle.</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol>
+          <li><p>Amplitude <m>2</m>, period <m>4\pi</m>, shift right
+          <m>\pi</m>. The points are <m>(\pi,2)</m>,
+          <m>(2\pi,0)</m>, <m>(3\pi,-2)</m>, <m>(4\pi,0)</m>,
+          and <m>(5\pi,2)</m>.</p></li>
+          <li><p>Choose <m>A=4</m>, <m>w=\pi/3</m>, and
+          <m>T=\pi/3</m>, giving <m>4\cos(\pi x/3+\pi/3)</m>.
+          At <m>x=-1</m> the angle is zero; six units later it is
+          <m>2\pi</m>.</p></li>
+          <li><p>The angle <m>2x</m> still locates a point on a circle of
+          radius <m>1</m>. Its squared coordinates sum to <m>1</m>.
+          Changing the angle changes the point, not the radius.</p></li>
+        </ol></p>
+      </solution>
+    </exercise>
+  </subsection>
+</section>
