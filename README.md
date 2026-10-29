@@ -58,15 +58,18 @@ section-level HTML chunking supplies the topic pages. Existing chapter and
 page IDs are retained so previously published links continue to work.
 The quadratic lessons mix three visible worked examples with four optional
 example dropdowns. They also reuse three Part I WeBWorK problems for
-instant-feedback practice, alongside the written checkpoints.
+instant-feedback practice, alongside the written checkpoints. An additional
+randomized problem, authored directly in PreTeXt, checks the discriminant
+and both branches of the quadratic formula. Quadratic examples and
+checkpoints use numbered headings without descriptive titles.
 
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
 [`Function Review`](lessons/sections/function-review.ptx), is intentionally
 empty and is published beneath the main site at `/lessons/`.
 
-Interactive exercises use `<webwork source="Contrib/CCCS/..."/>` references into the
-Open Problem Library. No `.pg` files live in this repository; the problems
-are rendered at read time by whichever WeBWorK server is named in
+Most interactive exercises use `<webwork source="Contrib/CCCS/..."/>` references
+into the Open Problem Library; the quadratic-formula problem is authored inline
+in PreTeXt. No `.pg` files live in this repository; the problems are rendered at read time by whichever WeBWorK server is named in
 [`publication/publication.ptx`](publication/publication.ptx).
 
 ## Building locally

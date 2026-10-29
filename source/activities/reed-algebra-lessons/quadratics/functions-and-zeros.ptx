@@ -25,7 +25,6 @@
     becomes linear (or constant if <m>b=0</m>), so it is no longer quadratic.
     Either <m>b</m> or <m>c</m> can be zero in a quadratic function.</p>
     <example xml:id="reed-quadratic-example-evaluation">
-      <title>Evaluate a quadratic function</title>
       <statement><p>For <m>f(x)=x^2-2x-3</m>, find <m>f(2)</m> and
       identify the corresponding point on the graph.</p></statement>
       <solution><p>Substitute <m>2</m> for every occurrence of <m>x</m>:
@@ -105,7 +104,6 @@
     where <m>i^2=-1</m>.</p>
   </paragraphs>
   <example xml:id="reed-quadratic-example-zero-reading">
-    <title>Additional example: distinguish a zero from a y-intercept</title>
     <statement><p>Let <m>g(x)=(x-2)^2</m>. Find its real zeros,
     x-intercepts, and y-intercept. Does its graph cross the x-axis?</p></statement>
     <solution><p>Solving <m>(x-2)^2=0</m> gives the repeated zero
@@ -121,17 +119,14 @@
     and <xref ref="polynomial_roots" text="title"/>.</p>
   </paragraphs>
   <exercise xml:id="reed-quadratic-live-evaluation">
-    <title>Evaluate numeric and symbolic inputs</title>
     <!-- Reused from Part I: Functions, exercise 12; also in Stat 141. -->
     <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions2.pg"/>
   </exercise>
   <exercise xml:id="reed-quadratic-live-graph-zeros">
-    <title>Read two zeros from a parabola</title>
     <!-- Reused from Part I: Polynomial Roots. -->
     <webwork source="Library/UMN/algebraKaufmannSchwitters/ks_9_4_prob06.pg"/>
   </exercise>
   <exercise xml:id="reed-quadratic-reading-check">
-    <title>Read the graph and the equation</title>
     <statement><p>For <m>f(x)=x^2-2x-3</m>, state the zeros, the
     x-intercepts, and the y-intercept. Is <m>x=0</m> a solution of
     <m>f(x)=0</m>? Explain the difference between <m>f(0)</m> and a zero

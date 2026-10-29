@@ -109,7 +109,6 @@
     factoring, and the graph all tell the same story.</p>
   </paragraphs>
   <example xml:id="reed-quadratic-example-negative-linear">
-    <title>Additional example: complete a square with a negative linear term</title>
     <statement><p>Solve <m>x^2-6x+2=0</m> by completing the square,
     then compare with the quadratic formula.</p></statement>
     <solution><p>Move the constant to obtain <m>x^2-6x=-2</m>.
@@ -125,7 +124,6 @@
     Completing the square uses the same steps that produced the formula.</p></solution>
   </example>
   <exercise xml:id="reed-quadratic-complete-check">
-    <title>Reconstruct the idea</title>
     <statement><p>What must be added to <m>x^2-10x</m> to complete
     the square? Use it to solve <m>x^2-10x+13=0</m>. Explain why
     you add the same number to both sides and why you need two signs.</p></statement>

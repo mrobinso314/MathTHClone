@@ -40,7 +40,6 @@
     </tabular>
   </table>
   <example xml:id="reed-quadratic-example-rational">
-    <title>Put the equation in standard form first</title>
     <statement><p>Solve <m>2x^2+x=3</m>.</p></statement>
     <solution>
       <p><ol>
@@ -93,7 +92,6 @@
     factors quickly, the formula will always work.</p>
   </paragraphs>
   <exercise xml:id="reed-quadratic-live-factoring">
-    <title>Connect factors to solutions</title>
     <introduction><p>This instant-feedback problem is reused from
     <xref ref="factoring" text="title"/> in Part I. Factor the expression
     in the answer box. After checking your factorization, set each factor
@@ -102,7 +100,6 @@
     <webwork source="Contrib/CCCS/CollegeAlgebra/Prerequisite_Review/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_1_5_F.pg"/>
   </exercise>
   <example xml:id="reed-quadratic-example-irrational">
-    <title>When integer factoring does not work</title>
     <statement><p>Solve <m>x^2-4x+1=0</m> exactly.</p></statement>
     <solution>
       <p>Here <m>a=1</m>, <m>b=-4</m>, <m>c=1</m>, so
@@ -117,10 +114,60 @@
       Substituting either root gives <m>(\pm\sqrt{3})^2-3=0</m>.</p>
     </solution>
   </example>
+  <exercise xml:id="reed-quadratic-live-formula">
+    <webwork>
+      <pg-code><![CDATA[
+Context("Numeric");
+$a = random(1,4,1);
+$b = non_zero_random(-7,7,1);
+# A negative constant gives two real roots. Avoid a square discriminant so
+# this practice calls for the quadratic formula rather than integer factoring.
+do {
+    $c = random(-6,-1,1);
+    $D = $b*$b - 4*$a*$c;
+} while (int(sqrt($D))**2 == $D);
+$f = Formula("$a*x^2+($b)*x+($c)")->reduce;
+$disc = Real($D);
+$xplus = Compute("(-($b)+sqrt($D))/(2*$a)");
+$xminus = Compute("(-($b)-sqrt($D))/(2*$a)");
+      ]]></pg-code>
+      <statement>
+        <p>Use the quadratic formula to solve</p>
+        <p><md><var name="$f"/>=0.</md></p>
+        <p>Identify <m>a</m>, <m>b</m>, and <m>c</m> on paper, then
+        enter the discriminant and both solutions. Enter exact expressions;
+        for example, type <c>sqrt(5)</c> for <m>\sqrt{5}</m>.</p>
+        <p>Discriminant: <m>D=b^2-4ac=</m>
+        <var name="$disc" width="8"/>.</p>
+        <p>Solution using the plus sign: <m>x_+=</m>
+        <var name="$xplus" width="25"/>.</p>
+        <p>Solution using the minus sign: <m>x_-=</m>
+        <var name="$xminus" width="25"/>.</p>
+        <p>Use <q>Check Responses</q> to check each answer and
+        <q>Randomize</q> to try a new equation.</p>
+      </statement>
+      <hint><p>Keep the signs of <m>a</m>, <m>b</m>, and <m>c</m>.
+      Square all of <m>b</m>, including its sign. Divide the entire
+      numerator by <m>2a</m>, and calculate both branches of
+      <m>x=(-b\pm\sqrt{D})/(2a)</m>.</p></hint>
+      <solution>
+        <p>Here <m>a=<var name="$a"/></m>,
+        <m>b=<var name="$b"/></m>, and <m>c=<var name="$c"/></m>.
+        Therefore</p>
+        <p><md>D=(<var name="$b"/>)^2
+        -4(<var name="$a"/>)(<var name="$c"/>)=<var name="$D"/>.</md></p>
+        <p>Substitute into the two branches:</p>
+        <p><md>x_+=\frac{-(<var name="$b"/>)+\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)},
+        \qquad
+        x_-=\frac{-(<var name="$b"/>)-\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)}.</md></p>
+        <p>Equivalent exact expressions are accepted. The positive
+        discriminant gives two distinct real solutions.</p>
+      </solution>
+    </webwork>
+  </exercise>
   <p>The following two additional examples compare the cases
   <m>D=0</m> and <m>D&lt;0</m>.</p>
   <example xml:id="reed-quadratic-example-repeated">
-    <title>Additional example: one repeated root</title>
     <statement><p>Solve <m>x^2-6x+9=0</m> and describe what happens
     on the graph.</p></statement>
     <solution><p>Here <m>(a,b,c)=(1,-6,9)</m>, so
@@ -131,7 +178,6 @@
     its vertex <m>(3,0)</m>.</p></solution>
   </example>
   <example xml:id="reed-quadratic-example-complex">
-    <title>Additional example: no real roots</title>
     <statement><p>Solve <m>x^2+2x+5=0</m> over the real numbers.
     If complex numbers are available, find those solutions too.</p></statement>
     <solution><p>Here <m>(a,b,c)=(1,2,5)</m> and
@@ -158,7 +204,6 @@
     exercise has an expandable solution for checking your reasoning.</p>
   </paragraphs>
   <exercise xml:id="reed-quadratic-practice-standard">
-    <title>Standard form and signed coefficients</title>
     <statement><p>Solve <m>3x^2+5=8x</m> using the formula.
     Then check by factoring.</p></statement>
     <hint><p>Subtract <m>8x</m> first. What is the sign of <m>b</m>?</p></hint>
@@ -169,7 +214,6 @@
     <m>(3x-5)(x-1)=0</m> with the same solutions.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-irrational">
-    <title>Two irrational roots</title>
     <statement><p>Solve <m>2x^2+4x-1=0</m> exactly. Can this
     polynomial be factored into linear factors with rational coefficients?</p></statement>
     <hint><p>Simplify <m>\sqrt{24}</m> before reducing the fraction.</p></hint>
@@ -179,7 +223,6 @@
     factors exists.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-repeated">
-    <title>A repeated root</title>
     <statement><p>Solve <m>4x^2-12x+9=0</m>. How many distinct
     real zeros does the corresponding function have? Describe its graph
     at the x-axis.</p></statement>
@@ -189,7 +232,6 @@
     x-axis at its vertex <m>(3/2,0)</m>.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-no-real">
-    <title>Know when to stop over the real numbers</title>
     <statement><p>Determine the real solutions of <m>x^2+2x+5=0</m>
     using its discriminant. If you know complex numbers, also find its
     complex solutions.</p></statement>
@@ -198,7 +240,6 @@
     <m>x=(-2\pm4i)/2=-1\pm2i</m>.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-missing">
-    <title>A missing term</title>
     <statement><p>Solve <m>3x^2=12</m> using the formula and then
     directly using square roots. Explain why <m>b=0</m> does not prevent
     use of the formula.</p></statement>
@@ -209,7 +250,6 @@
     <m>b</m> is allowed.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-error">
-    <title>Find and repair an error</title>
     <statement><p>For <m>2x^2-3x-2=0</m>, a student writes
     <m>x=(3\pm5)/2</m>, giving <m>4</m> and <m>-1</m>.
     What went wrong? Find and check the correct solutions.</p></statement>
@@ -220,7 +260,6 @@
     <m>1/2+3/2-2=0</m>.</p></solution>
   </exercise>
   <exercise xml:id="reed-quadratic-practice-context">
-    <title>Choose a solution that fits the situation</title>
     <statement><p>A rectangle is <m>3</m> meters longer than it is wide
     and has area <m>18</m> square meters. Let <m>w</m> be its width.
     Write a quadratic equation, use the formula to solve it, and explain
