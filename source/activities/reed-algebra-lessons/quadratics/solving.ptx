@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="reed-quadratic-solving">
   <title>Solving with the quadratic formula</title>
-  <p>Factoring is quick when factors are easy to spot. The quadratic formula
-  gives a systematic way to solve any quadratic equation, including those
-  whose roots are not integers or fractions.</p>
+  <p>The quadratic formula gives a systematic way to find the solutions
+  (roots) of any quadratic equation.</p>
   <assemblage>
     <title>The quadratic formula</title>
     <p>For real coefficients <m>a,b,c</m> with <m>a\ne0</m>, the
@@ -12,7 +11,7 @@
     <p>The symbol <m>\pm</m> asks you to calculate two expressions:
     one with a plus and one with a minus. If the square root is zero, the
     two expressions give the same solution. If <m>b^2-4ac&lt;0</m>, there
-    are no real solutions; complex solutions are discussed below.</p>
+    are no real solutions; complex solutions are discussed further below.</p>
   </assemblage>
   <paragraphs>
     <title>A reliable procedure</title>
@@ -22,36 +21,66 @@
       <li><p>Identify <m>a,b,c</m>, including their signs. Use zero for
       any missing linear or constant term.</p></li>
       <li><p>Compute the <term>discriminant</term>
-      <m>D=b^2-4ac</m>. Its sign tells you how many distinct real
-      solutions to expect.</p></li>
+      <m>D=b^2-4ac</m>.</p></li>
       <li><p>Substitute into the formula with parentheses around negative
-      coefficients. Simplify the square root, then calculate both branches.
-      The denominator <m>2a</m> divides the entire numerator.</p></li>
+      coefficients. Simplify the square root, then calculate both the
+      <m>+</m> and <m>-</m> solutions. The denominator <m>2a</m> divides
+      the entire numerator.</p></li>
       <li><p>Check by substituting your answers into the original equation.
       Keep exact roots unless a decimal approximation is requested.</p></li>
     </ol></p>
   </paragraphs>
+  <table xml:id="reed-quadratic-discriminant">
+    <title>Let the discriminant predict the result</title>
+    <tabular>
+      <row header="yes"><cell>Discriminant</cell><cell>Real solutions</cell><cell>Graph of <m>y=ax^2+bx+c</m></cell></row>
+      <row><cell><m>D&gt;0</m></cell><cell>Two distinct real roots</cell><cell>Crosses the x-axis twice</cell></row>
+      <row><cell><m>D=0</m></cell><cell>One distinct real root, <m>-b/(2a)</m></cell><cell>Touches the x-axis at its vertex</cell></row>
+      <row><cell><m>D&lt;0</m></cell><cell>No real roots</cell><cell>Does not meet the x-axis</cell></row>
+    </tabular>
+  </table>
   <example xml:id="reed-quadratic-example-rational">
     <title>Put the equation in standard form first</title>
     <statement><p>Solve <m>2x^2+x=3</m>.</p></statement>
     <solution>
-      <p>Subtract <m>3</m> to obtain <m>2x^2+x-3=0</m>. Thus
-      <m>a=2</m>, <m>b=1</m>, and <m>c=-3</m>. In particular,
-      <m>c</m> is not <m>3</m>. The discriminant is
-      <m>D=1^2-4(2)(-3)=25</m>, so</p>
-      <p><md>x=\frac{-1\pm\sqrt{25}}{2(2)}=\frac{-1\pm5}{4}.</md></p>
-      <p>The plus branch gives <m>x=1</m>; the minus branch gives
-      <m>x=-3/2</m>. Check in the original equation:
-      <m>2(1)^2+1=3</m> and
-      <m>2(-3/2)^2+(-3/2)=9/2-3/2=3</m>.</p>
+      <p><ol>
+        <li><p>Subtract <m>3</m> from both sides to obtain
+        <m>2x^2+x-3=0</m>.</p></li>
+        <li><p>Thus <m>a=2</m>, <m>b=1</m>, and <m>c=-3</m>.
+        Note that <m>c</m> is not <m>3</m>!</p></li>
+        <li><p>The discriminant is <m>D=1^2-4(2)(-3)=25</m>, so the
+        equation will have two real solutions.</p></li>
+        <li><p><md>x=\frac{-1\pm\sqrt{25}}{2(2)}
+        =\frac{-1\pm5}{4}.</md></p>
+        <p>The plus branch gives <m>x=1</m>; the minus branch gives
+        <m>x=-3/2</m>.</p></li>
+        <li><p>Check in the original equation: <m>2(1)^2+1=3</m> and
+        <m>2(-3/2)^2+(-3/2)=9/2-3/2=3</m>.</p></li>
+      </ol></p>
     </solution>
   </example>
-  <paragraphs>
-    <title>How this agrees with factoring</title>
-    <p>The same equation factors as <m>(2x+3)(x-1)=0</m>. The
-    <term>zero-product property</term> says that if a product is zero,
-    at least one factor must be zero. Thus <m>2x+3=0</m> or
-    <m>x-1=0</m>, again giving <m>-3/2</m> and <m>1</m>.</p>
+  <paragraphs xml:id="reed-quadratic-factoring">
+    <title>Factoring</title>
+    <p><term>Factoring</term> means rewriting an expression as a product
+    of simpler expressions, called <term>factors</term>. For example,
+    <m>x^2+5x+6=(x+2)(x+3)</m>: the factors are <m>x+2</m> and
+    <m>x+3</m>. Factoring reverses expanding, which uses the distributive
+    property to multiply out the factors.</p>
+    <p>For a quadratic beginning with <m>x^2</m>, one useful method is
+    to look for two numbers whose sum is the coefficient of <m>x</m> and
+    whose product is the constant term. Here <m>2+3=5</m> and
+    <m>2\cdot3=6</m>, so we try <m>(x+2)(x+3)</m>. Expanding checks
+    the factorization:</p>
+    <p><md>(x+2)(x+3)=x^2+3x+2x+6=x^2+5x+6.</md></p>
+    <p>Note that the equation from the previous example factors as
+    <m>(2x+3)(x-1)=0</m>. We can check this by expanding and simplifying:</p>
+    <p><md>(2x+3)(x-1)=2x^2-2x+3x-3=2x^2+x-3.</md></p>
+    <p>When considering the solutions to the equation
+    <m>(2x+3)(x-1)=0</m>, we know that at least one factor must be zero,
+    since the only way two numbers multiply to be zero is if at least one
+    of them is zero. Thus <m>2x+3=0</m> or <m>x-1=0</m>, again giving
+    the same solutions we found with the quadratic formula:
+    <m>-3/2</m> and <m>1</m>.</p>
     <p>Both methods find the same zeros. More generally, if a quadratic has
     real roots <m>r_1,r_2</m> (including a possible repeated root), then</p>
     <p><md>ax^2+bx+c=a(x-r_1)(x-r_2).</md></p>
@@ -59,12 +88,9 @@
     <m>2(x+3/2)(x-1)=(2x+3)(x-1)</m>. A root <m>r</m> corresponds
     to a factor <m>x-r</m>: a root of <m>-3/2</m> gives
     <m>x+3/2</m>, not <m>x-3/2</m>.</p>
-    <p>For integer coefficients, a nonnegative perfect-square discriminant
-    gives rational roots, so factoring over the rational numbers is
-    possible. A positive discriminant that is not a perfect square gives
-    irrational roots. You can still factor using real roots, but integer
-    factors will not work. If you do not see factors quickly, the formula
-    is a dependable choice.</p>
+    <p>Factoring can be a quick way to avoid having to go through the full
+    process of using the quadratic formula. However, if you do not see
+    factors quickly, the formula will always work.</p>
   </paragraphs>
   <exercise xml:id="reed-quadratic-live-factoring">
     <title>Connect factors to solutions</title>
@@ -91,18 +117,8 @@
       Substituting either root gives <m>(\pm\sqrt{3})^2-3=0</m>.</p>
     </solution>
   </example>
-  <table xml:id="reed-quadratic-discriminant">
-    <title>Let the discriminant predict the result</title>
-    <tabular>
-      <row header="yes"><cell>Discriminant</cell><cell>Real solutions</cell><cell>Graph of <m>y=ax^2+bx+c</m></cell></row>
-      <row><cell><m>D&gt;0</m></cell><cell>Two distinct real roots</cell><cell>Crosses the x-axis twice</cell></row>
-      <row><cell><m>D=0</m></cell><cell>One distinct real root, <m>-b/(2a)</m></cell><cell>Touches the x-axis at its vertex</cell></row>
-      <row><cell><m>D&lt;0</m></cell><cell>No real roots</cell><cell>Does not meet the x-axis</cell></row>
-    </tabular>
-  </table>
-  <p>Use the two additional examples below to compare the cases
-  <m>D=0</m> and <m>D&lt;0</m>. Open an example to see its complete
-  worked solution.</p>
+  <p>The following two additional examples compare the cases
+  <m>D=0</m> and <m>D&lt;0</m>.</p>
   <example xml:id="reed-quadratic-example-repeated">
     <title>Additional example: one repeated root</title>
     <statement><p>Solve <m>x^2-6x+9=0</m> and describe what happens

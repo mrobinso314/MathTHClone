@@ -2,11 +2,10 @@
 <section xml:id="reed-quadratic-derivation">
   <title>Where the quadratic formula comes from</title>
   <p>The formula is the result of one reusable idea: <term>completing the
-  square</term>. Rewrite a quadratic equation so that its variable appears
-  inside a square, then take square roots. First see why the square needs
-  a particular extra piece.</p>
+  square</term>. We give a visual example of this below and then show how
+  the quadratic formula can be derived.</p>
   <paragraphs>
-    <title>Build a square from an area</title>
+    <title>Visual example of completing the square</title>
     <p>Consider <m>x^2+6x=7</m>. For the picture, temporarily suppose
     <m>x&gt;0</m> so it represents a length. Draw a square of area
     <m>x^2</m>, and split the rectangle of area <m>6x</m> into two
@@ -45,7 +44,7 @@
     needed in the derivation below.</p>
   </paragraphs>
   <paragraphs>
-    <title>Complete the square once, for every quadratic</title>
+    <title>Quadratic formula derivation</title>
     <p>Start with <m>ax^2+bx+c=0</m> and <m>a\ne0</m>. The steps
     work for positive or negative <m>a</m>.</p>
     <p><ol>
@@ -84,7 +83,7 @@
     negative have the same square.</p>
   </paragraphs>
   <paragraphs>
-    <title>See the two branches as distances from the center</title>
+    <title>Graphical interpretation of completing the square</title>
     <p>The completed-square equation also says</p>
     <p><md>\left(x-\left(-\frac b{2a}\right)\right)^2
     =\frac{D}{4a^2}.</md></p>

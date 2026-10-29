@@ -56,6 +56,10 @@
     <xsl:text>false</xsl:text>
 </xsl:template>
 
+<!-- The edited lesson uses an untitled discriminant summary. Preserve the
+     table's stable anchor and semantic source title without a visible caption. -->
+<xsl:template match="table[@xml:id='reed-quadratic-discriminant']" mode="figure-caption"/>
+
 <!-- The diagnostic course sections are intended as self-contained exercise -->
 <!-- sets. Suppress their previous, up, and next controls without affecting  -->
 <!-- navigation on the rest of the Math Trailhead.                           -->
