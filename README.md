@@ -45,7 +45,7 @@ In Part II, the
 [`Trigonometry`](source/activities/reed-algebra-lessons/trigonometry.ptx)
 chapter has an overview and a separate page for each topic. It connects
 the unit circle to right triangles, derives the Pythagorean identity, develops
-the family `A cos(wx + T)`, and introduces tangent, cotangent, secant, and
+the family `A cos(wx + T) + C`, including vertical displacement, and introduces tangent, cotangent, secant, and
 cosecant. Existing WeBWorK exercises accompany written checkpoints. Its illustrations live in
 [`assets/reed-algebra-lessons`](assets/reed-algebra-lessons).
 

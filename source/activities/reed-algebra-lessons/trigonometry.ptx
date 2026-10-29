@@ -5,11 +5,12 @@
     <p>A point traveling around a circle creates a repeating wave when we record
     one of its coordinates. This connects the geometry of the unit circle to the
     family of functions</p>
-    <p><md>f(x)=A\cos(wx+T).</md></p>
+    <p><md>f(x)=A\cos(wx+T)+C.</md></p>
     <p>By the end of this lesson, you will be able to read sine and cosine from
     the unit circle, use sine and cosine to find sides of right triangles,
     explain why <m>\sin^2\theta+\cos^2\theta=1</m>, and use
-    <m>A</m>, <m>w</m>, and <m>T</m> to describe and sketch a cosine wave.
+    <m>A</m>, <m>w</m>, <m>T</m>, and <m>C</m> to describe and sketch a
+    cosine wave, including its vertical displacement.
     The final page introduces the other four trigonometric functions:
     tangent, cotangent, secant, and cosecant.
     You need the Pythagorean theorem, coordinates, and basic algebra; no previous
@@ -297,21 +298,26 @@
   </section>
 
   <section xml:id="reed-trig-parameters">
-    <title>What A, w, and T do</title>
-    <p>In <m>f(x)=A\cos(wx+T)</m>, call the angle inside cosine
+    <title>What A, w, T, and C do</title>
+    <p>In <m>f(x)=A\cos(wx+T)+C</m>, call the angle inside cosine
     <m>\theta=wx+T</m>. Starting with an input <m>x</m>, first compute this
     angle, then read its horizontal coordinate on the unit circle, then
-    multiply that coordinate by <m>A</m>. The parameter <m>w</m> is often
+    multiply that coordinate by <m>A</m>, and finally add <m>C</m> to the
+    result. The parameter <m>w</m> is often
     written as the Greek letter <m>\omega</m>. We use <m>P</m> for the
     period: <m>T</m> here is an angle, not the period.</p>
     <paragraphs>
       <title>A controls vertical size and reflection</title>
-      <p>Multiplying by <m>A</m> multiplies every height by <m>A</m>. Thus
+      <p>Multiplying cosine by <m>A</m> multiplies its output by <m>A</m>.
+      First take <m>C=0</m>. Then
       <m>3\cos x</m> ranges from <m>-3</m> to <m>3</m>, and
       <m>\tfrac12\cos x</m> ranges from <m>-1/2</m> to <m>1/2</m>.
       A negative <m>A</m> also reflects the graph across the horizontal axis:
       <m>-3\cos x</m> begins at <m>-3</m> rather than <m>3</m>.
-      Amplitude is a distance, so it is <m>|A|</m>, never negative.</p>
+      Amplitude is a distance, so it is <m>|A|</m>, never negative.
+      With any <m>C</m>, the displacement from the midline is
+      <m>f(x)-C=A\cos(wx+T)</m>. Changing the sign of <m>A</m> reflects
+      the wave across its midline <m>y=C</m>.</p>
     </paragraphs>
     <exercise xml:id="reed-trig-amplitude-read">
       <title>Read amplitude from a graph</title>
@@ -344,12 +350,12 @@
     </exercise>
     <paragraphs>
       <title>T controls the starting angle</title>
-      <p>At <m>x=0</m>, the angle is <m>T</m>, so <m>f(0)=A\cos T</m>.
+      <p>At <m>x=0</m>, the angle is <m>T</m>, so <m>f(0)=A\cos T+C</m>.
       To locate the horizontal shift, factor out <m>w</m>:</p>
       <p><md>w x+T=w\left(x+\frac{T}{w}\right)=w(x-h),
       \qquad \boxed{h=-\frac{T}{w}.}</md></p>
-      <p>The graph of <m>A\cos(w(x-h))</m> is the graph of
-      <m>A\cos(wx)</m> shifted right by <m>h</m> if <m>h&gt;0</m>, or left
+      <p>The graph of <m>A\cos(w(x-h))+C</m> is the graph of
+      <m>A\cos(wx)+C</m> shifted right by <m>h</m> if <m>h&gt;0</m>, or left
       by <m>|h|</m> if <m>h&lt;0</m>. Equivalently, solve <m>w x+T=0</m>
       to find where the original angle-zero point has moved.</p>
       <p>For example, <m>\cos(2x+\pi/2)=\cos(2(x+\pi/4))</m>
@@ -363,31 +369,56 @@
       If you change <m>w</m> while keeping <m>T</m> fixed, both the period
       and the shift <m>-T/w</m> generally change.</p>
     </paragraphs>
+    <paragraphs xml:id="reed-trig-vertical-displacement">
+      <title>C controls vertical displacement</title>
+      <p>The <m>+C</m> sits outside cosine, so it adds the same amount to
+      every output. If <m>C&gt;0</m>, the graph moves up by <m>C</m>; if
+      <m>C&lt;0</m>, it moves down by <m>|C|</m>. The midline becomes
+      <m>y=C</m>. Taking <m>C=0</m> gives a wave centered on the horizontal
+      axis.</p>
+      <p>For a nonconstant wave,</p>
+      <p><md>\boxed{\text{maximum}=C+|A|,\qquad
+      \text{minimum}=C-|A|.}</md></p>
+      <p>For example, <m>2\cos(3x)+4</m> has midline <m>y=4</m> and
+      range <m>[2,6]</m>. Its amplitude is still <m>2</m>, and its period
+      is still <m>2\pi/3</m>. The graph of <m>\cos x-4</m> has midline
+      <m>y=-4</m> and range <m>[-5,-3]</m>.</p>
+      <p>Changing <m>C</m> leaves amplitude, period, and horizontal shift
+      unchanged. Keep the two additions separate: <m>T</m> is added to
+      the angle <em>inside</em> cosine and changes the horizontal shift;
+      <m>C</m> is added to the output <em>outside</em> cosine and changes
+      the vertical position. In particular, the maximum height is not
+      necessarily the amplitude.</p>
+    </paragraphs>
     <table>
       <title>The nonconstant family at a glance</title>
       <tabular>
-        <row header="yes"><cell>Feature</cell><cell><m>A\cos(wx+T)</m>, with <m>A,w\ne0</m></cell></row>
+        <row header="yes"><cell>Feature</cell><cell><m>A\cos(wx+T)+C</m>, with <m>A,w\ne0</m></cell></row>
         <row><cell>Amplitude</cell><cell><m>|A|</m></cell></row>
-        <row><cell>Midline and range</cell><cell><m>y=0</m>; <m>[-|A|,|A|]</m></cell></row>
+        <row><cell>Midline and range</cell><cell><m>y=C</m>; <m>[C-|A|,C+|A|]</m></cell></row>
         <row><cell>Period</cell><cell><m>P=2\pi/|w|</m></cell></row>
         <row><cell>Horizontal shift</cell><cell><m>h=-T/w</m></cell></row>
-        <row><cell>Value at zero</cell><cell><m>A\cos T</m></cell></row>
+        <row><cell>Value at zero</cell><cell><m>A\cos T+C</m></cell></row>
       </tabular>
     </table>
     <p>Two exceptions deserve their own check: if <m>A=0</m>, then
-    <m>f(x)=0</m>; if <m>w=0</m>, then <m>f(x)=A\cos T</m> is constant.
+    <m>f(x)=C</m>; if <m>w=0</m>, then <m>f(x)=A\cos T+C</m> is constant.
     Constant functions have no smallest positive period. In particular, do not
     divide by <m>w</m> when <m>w=0</m>.</p>
     <exercise xml:id="reed-trig-shift-check">
-      <title>Read the inside carefully</title>
-      <statement><p>For <m>g(x)=-2\cos(3x-\pi)</m>, find the amplitude,
-      period, horizontal shift, and <m>g(0)</m>. Explain why its amplitude is
-      not negative and its shift is not <m>\pi</m>.</p></statement>
+      <title>Read the inside and outside carefully</title>
+      <statement><p>For <m>g(x)=-2\cos(3x-\pi)+5</m>, find the amplitude,
+      period, horizontal shift, midline, range, and <m>g(0)</m>. Explain why
+      its amplitude is not negative, its horizontal shift is not <m>\pi</m>,
+      and the <m>+5</m> does not change the period.</p></statement>
       <solution><p>The amplitude is <m>2</m>, the period is <m>2\pi/3</m>,
       and <m>3x-\pi=3(x-\pi/3)</m> gives a shift right by
-      <m>\pi/3</m>. Also <m>g(0)=-2\cos(-\pi)=2</m>. The minus sign
-      reflects the graph; amplitude is a positive distance. The phase angle
-      must be divided by the coefficient of <m>x</m> to find the shift.</p></solution>
+      <m>\pi/3</m>. The midline is <m>y=5</m>, the range is
+      <m>[3,7]</m>, and <m>g(0)=-2\cos(-\pi)+5=7</m>. The minus sign
+      reflects the graph across its midline; amplitude is a positive distance.
+      The phase angle must be divided by the coefficient of <m>x</m> to
+      find the horizontal shift. Adding <m>5</m> changes heights, not the
+      rate at which the angle changes.</p></solution>
     </exercise>
     <exercise xml:id="reed-trig-phase-graphs">
       <title>Write equations for shifted cosine graphs</title>
@@ -399,81 +430,89 @@
     <title>Build a graph, then read an equation from a graph</title>
     <p>For <m>w&gt;0</m>, the five quarter-turn landmarks occur at
     <m>x=h,h+P/4,h+P/2,h+3P/4,h+P</m>. Their heights are
-    <m>A,0,-A,0,A</m>. This works even when <m>A&lt;0</m>: the first point
+    <m>C+A,C,C-A,C,C+A</m>. This works even when <m>A&lt;0</m>: the first point
     is then a minimum. Join the landmarks with a smooth wave and repeat.</p>
     <example xml:id="reed-trig-worked-wave">
-      <title>Sketch <m>f(x)=3\cos(2x+\pi/2)</m></title>
-      <statement><p>Find its amplitude, period, and shift, and sketch one cycle.</p></statement>
+      <title>Sketch <m>f(x)=3\cos(2x+\pi/2)+2</m></title>
+      <statement><p>Find its amplitude, period, horizontal shift, midline,
+      and range, and sketch one cycle.</p></statement>
       <solution>
-        <p>Here <m>A=3</m>, <m>w=2</m>, and <m>T=\pi/2</m>. The
+        <p>Here <m>A=3</m>, <m>w=2</m>, <m>T=\pi/2</m>, and <m>C=2</m>. The
         amplitude is <m>3</m>, <m>P=\pi</m>, and <m>h=-\pi/4</m>.
-        Each quarter period has length <m>\pi/4</m>.</p>
+        Each quarter period has length <m>\pi/4</m>. The midline is
+        <m>y=2</m> and the range is <m>[-1,5]</m>. Add <m>2</m> to each
+        height of the corresponding wave with <m>C=0</m>.</p>
         <table>
           <title>Follow the angle inside cosine</title>
           <tabular halign="center">
             <row header="yes"><cell><m>x</m></cell><cell><m>-\pi/4</m></cell><cell><m>0</m></cell><cell><m>\pi/4</m></cell><cell><m>\pi/2</m></cell><cell><m>3\pi/4</m></cell></row>
             <row><cell><m>2x+\pi/2</m></cell><cell><m>0</m></cell><cell><m>\pi/2</m></cell><cell><m>\pi</m></cell><cell><m>3\pi/2</m></cell><cell><m>2\pi</m></cell></row>
-            <row><cell><m>f(x)</m></cell><cell><m>3</m></cell><cell><m>0</m></cell><cell><m>-3</m></cell><cell><m>0</m></cell><cell><m>3</m></cell></row>
+            <row><cell><m>f(x)</m></cell><cell><m>5</m></cell><cell><m>2</m></cell><cell><m>-1</m></cell><cell><m>2</m></cell><cell><m>5</m></cell></row>
           </tabular>
         </table>
         <p>The graph starts this cycle at a maximum, falls through the midline,
         reaches a minimum, and returns to the maximum. As a check,
-        <m>f(0)=3\cos(\pi/2)=0</m>.</p>
+        <m>f(0)=3\cos(\pi/2)+2=2</m>.</p>
       </solution>
     </example>
     <figure>
-      <caption>One cycle of <m>3\cos(2x+\pi/2)</m>. The peak has moved
-      left to <m>-\pi/4</m>, and consecutive peaks are <m>\pi</m> apart.</caption>
+      <caption>One cycle of <m>3\cos(2x+\pi/2)+2</m>. The midline is
+      <m>y=2</m>, the amplitude is <m>3</m>, and consecutive peaks are
+      <m>\pi</m> apart. Adding <m>2</m> moves every point up by <m>2</m>.</caption>
       <image source="reed-algebra-lessons/transformed-cosine.svg" width="100%">
         <shortdescription>A cosine wave through the five points negative pi over four,
-        three; zero, zero; pi over four, negative three; pi over two, zero; and
-        three pi over four, three. Amplitude three and period pi are marked.</shortdescription>
+        five; zero, two; pi over four, negative one; pi over two, two; and
+        three pi over four, five. The dashed midline is y equals two.
+        Amplitude three, period pi, and vertical displacement two are marked.</shortdescription>
       </image>
     </figure>
     <example>
       <title>Choose parameters from a graph</title>
-      <statement><p>A cosine-shaped wave has maximum <m>2</m>, minimum
-      <m>-2</m>, and consecutive maxima at <m>x=1</m> and <m>x=5</m>.
+      <statement><p>A cosine-shaped wave has maximum <m>7</m>, minimum
+      <m>3</m>, and consecutive maxima at <m>x=1</m> and <m>x=5</m>.
       Find an equation.</p></statement>
-      <solution><p>The midline is <m>0</m> and the amplitude is
-      <m>(2-(-2))/2=2</m>. Choose <m>A=2</m>. The period is
+      <solution><p>The midline is halfway between the extreme heights:
+      <m>C=(7+3)/2=5</m>. The amplitude is half their difference:
+      <m>|A|=(7-3)/2=2</m>. Choose <m>A=2</m>. The period is
       <m>5-1=4</m>, so choose <m>w=2\pi/4=\pi/2</m>. Place a peak at
       <m>h=1</m>:</p>
-      <p><md>f(x)=2\cos\left(\frac{\pi}{2}(x-1)\right)
-      =2\cos\left(\frac{\pi}{2}x-\frac{\pi}{2}\right).</md></p>
+      <p><md>f(x)=2\cos\left(\frac{\pi}{2}(x-1)\right)+5
+      =2\cos\left(\frac{\pi}{2}x-\frac{\pi}{2}\right)+5.</md></p>
       <p>Thus one choice is <m>T=-\pi/2</m>. Check that the minimum lies
-      halfway between the two maxima, at <m>x=3</m>.</p></solution>
+      halfway between the two maxima, at <m>x=3</m>, where <m>f(3)=3</m>.</p></solution>
     </example>
+    <p>In general, if a nonconstant wave has maximum <m>M</m> and minimum
+    <m>m</m>, recover its vertical displacement and amplitude using</p>
+    <p><md>\boxed{C=\frac{M+m}{2},\qquad |A|=\frac{M-m}{2}.}</md></p>
     <exercise xml:id="reed-trig-graph-match">
       <title>Combine amplitude and period</title>
       <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/GraphingSineCosine/function-graphing.pg"/>
     </exercise>
     <paragraphs>
-      <title>A useful extension: move the midline</title>
-      <p>Some Trailhead problems include a vertical translation:
-      <m>f(x)=D+A\cos(wx+T)</m>. The added <m>D</m> moves the midline
-      to <m>y=D</m>; the maximum and minimum become <m>D+|A|</m> and
-      <m>D-|A|</m>. Amplitude, period, and horizontal shift stay the same.
-      For instance, <m>4+2\cos(3x)</m> has midline <m>4</m>, range
-      <m>[2,6]</m>, and period <m>2\pi/3</m>.</p>
-      <p>The same transformation rules apply to <m>D+A\sin(w(x-h))</m>.
+      <title>The same rules for sine</title>
+      <p>The same parameter rules apply to <m>A\sin(wx+T)+C</m>:
+      amplitude <m>|A|</m>, period <m>2\pi/|w|</m>, horizontal shift
+      <m>-T/w</m>, and midline <m>y=C</m>, when <m>A,w\ne0</m>.</p>
+      <p>In shifted form, write the wave as <m>A\sin(w(x-h))+C</m>.
       For <m>w&gt;0</m>, its quarter-cycle heights, starting at <m>x=h</m>, are
-      <m>D,D+A,D,D-A,D</m>. If you convert it to cosine using the
-      quarter-turn identity, its phase angle is <m>T=-wh-\pi/2</m>.</p>
+      <m>C,C+A,C,C-A,C</m>. If you convert it to cosine using the
+      quarter-turn identity, the corresponding cosine phase angle is
+      <m>-wh-\pi/2</m>. The vertical displacement <m>C</m> stays the same.</p>
     </paragraphs>
     <exercise xml:id="reed-trig-complete-features">
-      <title>Extension: describe a shifted sine wave</title>
+      <title>Describe a shifted sine wave</title>
       <webwork source="Contrib/CCCS/PreCalculus/08.1/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_8_1_22.pg"/>
     </exercise>
     <exercise xml:id="reed-trig-exit-check">
       <title>Check your understanding</title>
       <statement>
         <p><ol>
-          <li><p>Sketch one cycle of <m>2\cos(x/2-\pi/2)</m> by listing
-          its five quarter-turn points. State its amplitude, period, and shift.</p></li>
-          <li><p>A wave with midline <m>0</m> has amplitude <m>4</m>,
+          <li><p>Sketch one cycle of <m>2\cos(x/2-\pi/2)-1</m> by listing
+          its five quarter-turn points. State its amplitude, period, horizontal
+          shift, midline, and range.</p></li>
+          <li><p>A wave with midline <m>-3</m> has amplitude <m>4</m>,
           period <m>6</m>, and a maximum at <m>x=-1</m>. Write one
-          equation in the form <m>A\cos(wx+T)</m>.</p></li>
+          equation in the form <m>A\cos(wx+T)+C</m>.</p></li>
           <li><p>A classmate says <m>\cos^2(2x)+\sin^2(2x)=2</m>
           because the angle doubles. Explain the mistake using the circle.</p></li>
         </ol></p>
@@ -481,11 +520,12 @@
       <solution>
         <p><ol>
           <li><p>Amplitude <m>2</m>, period <m>4\pi</m>, shift right
-          <m>\pi</m>. The points are <m>(\pi,2)</m>,
-          <m>(2\pi,0)</m>, <m>(3\pi,-2)</m>, <m>(4\pi,0)</m>,
-          and <m>(5\pi,2)</m>.</p></li>
+          <m>\pi</m>, midline <m>y=-1</m>, and range <m>[-3,1]</m>.
+          The points are <m>(\pi,1)</m>, <m>(2\pi,-1)</m>,
+          <m>(3\pi,-3)</m>, <m>(4\pi,-1)</m>, and <m>(5\pi,1)</m>.</p></li>
           <li><p>Choose <m>A=4</m>, <m>w=\pi/3</m>, and
-          <m>T=\pi/3</m>, giving <m>4\cos(\pi x/3+\pi/3)</m>.
+          <m>T=\pi/3</m>, with <m>C=-3</m>, giving
+          <m>4\cos(\pi x/3+\pi/3)-3</m>.
           At <m>x=-1</m> the angle is zero; six units later it is
           <m>2\pi</m>.</p></li>
           <li><p>The angle <m>2x</m> still locates a point on a circle of
@@ -573,6 +613,11 @@
       Each function has vertical asymptotes at the angles where its
       denominator is zero, and each is unbounded. Thus none has an
       amplitude like a sine or cosine wave.</p>
+      <p>Vertical displacement works here too: adding <m>C</m> to any of
+      these functions moves every defined output up or down by <m>C</m>.
+      For example, <m>y=\tan x+2</m> passes through <m>(0,2)</m> instead
+      of <m>(0,0)</m>. Its period and the locations of its vertical
+      asymptotes are unchanged.</p>
       <p>There are two more identities hiding in the original one.
       Dividing <m>\sin^2\theta+\cos^2\theta=1</m> by
       <m>\cos^2\theta</m>, when cosine is nonzero, gives
