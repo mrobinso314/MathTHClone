@@ -24,9 +24,15 @@
     is all real numbers. The highest power of <m>x</m> is two. The condition
     <m>a\ne0</m> matters: without an <m>x^2</m> term the function is not
     quadratic. Either <m>b</m> or <m>c</m> can be zero.</p>
-    <p>For example, <m>f(x)=x^2-2x-3</m> assigns one output to each input.
-    At input <m>2</m>, <m>f(2)=4-4-3=-3</m>, so <m>(2,-3)</m> lies on
-    its graph. The graph of every quadratic function is a <term>parabola</term>:
+    <example xml:id="reed-quadratic-example-evaluation">
+      <title>Evaluate a quadratic function</title>
+      <statement><p>For <m>f(x)=x^2-2x-3</m>, find <m>f(2)</m> and
+      identify the corresponding point on the graph.</p></statement>
+      <solution><p>Substitute <m>2</m> for every occurrence of <m>x</m>:
+      <m>f(2)=2^2-2(2)-3=4-4-3=-3</m>. Thus <m>(2,-3)</m> lies on
+      the graph. Evaluating a function gives an output for a specified input.</p></solution>
+    </example>
+    <p>The graph of every quadratic function is a <term>parabola</term>:
     a smooth curve with a turning point called its <term>vertex</term> and a
     vertical line of symmetry through that vertex.</p>
     <figure xml:id="reed-quadratic-parabola">
@@ -95,6 +101,32 @@
     complex numbers, the last equation has solutions <m>\pm i</m>, where
     <m>i^2=-1</m>; those are not intercepts on the real coordinate plane.</p>
   </paragraphs>
+  <example xml:id="reed-quadratic-example-zero-reading">
+    <title>Additional example: distinguish a zero from a y-intercept</title>
+    <statement><p>Let <m>g(x)=(x-2)^2</m>. Find its real zeros,
+    x-intercepts, and y-intercept. Does its graph cross the x-axis?</p></statement>
+    <solution><p>Solving <m>(x-2)^2=0</m> gives the repeated zero
+    <m>x=2</m> and the x-intercept <m>(2,0)</m>. Since <m>g(0)=4</m>,
+    the y-intercept is <m>(0,4)</m>. The parabola opens upward and touches
+    the x-axis at its vertex; it does not cross it.</p></solution>
+  </example>
+  <paragraphs>
+    <title>Try it with instant feedback</title>
+    <p>These problems also appear in Part I. Enter your answers and use
+    <q>Check Responses</q> for feedback. Try <q>Randomize</q> for another version.
+    For more practice, visit <xref ref="functions_general" text="title"/>
+    and <xref ref="polynomial_roots" text="title"/>.</p>
+  </paragraphs>
+  <exercise xml:id="reed-quadratic-live-evaluation">
+    <title>Evaluate numeric and symbolic inputs</title>
+    <!-- Reused from Part I: Functions, exercise 12; also in Stat 141. -->
+    <webwork source="Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions2.pg"/>
+  </exercise>
+  <exercise xml:id="reed-quadratic-live-graph-zeros">
+    <title>Read two zeros from a parabola</title>
+    <!-- Reused from Part I: Polynomial Roots. -->
+    <webwork source="Library/UMN/algebraKaufmannSchwitters/ks_9_4_prob06.pg"/>
+  </exercise>
   <exercise xml:id="reed-quadratic-reading-check">
     <title>Read the graph and the equation</title>
     <statement><p>For <m>f(x)=x^2-2x-3</m>, state the zeros, the

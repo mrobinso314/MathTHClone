@@ -56,6 +56,9 @@ completing-the-square derivation. Its source pages are in
 [`quadratics`](source/activities/reed-algebra-lessons/quadratics). Standard
 section-level HTML chunking supplies the topic pages. Existing chapter and
 page IDs are retained so previously published links continue to work.
+The quadratic lessons mix three visible worked examples with four optional
+example dropdowns. They also reuse three Part I WeBWorK problems for
+instant-feedback practice, alongside the written checkpoints.
 
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
 [`Function Review`](lessons/sections/function-review.ptx), is intentionally

@@ -49,6 +49,13 @@
     <xsl:text>false</xsl:text>
 </xsl:template>
 
+<!-- Quadratic lessons mix visible worked examples with optional dropdowns.
+     An additional example reveals its complete solution in one click.
+     Reused WeBWorK exercises stay visible and use the auto-activation below. -->
+<xsl:template match="example[@xml:id='reed-quadratic-example-evaluation' or @xml:id='reed-quadratic-example-rational' or @xml:id='reed-quadratic-example-irrational'] | example[ancestor::chapter[@xml:id='reed-quadratic-formula']]/solution | exercise[starts-with(@xml:id,'reed-quadratic-live-')][ancestor::chapter[@xml:id='reed-quadratic-formula']]" mode="is-hidden">
+    <xsl:text>false</xsl:text>
+</xsl:template>
+
 <!-- The diagnostic course sections are intended as self-contained exercise -->
 <!-- sets. Suppress their previous, up, and next controls without affecting  -->
 <!-- navigation on the rest of the Math Trailhead.                           -->

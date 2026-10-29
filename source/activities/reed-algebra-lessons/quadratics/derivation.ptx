@@ -109,6 +109,22 @@
     square, and the graph has no x-intercept. This is why the formula,
     factoring, and the graph all tell the same story.</p>
   </paragraphs>
+  <example xml:id="reed-quadratic-example-negative-linear">
+    <title>Additional example: complete a square with a negative linear term</title>
+    <statement><p>Solve <m>x^2-6x+2=0</m> by completing the square,
+    then compare with the quadratic formula.</p></statement>
+    <solution><p>Move the constant to obtain <m>x^2-6x=-2</m>.
+    Half of <m>-6</m> is <m>-3</m>; its square is <m>9</m>.
+    Add <m>9</m> to both sides:</p>
+    <p><md>
+      <mrow>x^2-6x+9&amp;=-2+9,</mrow>
+      <mrow>(x-3)^2&amp;=7,</mrow>
+      <mrow>x&amp;=3\pm\sqrt{7}.</mrow>
+    </md></p>
+    <p>The formula agrees: <m>D=(-6)^2-4(1)(2)=28</m> and
+    <m>x=(6\pm\sqrt{28})/2=3\pm\sqrt{7}</m>.
+    Completing the square uses the same steps that produced the formula.</p></solution>
+  </example>
   <exercise xml:id="reed-quadratic-complete-check">
     <title>Reconstruct the idea</title>
     <statement><p>What must be added to <m>x^2-10x</m> to complete

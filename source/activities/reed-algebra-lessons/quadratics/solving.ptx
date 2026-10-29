@@ -66,6 +66,15 @@
     factors will not work. If you do not see factors quickly, the formula
     is a dependable choice.</p>
   </paragraphs>
+  <exercise xml:id="reed-quadratic-live-factoring">
+    <title>Connect factors to solutions</title>
+    <introduction><p>This instant-feedback problem is reused from
+    <xref ref="factoring" text="title"/> in Part I. Factor the expression
+    in the answer box. After checking your factorization, set each factor
+    equal to zero on paper to find the roots; confirm them with the formula.</p></introduction>
+    <!-- Reused from Part I: Factoring, exercise 12; also in Math 111. -->
+    <webwork source="Contrib/CCCS/CollegeAlgebra/Prerequisite_Review/CCD_CCCS_Openstax_AlgTrig_AT-1-001-AS_1_5_F.pg"/>
+  </exercise>
   <example xml:id="reed-quadratic-example-irrational">
     <title>When integer factoring does not work</title>
     <statement><p>Solve <m>x^2-4x+1=0</m> exactly.</p></statement>
@@ -91,12 +100,32 @@
       <row><cell><m>D&lt;0</m></cell><cell>No real roots</cell><cell>Does not meet the x-axis</cell></row>
     </tabular>
   </table>
-  <p>For example, <m>x^2-6x+9=0</m> has <m>D=0</m> and root
-  <m>3</m>; its factorization is <m>(x-3)^2=0</m>. The equation
-  <m>x^2+2x+5=0</m> has <m>D=-16</m>, so it has no real solutions
-  and no factorization into real linear factors. If you are using complex
-  numbers, <m>\sqrt{-16}=4i</m> gives
-  <m>x=(-2\pm4i)/2=-1\pm2i</m>.</p>
+  <p>Use the two additional examples below to compare the cases
+  <m>D=0</m> and <m>D&lt;0</m>. Open an example to see its complete
+  worked solution.</p>
+  <example xml:id="reed-quadratic-example-repeated">
+    <title>Additional example: one repeated root</title>
+    <statement><p>Solve <m>x^2-6x+9=0</m> and describe what happens
+    on the graph.</p></statement>
+    <solution><p>Here <m>(a,b,c)=(1,-6,9)</m>, so
+    <m>D=(-6)^2-4(1)(9)=0</m>. The formula gives</p>
+    <p><md>x=\frac{6\pm\sqrt{0}}{2}=3.</md></p>
+    <p>Both branches coincide. Factoring gives <m>(x-3)^2=0</m>, so
+    <m>3</m> is a repeated root. The graph touches the x-axis at
+    its vertex <m>(3,0)</m>.</p></solution>
+  </example>
+  <example xml:id="reed-quadratic-example-complex">
+    <title>Additional example: no real roots</title>
+    <statement><p>Solve <m>x^2+2x+5=0</m> over the real numbers.
+    If complex numbers are available, find those solutions too.</p></statement>
+    <solution><p>Here <m>(a,b,c)=(1,2,5)</m> and
+    <m>D=2^2-4(1)(5)=-16</m>. There are no real solutions, since
+    no real square root of <m>-16</m> exists. The graph has no x-intercept.</p>
+    <p>Over the complex numbers, use <m>i^2=-1</m> and
+    <m>\sqrt{-16}=4i</m>:</p>
+    <p><md>x=\frac{-2\pm4i}{2}=-1\pm2i.</md></p>
+    <p>This quadratic cannot be factored into real linear factors.</p></solution>
+  </example>
   <assemblage>
     <title>Watch the signs and the fraction</title>
     <p>If <m>b=-4</m>, then <m>-b=4</m> and <m>b^2=16</m>.
