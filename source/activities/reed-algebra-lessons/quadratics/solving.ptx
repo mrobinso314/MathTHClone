@@ -58,6 +58,57 @@
       </ol></p>
     </solution>
   </example>
+  <exercise xml:id="reed-quadratic-live-formula">
+    <webwork>
+      <pg-code><![CDATA[
+Context("Numeric");
+$a = random(1,4,1);
+$b = non_zero_random(-7,7,1);
+# A negative constant gives two real roots. Avoid a square discriminant so
+# this practice calls for the quadratic formula rather than integer factoring.
+do {
+    $c = random(-6,-1,1);
+    $D = $b*$b - 4*$a*$c;
+} while (int(sqrt($D))**2 == $D);
+$f = Formula("$a*x^2+($b)*x+($c)")->reduce;
+$disc = Real($D);
+$xplus = Compute("(-($b)+sqrt($D))/(2*$a)");
+$xminus = Compute("(-($b)-sqrt($D))/(2*$a)");
+      ]]></pg-code>
+      <statement>
+        <p>Use the quadratic formula to solve</p>
+        <p><md><var name="$f"/>=0.</md></p>
+        <p>Identify <m>a</m>, <m>b</m>, and <m>c</m> on paper, then
+        enter the discriminant and both solutions. Enter exact expressions;
+        for example, type <c>sqrt(5)</c> for <m>\sqrt{5}</m>.</p>
+        <p>Discriminant: <m>D=b^2-4ac=</m>
+        <var name="$disc" width="8"/>.</p>
+        <p>Solution using the plus sign: <m>x_+=</m>
+        <var name="$xplus" width="25"/>.</p>
+        <p>Solution using the minus sign: <m>x_-=</m>
+        <var name="$xminus" width="25"/>.</p>
+        <p>Use <q>Check Responses</q> to check each answer and
+        <q>Randomize</q> to try a new equation.</p>
+      </statement>
+      <hint><p>Keep the signs of <m>a</m>, <m>b</m>, and <m>c</m>.
+      Square all of <m>b</m>, including its sign. Divide the entire
+      numerator by <m>2a</m>, and calculate both branches of
+      <m>x=(-b\pm\sqrt{D})/(2a)</m>.</p></hint>
+      <solution>
+        <p>Here <m>a=<var name="$a"/></m>,
+        <m>b=<var name="$b"/></m>, and <m>c=<var name="$c"/></m>.
+        Therefore</p>
+        <p><md>D=(<var name="$b"/>)^2
+        -4(<var name="$a"/>)(<var name="$c"/>)=<var name="$D"/>.</md></p>
+        <p>Substitute into the two branches:</p>
+        <p><md>x_+=\frac{-(<var name="$b"/>)+\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)},
+        \qquad
+        x_-=\frac{-(<var name="$b"/>)-\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)}.</md></p>
+        <p>Equivalent exact expressions are accepted. The positive
+        discriminant gives two distinct real solutions.</p>
+      </solution>
+    </webwork>
+  </exercise>
   <paragraphs xml:id="reed-quadratic-factoring">
     <title>Factoring</title>
     <p><term>Factoring</term> means rewriting an expression as a product
@@ -114,57 +165,6 @@
       Substituting either root gives <m>(\pm\sqrt{3})^2-3=0</m>.</p>
     </solution>
   </example>
-  <exercise xml:id="reed-quadratic-live-formula">
-    <webwork>
-      <pg-code><![CDATA[
-Context("Numeric");
-$a = random(1,4,1);
-$b = non_zero_random(-7,7,1);
-# A negative constant gives two real roots. Avoid a square discriminant so
-# this practice calls for the quadratic formula rather than integer factoring.
-do {
-    $c = random(-6,-1,1);
-    $D = $b*$b - 4*$a*$c;
-} while (int(sqrt($D))**2 == $D);
-$f = Formula("$a*x^2+($b)*x+($c)")->reduce;
-$disc = Real($D);
-$xplus = Compute("(-($b)+sqrt($D))/(2*$a)");
-$xminus = Compute("(-($b)-sqrt($D))/(2*$a)");
-      ]]></pg-code>
-      <statement>
-        <p>Use the quadratic formula to solve</p>
-        <p><md><var name="$f"/>=0.</md></p>
-        <p>Identify <m>a</m>, <m>b</m>, and <m>c</m> on paper, then
-        enter the discriminant and both solutions. Enter exact expressions;
-        for example, type <c>sqrt(5)</c> for <m>\sqrt{5}</m>.</p>
-        <p>Discriminant: <m>D=b^2-4ac=</m>
-        <var name="$disc" width="8"/>.</p>
-        <p>Solution using the plus sign: <m>x_+=</m>
-        <var name="$xplus" width="25"/>.</p>
-        <p>Solution using the minus sign: <m>x_-=</m>
-        <var name="$xminus" width="25"/>.</p>
-        <p>Use <q>Check Responses</q> to check each answer and
-        <q>Randomize</q> to try a new equation.</p>
-      </statement>
-      <hint><p>Keep the signs of <m>a</m>, <m>b</m>, and <m>c</m>.
-      Square all of <m>b</m>, including its sign. Divide the entire
-      numerator by <m>2a</m>, and calculate both branches of
-      <m>x=(-b\pm\sqrt{D})/(2a)</m>.</p></hint>
-      <solution>
-        <p>Here <m>a=<var name="$a"/></m>,
-        <m>b=<var name="$b"/></m>, and <m>c=<var name="$c"/></m>.
-        Therefore</p>
-        <p><md>D=(<var name="$b"/>)^2
-        -4(<var name="$a"/>)(<var name="$c"/>)=<var name="$D"/>.</md></p>
-        <p>Substitute into the two branches:</p>
-        <p><md>x_+=\frac{-(<var name="$b"/>)+\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)},
-        \qquad
-        x_-=\frac{-(<var name="$b"/>)-\sqrt{<var name="$D"/>}}{2(<var name="$a"/>)}.</md></p>
-        <p>Equivalent exact expressions are accepted. The positive
-        discriminant gives two distinct real solutions.</p>
-      </solution>
-    </webwork>
-  </exercise>
   <p>The following two additional examples compare the cases
   <m>D=0</m> and <m>D&lt;0</m>.</p>
   <example xml:id="reed-quadratic-example-repeated">
