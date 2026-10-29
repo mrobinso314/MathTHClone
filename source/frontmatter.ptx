@@ -51,7 +51,7 @@
       generate a new version of a problem when you want more practice with
       the same idea. Nothing you type is recorded or reported to anyone:
       this is a place to practice, not an assignment.
-      The Reed Algebra Lessons also include written checkpoints with solutions
+      Part II: Lessons also includes written checkpoints with solutions
       you can reveal after trying them.
     </p>
 
@@ -95,13 +95,16 @@
 
 
     <p>
-      The chapters are independent of one another, and so are the sections
-      within them. Start wherever you like.
+      <xref ref="problems" text="title"/> contains the diagnostics and practice
+      worksheets. <xref ref="reed-algebra-lessons" text="title"/> develops
+      ideas through explanations, worked examples, and written checkpoints.
+      Each lesson is a chapter, with a separate page for each topic. Start
+      wherever you like.
     </p>
 
 
-    <p>
-    <ul>
+    <p><xref ref="problems" text="title"/></p>
+    <p><ul>
       <li>
         <p><xref ref="diagnostics" text="title"/></p>
         <p>
@@ -197,14 +200,29 @@
         </ul>
         </p>
       </li>
+    </ul></p>
+    <p><xref ref="reed-algebra-lessons" text="title"/></p>
+    <p><ul>
       <li>
-        <p><xref ref="reed-algebra-lessons" text="title"/></p>
+        <p><xref ref="reed-trigonometry" text="title"/></p>
         <p><ul>
-          <li><p><xref ref="reed-trigonometry" text="title"/></p></li>
-          <li><p><xref ref="reed-quadratic-formula" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-circle" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-right-triangles" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-identity" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-waves" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-parameters" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-put-together" text="title"/></p></li>
+          <li><p><xref ref="reed-trig-other-functions" text="title"/></p></li>
         </ul></p>
       </li>
-    </ul>
-    </p>
+      <li>
+        <p><xref ref="reed-quadratic-formula" text="title"/></p>
+        <p><ul>
+          <li><p><xref ref="reed-quadratic-functions" text="title"/></p></li>
+          <li><p><xref ref="reed-quadratic-solving" text="title"/></p></li>
+          <li><p><xref ref="reed-quadratic-derivation" text="title"/></p></li>
+        </ul></p>
+      </li>
+    </ul></p>
   </preface>
 </frontmatter>

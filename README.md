@@ -29,6 +29,11 @@ copies of the problems ourselves rather than referencing the OPL. See
 
 ## How it is organized
 
+The main book has two parts: **Part I: Problems**, containing diagnostics and
+practice worksheets, and **Part II: Lessons**, with each lesson as a chapter
+and each topic as a section on its own page. The sidebar lists all three
+levels (part, chapter, and section).
+
 Chapter introductions and the overall book structure live in
 [`source/main.ptx`](source/main.ptx). Front-matter pages live in
 [`source/frontmatter.ptx`](source/frontmatter.ptx), while individual content
@@ -36,21 +41,21 @@ pages are grouped by chapter under [`source/activities`](source/activities).
 The Math 111, Stat 141, and Econ 201 diagnostic sections are in
 [`source/activities/diagnostics`](source/activities/diagnostics).
 
-The **Reed Algebra Lessons** chapter is part of the main book. Its
+In Part II, the
 [`Trigonometry`](source/activities/reed-algebra-lessons/trigonometry.ptx)
-section has an overview and a separate page for each subsection. It connects
+chapter has an overview and a separate page for each topic. It connects
 the unit circle to right triangles, derives the Pythagorean identity, develops
 the family `A cos(wx + T)`, and introduces tangent, cotangent, secant, and
 cosecant. Existing WeBWorK exercises accompany written checkpoints. Its illustrations live in
 [`assets/reed-algebra-lessons`](assets/reed-algebra-lessons).
 
 The [Quadratic Formula](source/activities/reed-algebra-lessons/quadratic-formula.ptx)
-section contains three separate HTML pages: functions and zeros, solving with
+chapter contains three separate topic pages: functions and zeros, solving with
 the formula (including practice with expandable solutions), and a visual
 completing-the-square derivation. Its source pages are in
-[`quadratics`](source/activities/reed-algebra-lessons/quadratics). The custom
-HTML stylesheet splits only this section at the subsection level; other
-lessons retain their existing page structure.
+[`quadratics`](source/activities/reed-algebra-lessons/quadratics). Standard
+section-level HTML chunking supplies the topic pages. Existing chapter and
+page IDs are retained so previously published links continue to work.
 
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
 [`Function Review`](lessons/sections/function-review.ptx), is intentionally

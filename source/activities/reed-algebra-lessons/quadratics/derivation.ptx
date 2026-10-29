@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<subsection xml:id="reed-quadratic-derivation">
+<section xml:id="reed-quadratic-derivation">
   <title>Where the quadratic formula comes from</title>
   <p>The formula is the result of one reusable idea: <term>completing the
   square</term>. Rewrite a quadratic equation so that its variable appears
@@ -124,4 +124,4 @@
   <p>Return to <xref ref="reed-quadratic-solving" text="title"/> for
   practice, or to the <xref ref="reed-quadratic-functions" text="title"/>
   page for the lesson overview.</p>
-</subsection>
+</section>

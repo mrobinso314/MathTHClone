@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="reed-quadratic-formula" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="reed-quadratic-formula" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Quadratic Formula</title>
   <introduction>
     <p>Why do some quadratic equations have two solutions, some one, and some
@@ -11,4 +11,4 @@
   <xi:include href="quadratics/functions-and-zeros.ptx"/>
   <xi:include href="quadratics/solving.ptx"/>
   <xi:include href="quadratics/derivation.ptx"/>
-</section>
+</chapter>

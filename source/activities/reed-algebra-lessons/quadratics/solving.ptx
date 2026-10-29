@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<subsection xml:id="reed-quadratic-solving">
+<section xml:id="reed-quadratic-solving">
   <title>Solving with the quadratic formula</title>
   <p>Factoring is quick when factors are easy to spot. The quadratic formula
   gives a systematic way to solve any quadratic equation, including those
@@ -189,4 +189,4 @@
   </exercise>
   <p>Previous: <xref ref="reed-quadratic-functions" text="title"/>.
   Next: <xref ref="reed-quadratic-derivation" text="title"/>.</p>
-</subsection>
+</section>

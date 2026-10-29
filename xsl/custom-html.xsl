@@ -43,24 +43,9 @@
 
 <xsl:import href="./core/pretext-html.xsl"/>
 
-<!-- Give each Reed trigonometry subsection its own page. Keep the section
-     URL as an overview and preserve the rest of the book's page boundaries. -->
-<xsl:template match="section[@xml:id = 'reed-trigonometry']" mode="is-chunk">
-    <xsl:text>false</xsl:text>
-</xsl:template>
-<xsl:template match="section[@xml:id = 'reed-trigonometry']" mode="is-intermediate">
-    <xsl:text>true</xsl:text>
-</xsl:template>
-<xsl:template match="subsection[parent::section[@xml:id = 'reed-trigonometry']]" mode="is-chunk">
-    <xsl:text>true</xsl:text>
-</xsl:template>
-<xsl:template match="subsection[parent::section[@xml:id = 'reed-trigonometry']]" mode="is-intermediate">
-    <xsl:text>false</xsl:text>
-</xsl:template>
-
 <!-- Keep instruction and practice visible while reading the Reed lesson.
      Written-checkpoint solutions retain the usual reveal controls. -->
-<xsl:template match="example[ancestor::section[@xml:id = 'reed-trigonometry']] | exercise[ancestor::section[@xml:id = 'reed-trigonometry']] | example[ancestor::section[@xml:id = 'reed-trigonometry']]/solution" mode="is-hidden">
+<xsl:template match="example[ancestor::chapter[@xml:id = 'reed-trigonometry']] | exercise[ancestor::chapter[@xml:id = 'reed-trigonometry']] | example[ancestor::chapter[@xml:id = 'reed-trigonometry']]/solution" mode="is-hidden">
     <xsl:text>false</xsl:text>
 </xsl:template>
 
@@ -70,14 +55,6 @@
 <xsl:template
     match="section[@xml:id = 'math-111' or @xml:id = 'stat-141' or @xml:id = 'econ-201']"
     mode="primary-navigation-treebuttons"/>
-
-<!-- Only the quadratic unit is split below the site's section-level cutoff.
-     Use the standard chunking hooks so xrefs and previous/next navigation
-     resolve to the three subsection pages. Other lessons keep their URLs. -->
-<xsl:template match="section[@xml:id='reed-quadratic-formula']" mode="is-chunk">false</xsl:template>
-<xsl:template match="section[@xml:id='reed-quadratic-formula']" mode="is-intermediate">true</xsl:template>
-<xsl:template match="subsection[parent::section[@xml:id='reed-quadratic-formula']]" mode="is-chunk">true</xsl:template>
-<xsl:template match="subsection[parent::section[@xml:id='reed-quadratic-formula']]" mode="is-intermediate">false</xsl:template>
 
 <xsl:template name="extra-js-footer">
     <script>

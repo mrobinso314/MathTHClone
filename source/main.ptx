@@ -15,6 +15,9 @@
     <!-- standalone review resource, not a course site. The template syllabus is -->
     <!-- still at source/syllabus/syllabus.ptx, unused, if it is ever wanted.    -->
 
+    <part xml:id="problems">
+      <title>Part I: Problems</title>
+
     <chapter xml:id="diagnostics">
       <title>Course Readiness Diagnostics</title>
 
@@ -292,15 +295,12 @@
       <xi:include href="./activities/trigonometry/inverse_trig_functions.ptx"/>
       <xi:include href="./activities/trigonometry/identities.ptx"/>
     </chapter>
-    <chapter xml:id="reed-algebra-lessons">
-      <title>Reed Algebra Lessons</title>
-      <introduction>
-        <p>These lessons develop ideas through explanations, worked examples,
-        and practice drawn from the Math Trailhead. Each section can be read
-        on its own.</p>
-      </introduction>
+    </part>
+
+    <part xml:id="reed-algebra-lessons">
+      <title>Part II: Lessons</title>
       <xi:include href="./activities/reed-algebra-lessons/trigonometry.ptx"/>
       <xi:include href="./activities/reed-algebra-lessons/quadratic-formula.ptx"/>
-    </chapter>
+    </part>
   </book>
 </pretext>

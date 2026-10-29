@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="reed-trigonometry">
+<chapter xml:id="reed-trigonometry">
   <title>Trigonometry</title>
   <introduction>
     <p>A point traveling around a circle creates a repeating wave when we record
@@ -23,7 +23,7 @@
     graphs. Use the Previous, Up, and Next links to move through the lesson.</p>
   </introduction>
 
-  <subsection xml:id="reed-trig-circle">
+  <section xml:id="reed-trig-circle">
     <title>The unit circle: angles become coordinates</title>
     <p>The <term>unit circle</term> has center <m>(0,0)</m> and radius
     <m>1</m>. Start at <m>(1,0)</m> and turn through an angle <m>\theta</m>.
@@ -54,7 +54,7 @@
     </figure>
     <p>Dropping a perpendicular from <m>Q</m> to the horizontal axis makes
     a right triangle. Its hypotenuse is the radius, so its length is <m>1</m>.
-    On the next page, <xref ref="reed-trig-right-triangles"/>, we will scale
+    On the next page, <xref ref="reed-trig-right-triangles" text="title"/>, we will scale
     this picture to explain sine and cosine for right triangles of any size.
     The coordinate definition also works in every quadrant and on the axes.</p>
     <table>
@@ -114,9 +114,9 @@
       <title>Read exact sine values</title>
       <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/UnitCircle/unit-circle-sine.pg"/>
     </exercise>
-  </subsection>
+  </section>
 
-  <subsection xml:id="reed-trig-right-triangles">
+  <section xml:id="reed-trig-right-triangles">
     <title>Right triangles and the unit circle</title>
     <p>Choose one acute angle <m>\theta</m> in a right triangle. The
     <term>hypotenuse</term> is the side opposite the right angle; it is always
@@ -221,9 +221,9 @@
         <m>\cos\phi=5/13</m>.</p></li>
       </ol></p></solution>
     </exercise>
-  </subsection>
+  </section>
 
-  <subsection xml:id="reed-trig-identity">
+  <section xml:id="reed-trig-identity">
     <title>One circle, one identity</title>
     <p>Every point <m>(u,v)</m> on the unit circle is one unit from the
     origin. The Pythagorean theorem says <m>u^2+v^2=1</m>. Substitute
@@ -258,9 +258,9 @@
       negative, so <m>\cos\theta=-12/13</m>. For every angle,
       <m>1-\sin^2\theta=\cos^2\theta</m>.</p></solution>
     </exercise>
-  </subsection>
+  </section>
 
-  <subsection xml:id="reed-trig-waves">
+  <section xml:id="reed-trig-waves">
     <title>From a circle to a wave</title>
     <p>Now let the angle vary and graph its horizontal coordinate against the
     angle. This produces <m>y=\cos x</m>. As the point goes around the circle,
@@ -294,9 +294,9 @@
       <!-- Reused from sine_cosine.ptx. -->
       <webwork source="Library/LoyolaChicago/Precalc/Chap6Sec3/Q40.pg"/>
     </exercise>
-  </subsection>
+  </section>
 
-  <subsection xml:id="reed-trig-parameters">
+  <section xml:id="reed-trig-parameters">
     <title>What A, w, and T do</title>
     <p>In <m>f(x)=A\cos(wx+T)</m>, call the angle inside cosine
     <m>\theta=wx+T</m>. Starting with an input <m>x</m>, first compute this
@@ -393,9 +393,9 @@
       <title>Write equations for shifted cosine graphs</title>
       <webwork source="Contrib/CUNY/CityTech/Precalculus/setTrigonometry_-_Graphing_Phase_Shift/short-answer-phaseshift-cosine.pg"/>
     </exercise>
-  </subsection>
+  </section>
 
-  <subsection xml:id="reed-trig-put-together">
+  <section xml:id="reed-trig-put-together">
     <title>Build a graph, then read an equation from a graph</title>
     <p>For <m>w&gt;0</m>, the five quarter-turn landmarks occur at
     <m>x=h,h+P/4,h+P/2,h+3P/4,h+P</m>. Their heights are
@@ -494,8 +494,8 @@
         </ol></p>
       </solution>
     </exercise>
-  </subsection>
-  <subsection xml:id="reed-trig-other-functions">
+  </section>
+  <section xml:id="reed-trig-other-functions">
     <title>Four more functions: tangent, cotangent, secant, and cosecant</title>
     <p>Sine and cosine give the coordinates of a point on the unit circle.
     The other four trigonometric functions are ratios or reciprocals of
@@ -610,5 +610,5 @@
         makes the reciprocal's magnitude very large.</p></li>
       </ol></p></solution>
     </exercise>
-  </subsection>
-</section>
+  </section>
+</chapter>

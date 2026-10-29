@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<subsection xml:id="reed-quadratic-functions">
+<section xml:id="reed-quadratic-functions">
   <title>Quadratic functions, equations, and zeros</title>
   <assemblage xml:id="reed-quadratic-roadmap">
     <title>Your guide to this three-page lesson</title>
@@ -108,4 +108,4 @@
     input that produces output zero.</p></solution>
   </exercise>
   <p>Next: <xref ref="reed-quadratic-solving" text="title"/>.</p>
-</subsection>
+</section>
