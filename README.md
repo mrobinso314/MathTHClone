@@ -44,6 +44,14 @@ the family `A cos(wx + T)`, and introduces tangent, cotangent, secant, and
 cosecant. Existing WeBWorK exercises accompany written checkpoints. Its illustrations live in
 [`assets/reed-algebra-lessons`](assets/reed-algebra-lessons).
 
+The [Quadratic Formula](source/activities/reed-algebra-lessons/quadratic-formula.ptx)
+section contains three separate HTML pages: functions and zeros, solving with
+the formula (including practice with expandable solutions), and a visual
+completing-the-square derivation. Its source pages are in
+[`quadratics`](source/activities/reed-algebra-lessons/quadratics). The custom
+HTML stylesheet splits only this section at the subsection level; other
+lessons retain their existing page structure.
+
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
 [`Function Review`](lessons/sections/function-review.ptx), is intentionally
 empty and is published beneath the main site at `/lessons/`.

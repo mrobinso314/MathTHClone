@@ -300,6 +300,7 @@
         on its own.</p>
       </introduction>
       <xi:include href="./activities/reed-algebra-lessons/trigonometry.ptx"/>
+      <xi:include href="./activities/reed-algebra-lessons/quadratic-formula.ptx"/>
     </chapter>
   </book>
 </pretext>

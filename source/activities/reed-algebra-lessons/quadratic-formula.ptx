@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="reed-quadratic-formula" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Quadratic Formula</title>
+  <introduction>
+    <p>Why do some quadratic equations have two solutions, some one, and some
+    none on the real number line? Learn to see the solutions on a graph, find
+    them with a formula, and explain why that formula works.</p>
+    <p>Start with <xref ref="reed-quadratic-functions" text="title"/>.
+    You will need basic algebra, square roots, and coordinates.</p>
+  </introduction>
+  <xi:include href="quadratics/functions-and-zeros.ptx"/>
+  <xi:include href="quadratics/solving.ptx"/>
+  <xi:include href="quadratics/derivation.ptx"/>
+</section>

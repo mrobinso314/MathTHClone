@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="reed-quadratic-functions">
+  <title>Quadratic functions, equations, and zeros</title>
+  <assemblage xml:id="reed-quadratic-roadmap">
+    <title>Your guide to this three-page lesson</title>
+    <p><ol>
+      <li><p><xref ref="reed-quadratic-functions" text="title"/>:
+      distinguish a function from an equation, read parabolas, and connect
+      solutions to zeros and horizontal-axis intercepts.</p></li>
+      <li><p><xref ref="reed-quadratic-solving" text="title"/>:
+      use the quadratic formula, compare it with factoring, and practice
+      with exercises and worked solutions.</p></li>
+      <li><p><xref ref="reed-quadratic-derivation" text="title"/>:
+      complete a square with an area diagram, derive the formula, and
+      interpret its two branches on a graph.</p></li>
+    </ol></p>
+  </assemblage>
+  <paragraphs>
+    <title>A function gives outputs</title>
+    <p>A <term>quadratic function</term> is a function of the form</p>
+    <p><md>f(x)=ax^2+bx+c,\qquad a\ne0.</md></p>
+    <p>Here <m>a,b,c</m> are fixed real numbers, called coefficients, and
+    <m>x</m> is the input. Unless a context restricts the inputs, its domain
+    is all real numbers. The highest power of <m>x</m> is two. The condition
+    <m>a\ne0</m> matters: without an <m>x^2</m> term the function is not
+    quadratic. Either <m>b</m> or <m>c</m> can be zero.</p>
+    <p>For example, <m>f(x)=x^2-2x-3</m> assigns one output to each input.
+    At input <m>2</m>, <m>f(2)=4-4-3=-3</m>, so <m>(2,-3)</m> lies on
+    its graph. The graph of every quadratic function is a <term>parabola</term>:
+    a smooth curve with a turning point called its <term>vertex</term> and a
+    vertical line of symmetry through that vertex.</p>
+    <figure xml:id="reed-quadratic-parabola">
+      <caption>The graph of <m>f(x)=x^2-2x-3</m> has vertex
+      <m>(1,-4)</m> and symmetry line <m>x=1</m>. The points
+      <m>(0,-3)</m> and <m>(2,-3)</m> have equal heights.</caption>
+      <image source="reed-algebra-lessons/quadratic-parabola.svg" width="100%">
+        <shortdescription>An upward-opening parabola with vertex at (1,-4),
+        dashed symmetry line x=1, zeros marked at (-1,0) and (3,0), and
+        points at (0,-3) and (2,-3).</shortdescription>
+      </image>
+    </figure>
+    <p>If <m>a&gt;0</m>, the parabola opens upward and the vertex is its
+    minimum. If <m>a&lt;0</m>, it opens downward and the vertex is its
+    maximum. Multiplying a function by a positive number greater than one
+    stretches its graph vertically; multiplying by a negative number also
+    reflects it across the horizontal axis. In the displayed graph,
+    <m>f(x)=(x-1)^2-4</m>, so the minimum output is <m>-4</m> and the
+    range is <m>[-4,\infty)</m>.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>An equation asks which inputs work</title>
+    <p>A <term>quadratic equation</term> can be written in standard form</p>
+    <p><md>ax^2+bx+c=0,\qquad a\ne0.</md></p>
+    <p>A <term>solution</term> is a number that makes the equation true
+    when substituted for <m>x</m>. The function <m>f(x)=x^2-2x-3</m>
+    describes all the outputs; the equation <m>x^2-2x-3=0</m> asks for
+    just the inputs whose output is zero. For instance,
+    <m>3^2-2(3)-3=0</m>, so <m>x=3</m> is a solution.</p>
+    <p>A <term>zero</term> (or <term>root</term>) of <m>f</m> is an input
+    <m>r</m> such that <m>f(r)=0</m>. Thus the real solutions of
+    <m>ax^2+bx+c=0</m> are exactly the real zeros of the corresponding
+    quadratic function. On a graph, a real zero <m>r</m> gives the
+    <term>x-intercept</term> <m>(r,0)</m>. The zero is a number; the
+    intercept is a point.</p>
+    <p>In the graph above, the zeros are <m>-1</m> and <m>3</m>, so the
+    equation has solutions <m>x=-1</m> and <m>x=3</m>. The point
+    <m>(0,-3)</m> is the <term>y-intercept</term>, not a zero: it records
+    <m>f(0)=c=-3</m>.</p>
+    <p>Not every quadratic equation starts with zero on one side. To solve
+    <m>x^2-2x=3</m>, subtract <m>3</m> from both sides to obtain
+    <m>x^2-2x-3=0</m>. Equivalently, you are finding where the parabola
+    <m>y=x^2-2x</m> meets the horizontal line <m>y=3</m>.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Two, one, or no real zeros</title>
+    <figure xml:id="reed-quadratic-zero-count">
+      <caption>A parabola can cross, touch, or miss the horizontal axis.
+      Count distinct real zeros, not the number of times you write a root.</caption>
+      <image source="reed-algebra-lessons/quadratic-zero-count.svg" width="100%">
+        <shortdescription>Three graphs: y=x squared minus 1 crosses at -1
+        and 1; y=x squared touches at 0; y=x squared plus 1 stays above the
+        axis and has no real zeros.</shortdescription>
+      </image>
+    </figure>
+    <p><ol>
+      <li><p><m>x^2-1=0</m> has two distinct real solutions,
+      <m>-1</m> and <m>1</m>.</p></li>
+      <li><p><m>x^2=0</m> has one distinct real solution, <m>0</m>.
+      It is a <term>repeated root</term>: the factor <m>x</m> occurs twice
+      in <m>x^2=x\cdot x</m>.</p></li>
+      <li><p><m>x^2+1=0</m> has no real solutions because a real square
+      cannot be negative. Its graph never reaches height zero.</p></li>
+    </ol></p>
+    <p>A quadratic has at most two distinct real zeros. If you work with
+    complex numbers, the last equation has solutions <m>\pm i</m>, where
+    <m>i^2=-1</m>; those are not intercepts on the real coordinate plane.</p>
+  </paragraphs>
+  <exercise xml:id="reed-quadratic-reading-check">
+    <title>Read the graph and the equation</title>
+    <statement><p>For <m>f(x)=x^2-2x-3</m>, state the zeros, the
+    x-intercepts, and the y-intercept. Is <m>x=0</m> a solution of
+    <m>f(x)=0</m>? Explain the difference between <m>f(0)</m> and a zero
+    of <m>f</m>.</p></statement>
+    <solution><p>The zeros are <m>-1,3</m>; the x-intercepts are
+    <m>(-1,0),(3,0)</m>; the y-intercept is <m>(0,-3)</m>.
+    Since <m>f(0)=-3\ne0</m>, zero is not a solution. The value
+    <m>f(0)</m> is an output at input zero; a zero of <m>f</m> is an
+    input that produces output zero.</p></solution>
+  </exercise>
+  <p>Next: <xref ref="reed-quadratic-solving" text="title"/>.</p>
+</subsection>

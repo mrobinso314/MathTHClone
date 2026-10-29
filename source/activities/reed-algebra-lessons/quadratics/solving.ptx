@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="reed-quadratic-solving">
+  <title>Solving with the quadratic formula</title>
+  <p>Factoring is quick when factors are easy to spot. The quadratic formula
+  gives a systematic way to solve any quadratic equation, including those
+  whose roots are not integers or fractions.</p>
+  <assemblage>
+    <title>The quadratic formula</title>
+    <p>For real coefficients <m>a,b,c</m> with <m>a\ne0</m>, the
+    solutions of <m>ax^2+bx+c=0</m> are</p>
+    <p><md>\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.}</md></p>
+    <p>The symbol <m>\pm</m> asks you to calculate two expressions:
+    one with a plus and one with a minus. If the square root is zero, the
+    two expressions give the same solution. If <m>b^2-4ac&lt;0</m>, there
+    are no real solutions; complex solutions are discussed below.</p>
+  </assemblage>
+  <paragraphs>
+    <title>A reliable procedure</title>
+    <p><ol>
+      <li><p>Move all terms to one side, combine like terms, and write
+      <m>ax^2+bx+c=0</m>.</p></li>
+      <li><p>Identify <m>a,b,c</m>, including their signs. Use zero for
+      any missing linear or constant term.</p></li>
+      <li><p>Compute the <term>discriminant</term>
+      <m>D=b^2-4ac</m>. Its sign tells you how many distinct real
+      solutions to expect.</p></li>
+      <li><p>Substitute into the formula with parentheses around negative
+      coefficients. Simplify the square root, then calculate both branches.
+      The denominator <m>2a</m> divides the entire numerator.</p></li>
+      <li><p>Check by substituting your answers into the original equation.
+      Keep exact roots unless a decimal approximation is requested.</p></li>
+    </ol></p>
+  </paragraphs>
+  <example xml:id="reed-quadratic-example-rational">
+    <title>Put the equation in standard form first</title>
+    <statement><p>Solve <m>2x^2+x=3</m>.</p></statement>
+    <solution>
+      <p>Subtract <m>3</m> to obtain <m>2x^2+x-3=0</m>. Thus
+      <m>a=2</m>, <m>b=1</m>, and <m>c=-3</m>. In particular,
+      <m>c</m> is not <m>3</m>. The discriminant is
+      <m>D=1^2-4(2)(-3)=25</m>, so</p>
+      <p><md>x=\frac{-1\pm\sqrt{25}}{2(2)}=\frac{-1\pm5}{4}.</md></p>
+      <p>The plus branch gives <m>x=1</m>; the minus branch gives
+      <m>x=-3/2</m>. Check in the original equation:
+      <m>2(1)^2+1=3</m> and
+      <m>2(-3/2)^2+(-3/2)=9/2-3/2=3</m>.</p>
+    </solution>
+  </example>
+  <paragraphs>
+    <title>How this agrees with factoring</title>
+    <p>The same equation factors as <m>(2x+3)(x-1)=0</m>. The
+    <term>zero-product property</term> says that if a product is zero,
+    at least one factor must be zero. Thus <m>2x+3=0</m> or
+    <m>x-1=0</m>, again giving <m>-3/2</m> and <m>1</m>.</p>
+    <p>Both methods find the same zeros. More generally, if a quadratic has
+    real roots <m>r_1,r_2</m> (including a possible repeated root), then</p>
+    <p><md>ax^2+bx+c=a(x-r_1)(x-r_2).</md></p>
+    <p>The leading coefficient <m>a</m> must be included. For example,
+    <m>2(x+3/2)(x-1)=(2x+3)(x-1)</m>. A root <m>r</m> corresponds
+    to a factor <m>x-r</m>: a root of <m>-3/2</m> gives
+    <m>x+3/2</m>, not <m>x-3/2</m>.</p>
+    <p>For integer coefficients, a nonnegative perfect-square discriminant
+    gives rational roots, so factoring over the rational numbers is
+    possible. A positive discriminant that is not a perfect square gives
+    irrational roots. You can still factor using real roots, but integer
+    factors will not work. If you do not see factors quickly, the formula
+    is a dependable choice.</p>
+  </paragraphs>
+  <example xml:id="reed-quadratic-example-irrational">
+    <title>When integer factoring does not work</title>
+    <statement><p>Solve <m>x^2-4x+1=0</m> exactly.</p></statement>
+    <solution>
+      <p>Here <m>a=1</m>, <m>b=-4</m>, <m>c=1</m>, so
+      <m>D=(-4)^2-4(1)(1)=12</m>. Notice that
+      <m>(-4)^2=16</m>. Therefore</p>
+      <p><md>x=\frac{-(-4)\pm\sqrt{12}}{2}
+      =\frac{4\pm2\sqrt{3}}{2}=2\pm\sqrt{3}.</md></p>
+      <p>These are two exact real roots, approximately <m>0.268</m> and
+      <m>3.732</m>. The real factorization is
+      <m>(x-(2+\sqrt{3}))(x-(2-\sqrt{3}))</m>. To check both at once,
+      rewrite the original expression as <m>(x-2)^2-3</m>.
+      Substituting either root gives <m>(\pm\sqrt{3})^2-3=0</m>.</p>
+    </solution>
+  </example>
+  <table xml:id="reed-quadratic-discriminant">
+    <title>Let the discriminant predict the result</title>
+    <tabular>
+      <row header="yes"><cell>Discriminant</cell><cell>Real solutions</cell><cell>Graph of <m>y=ax^2+bx+c</m></cell></row>
+      <row><cell><m>D&gt;0</m></cell><cell>Two distinct real roots</cell><cell>Crosses the x-axis twice</cell></row>
+      <row><cell><m>D=0</m></cell><cell>One distinct real root, <m>-b/(2a)</m></cell><cell>Touches the x-axis at its vertex</cell></row>
+      <row><cell><m>D&lt;0</m></cell><cell>No real roots</cell><cell>Does not meet the x-axis</cell></row>
+    </tabular>
+  </table>
+  <p>For example, <m>x^2-6x+9=0</m> has <m>D=0</m> and root
+  <m>3</m>; its factorization is <m>(x-3)^2=0</m>. The equation
+  <m>x^2+2x+5=0</m> has <m>D=-16</m>, so it has no real solutions
+  and no factorization into real linear factors. If you are using complex
+  numbers, <m>\sqrt{-16}=4i</m> gives
+  <m>x=(-2\pm4i)/2=-1\pm2i</m>.</p>
+  <assemblage>
+    <title>Watch the signs and the fraction</title>
+    <p>If <m>b=-4</m>, then <m>-b=4</m> and <m>b^2=16</m>.
+    Write <m>(-4)^2</m> on a calculator. Also,
+    <m>(4\pm2\sqrt{3})/2=2\pm\sqrt{3}</m> because both terms
+    are divided by <m>2</m>. You cannot cancel a factor from just one
+    term in a sum. Finally, the zero-product property applies only when
+    the product equals zero.</p>
+  </assemblage>
+  <paragraphs>
+    <title>Practice: try first, then reveal the solution</title>
+    <p>Work on paper. For each equation, record standard form, the
+    coefficients, and the discriminant before finding the roots. Each
+    exercise has an expandable solution for checking your reasoning.</p>
+  </paragraphs>
+  <exercise xml:id="reed-quadratic-practice-standard">
+    <title>Standard form and signed coefficients</title>
+    <statement><p>Solve <m>3x^2+5=8x</m> using the formula.
+    Then check by factoring.</p></statement>
+    <hint><p>Subtract <m>8x</m> first. What is the sign of <m>b</m>?</p></hint>
+    <solution><p>Standard form is <m>3x^2-8x+5=0</m>, so
+    <m>(a,b,c)=(3,-8,5)</m> and <m>D=64-60=4</m>.
+    The formula gives <m>x=(8\pm2)/6</m>, hence
+    <m>x=5/3</m> or <m>x=1</m>. Factoring gives
+    <m>(3x-5)(x-1)=0</m> with the same solutions.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-irrational">
+    <title>Two irrational roots</title>
+    <statement><p>Solve <m>2x^2+4x-1=0</m> exactly. Can this
+    polynomial be factored into linear factors with rational coefficients?</p></statement>
+    <hint><p>Simplify <m>\sqrt{24}</m> before reducing the fraction.</p></hint>
+    <solution><p><m>(a,b,c)=(2,4,-1)</m> and <m>D=16+8=24</m>.
+    Thus <m>x=(-4\pm\sqrt{24})/4=-1\pm\sqrt{6}/2</m>.
+    Both roots are irrational, so no factorization into rational linear
+    factors exists.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-repeated">
+    <title>A repeated root</title>
+    <statement><p>Solve <m>4x^2-12x+9=0</m>. How many distinct
+    real zeros does the corresponding function have? Describe its graph
+    at the x-axis.</p></statement>
+    <solution><p><m>(a,b,c)=(4,-12,9)</m> and <m>D=144-144=0</m>.
+    Thus <m>x=12/8=3/2</m>. There is one distinct real zero, repeated
+    twice in <m>(2x-3)^2</m>. The upward-opening parabola touches the
+    x-axis at its vertex <m>(3/2,0)</m>.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-no-real">
+    <title>Know when to stop over the real numbers</title>
+    <statement><p>Determine the real solutions of <m>x^2+2x+5=0</m>
+    using its discriminant. If you know complex numbers, also find its
+    complex solutions.</p></statement>
+    <solution><p><m>(a,b,c)=(1,2,5)</m> gives <m>D=4-20=-16</m>.
+    There are no real solutions. Over the complex numbers,
+    <m>x=(-2\pm4i)/2=-1\pm2i</m>.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-missing">
+    <title>A missing term</title>
+    <statement><p>Solve <m>3x^2=12</m> using the formula and then
+    directly using square roots. Explain why <m>b=0</m> does not prevent
+    use of the formula.</p></statement>
+    <solution><p>Write <m>3x^2+0x-12=0</m>. Then
+    <m>(a,b,c)=(3,0,-12)</m>, <m>D=144</m>, and
+    <m>x=(0\pm12)/6=\pm2</m>. Directly, <m>x^2=4</m> gives
+    <m>x=\pm2</m>. Only <m>a</m> must be nonzero; a zero value for
+    <m>b</m> is allowed.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-error">
+    <title>Find and repair an error</title>
+    <statement><p>For <m>2x^2-3x-2=0</m>, a student writes
+    <m>x=(3\pm5)/2</m>, giving <m>4</m> and <m>-1</m>.
+    What went wrong? Find and check the correct solutions.</p></statement>
+    <solution><p>The denominator should be <m>2a=4</m>, not
+    <m>2</m>. With <m>(a,b,c)=(2,-3,-2)</m> and <m>D=25</m>,
+    the roots are <m>(3\pm5)/4</m>, namely <m>2</m> and <m>-1/2</m>.
+    Substitution gives <m>8-6-2=0</m> and
+    <m>1/2+3/2-2=0</m>.</p></solution>
+  </exercise>
+  <exercise xml:id="reed-quadratic-practice-context">
+    <title>Choose a solution that fits the situation</title>
+    <statement><p>A rectangle is <m>3</m> meters longer than it is wide
+    and has area <m>18</m> square meters. Let <m>w</m> be its width.
+    Write a quadratic equation, use the formula to solve it, and explain
+    which solution gives the rectangle's dimensions.</p></statement>
+    <solution><p>The area equation is <m>w(w+3)=18</m>, or
+    <m>w^2+3w-18=0</m>. Here <m>(a,b,c)=(1,3,-18)</m> and
+    <m>D=9+72=81</m>. Thus <m>w=(-3\pm9)/2</m> is <m>3</m> or
+    <m>-6</m>. Width must be positive, so the rectangle is <m>3</m>
+    meters by <m>6</m> meters. The negative root solves the algebraic
+    equation but does not describe a physical width.</p></solution>
+  </exercise>
+  <p>Previous: <xref ref="reed-quadratic-functions" text="title"/>.
+  Next: <xref ref="reed-quadratic-derivation" text="title"/>.</p>
+</subsection>

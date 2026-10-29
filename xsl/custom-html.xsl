@@ -71,6 +71,14 @@
     match="section[@xml:id = 'math-111' or @xml:id = 'stat-141' or @xml:id = 'econ-201']"
     mode="primary-navigation-treebuttons"/>
 
+<!-- Only the quadratic unit is split below the site's section-level cutoff.
+     Use the standard chunking hooks so xrefs and previous/next navigation
+     resolve to the three subsection pages. Other lessons keep their URLs. -->
+<xsl:template match="section[@xml:id='reed-quadratic-formula']" mode="is-chunk">false</xsl:template>
+<xsl:template match="section[@xml:id='reed-quadratic-formula']" mode="is-intermediate">true</xsl:template>
+<xsl:template match="subsection[parent::section[@xml:id='reed-quadratic-formula']]" mode="is-chunk">true</xsl:template>
+<xsl:template match="subsection[parent::section[@xml:id='reed-quadratic-formula']]" mode="is-intermediate">false</xsl:template>
+
 <xsl:template name="extra-js-footer">
     <script>
         <xsl:text>

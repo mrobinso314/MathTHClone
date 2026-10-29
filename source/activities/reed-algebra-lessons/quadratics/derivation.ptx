@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="reed-quadratic-derivation">
+  <title>Where the quadratic formula comes from</title>
+  <p>The formula is the result of one reusable idea: <term>completing the
+  square</term>. Rewrite a quadratic equation so that its variable appears
+  inside a square, then take square roots. First see why the square needs
+  a particular extra piece.</p>
+  <paragraphs>
+    <title>Build a square from an area</title>
+    <p>Consider <m>x^2+6x=7</m>. For the picture, temporarily suppose
+    <m>x&gt;0</m> so it represents a length. Draw a square of area
+    <m>x^2</m>, and split the rectangle of area <m>6x</m> into two
+    strips, each with area <m>3x</m>. Place one strip on the right and
+    one below the square. A <m>3</m>-by-<m>3</m> corner is missing.</p>
+    <figure xml:id="reed-quadratic-square-figure">
+      <caption>Split the linear term in half, then fill the missing corner.
+      Adding area <m>9</m> creates a square with side <m>x+3</m>.</caption>
+      <image source="reed-algebra-lessons/quadratic-completing-square.svg" width="100%">
+        <shortdescription>Two area diagrams. The first has a square labeled
+        x squared with two adjacent strips labeled 3x and a dashed missing
+        3 by 3 corner. The second fills the corner with area 9, making a
+        square of side x+3. Below: x squared plus 6x plus 9 equals (x+3) squared.</shortdescription>
+      </image>
+    </figure>
+    <p>The equation balances two quantities. Add <m>9</m> to
+    <em>both</em> sides, not just to the picture:</p>
+    <p><md>
+      <mrow>x^2+6x&amp;=7,</mrow>
+      <mrow>x^2+6x+9&amp;=7+9,</mrow>
+      <mrow>(x+3)^2&amp;=16,</mrow>
+      <mrow>x+3&amp;=\pm4,</mrow>
+      <mrow>x&amp;=1\quad\text{or}\quad x=-7.</mrow>
+    </md></p>
+    <p>Although negative <m>x</m> cannot serve as a side length in this
+    picture, the identity <m>x^2+6x+9=(x+3)^2</m> holds for every real
+    <m>x</m>. Both algebraic solutions are valid:
+    <m>1+6=7</m> and <m>49-42=7</m>. The diagram motivates the
+    identity; the algebra is what extends it to all inputs.</p>
+    <p>For a general linear coefficient <m>p</m>, half of it is
+    <m>p/2</m> and the missing corner has square <m>(p/2)^2</m>:</p>
+    <p><md>x^2+px+\left(\frac p2\right)^2
+    =\left(x+\frac p2\right)^2.</md></p>
+    <p>Expanding the right side verifies this even when <m>p</m> or
+    <m>x</m> is negative, so no assumption about positive lengths is
+    needed in the derivation below.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Complete the square once, for every quadratic</title>
+    <p>Start with <m>ax^2+bx+c=0</m> and <m>a\ne0</m>. The steps
+    work for positive or negative <m>a</m>.</p>
+    <p><ol>
+      <li><p><em>Divide by <m>a</m> and move the constant.</em> A leading
+      coefficient of <m>1</m> lets us use the square identity:</p>
+      <p><md>x^2+\frac ba x=-\frac ca.</md></p></li>
+      <li><p><em>Halve the coefficient of <m>x</m>, square it, and add
+      to both sides.</em> Here the half-coefficient is <m>b/(2a)</m>:</p>
+      <p><md>x^2+\frac ba x+\frac{b^2}{4a^2}
+      =-\frac ca+\frac{b^2}{4a^2}.</md></p></li>
+      <li><p><em>Write the left side as a square and combine the right
+      side over a common denominator.</em> Since
+      <m>-c/a=-4ac/(4a^2)</m>,</p>
+      <p><md>\left(x+\frac{b}{2a}\right)^2
+      =\frac{b^2-4ac}{4a^2}.</md></p>
+      <p>This explains the discriminant: <m>b^2-4ac</m> appears when
+      we combine the two terms on the right.</p></li>
+      <li><p><em>Multiply both sides by <m>4a^2</m>.</em> This avoids
+      having to simplify <m>\sqrt{a^2}=|a|</m>:</p>
+      <p><md>(2ax+b)^2=b^2-4ac.</md></p></li>
+      <li><p><em>Take both square-root branches, then solve for
+      <m>x</m>.</em> When <m>D=b^2-4ac\ge0</m>,</p>
+      <p><md>
+        <mrow>2ax+b&amp;=\pm\sqrt{b^2-4ac},</mrow>
+        <mrow>2ax&amp;=-b\pm\sqrt{b^2-4ac},</mrow>
+        <mrow>x&amp;=\boxed{\frac{-b\pm\sqrt{b^2-4ac}}{2a}.}</mrow>
+      </md></p>
+      <p>If <m>D&lt;0</m>, a real square cannot equal <m>D</m>, so
+      there are no real solutions. Allowing complex square roots gives
+      the same formula for the two complex solutions.</p></li>
+    </ol></p>
+    <p>Every step preserves the solutions: we divide only by the nonzero
+    numbers <m>a</m> and <m>2a</m>, add equal quantities to both sides,
+    and keep both possibilities when undoing a square. The symbol
+    <m>\pm</m> is essential because both a positive number and its
+    negative have the same square.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>See the two branches as distances from the center</title>
+    <p>The completed-square equation also says</p>
+    <p><md>\left(x-\left(-\frac b{2a}\right)\right)^2
+    =\frac{D}{4a^2}.</md></p>
+    <p>If <m>D&gt;0</m>, the two real roots lie the same horizontal
+    distance from the symmetry line <m>x=-b/(2a)</m>. That distance
+    is <m>\sqrt{D}/(2|a|)</m>. For the function in our first page,
+    <m>f(x)=x^2-2x-3=(x-1)^2-4</m>, the equation <m>f(x)=0</m>
+    becomes <m>(x-1)^2=4</m>. The roots are two units to either side
+    of <m>x=1</m>.</p>
+    <figure xml:id="reed-quadratic-root-distance">
+      <caption>The two signs in the formula locate roots on opposite sides
+      of the symmetry line. Here <m>x=1\pm2</m> gives <m>-1</m> and
+      <m>3</m>.</caption>
+      <image source="reed-algebra-lessons/quadratic-root-distance.svg" width="100%">
+        <shortdescription>Graph of (x-1) squared minus 4 with vertex
+        (1,-4), symmetry line x=1, and roots -1 and 3. Two arrows show a
+        horizontal distance of 2 from the symmetry line to each root.</shortdescription>
+      </image>
+    </figure>
+    <p>If <m>D=0</m>, that distance is zero: the two branches coincide
+    at the vertex. If <m>D&lt;0</m>, there is no real distance with that
+    square, and the graph has no x-intercept. This is why the formula,
+    factoring, and the graph all tell the same story.</p>
+  </paragraphs>
+  <exercise xml:id="reed-quadratic-complete-check">
+    <title>Reconstruct the idea</title>
+    <statement><p>What must be added to <m>x^2-10x</m> to complete
+    the square? Use it to solve <m>x^2-10x+13=0</m>. Explain why
+    you add the same number to both sides and why you need two signs.</p></statement>
+    <solution><p>Half of <m>-10</m> is <m>-5</m>, whose square is
+    <m>25</m>. Starting with <m>x^2-10x=-13</m>, add <m>25</m>
+    to both sides to preserve equality. This gives
+    <m>(x-5)^2=12</m>, hence <m>x=5\pm2\sqrt{3}</m>.
+    Both signs are needed because both <m>2\sqrt{3}</m> and
+    <m>-2\sqrt{3}</m> square to <m>12</m>.</p></solution>
+  </exercise>
+  <p>Return to <xref ref="reed-quadratic-solving" text="title"/> for
+  practice, or to the <xref ref="reed-quadratic-functions" text="title"/>
+  page for the lesson overview.</p>
+</subsection>
