@@ -7,14 +7,20 @@
     family of functions</p>
     <p><md>f(x)=A\cos(wx+T).</md></p>
     <p>By the end of this lesson, you will be able to read sine and cosine from
-    the unit circle, explain why <m>\sin^2\theta+\cos^2\theta=1</m>, and use
+    the unit circle, use sine and cosine to find sides of right triangles,
+    explain why <m>\sin^2\theta+\cos^2\theta=1</m>, and use
     <m>A</m>, <m>w</m>, and <m>T</m> to describe and sketch a cosine wave.
+    The final page introduces the other four trigonometric functions:
+    tangent, cotangent, secant, and cosecant.
     You need the Pythagorean theorem, coordinates, and basic algebra; no previous
     trigonometry lesson is required.</p>
     <p>Work with pencil and paper as you read. The interactive exercises are
     selected from the Math Trailhead's existing trigonometry worksheets.
     Enter exact answers such as <c>pi/3</c> and <c>sqrt(3)/2</c> unless a problem
     requests decimals. Use radians unless a degree symbol appears.</p>
+    <p>Each topic below opens on its own page. Start with the unit circle,
+    then connect it to right triangles before moving on to identities and
+    graphs. Use the Previous, Up, and Next links to move through the lesson.</p>
   </introduction>
 
   <subsection xml:id="reed-trig-circle">
@@ -46,10 +52,11 @@
         and angles 0, pi over 2, pi, and 3 pi over 2.</shortdescription>
       </image>
     </figure>
-    <p>In the first quadrant, this agrees with right-triangle trigonometry:
-    cosine is adjacent side divided by hypotenuse and sine is opposite side
-    divided by hypotenuse. Here the hypotenuse is <m>1</m>. The coordinate
-    definition continues to work in every quadrant, including points on the axes.</p>
+    <p>Dropping a perpendicular from <m>Q</m> to the horizontal axis makes
+    a right triangle. Its hypotenuse is the radius, so its length is <m>1</m>.
+    On the next page, <xref ref="reed-trig-right-triangles"/>, we will scale
+    this picture to explain sine and cosine for right triangles of any size.
+    The coordinate definition also works in every quadrant and on the axes.</p>
     <table>
       <title>Five landmarks in one turn</title>
       <tabular halign="center">
@@ -106,6 +113,113 @@
     <exercise xml:id="reed-trig-sine-values">
       <title>Read exact sine values</title>
       <webwork source="Contrib/CUNY/CityTech/CollegeAlgebra_Trig/UnitCircle/unit-circle-sine.pg"/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="reed-trig-right-triangles">
+    <title>Right triangles and the unit circle</title>
+    <p>Choose one acute angle <m>\theta</m> in a right triangle. The
+    <term>hypotenuse</term> is the side opposite the right angle; it is always
+    the longest side. Of the two remaining sides, the <term>opposite</term>
+    side faces <m>\theta</m>, and the <term>adjacent</term> side touches
+    <m>\theta</m>. The word adjacent here means the leg, not the hypotenuse.
+    Opposite and adjacent depend on which acute angle you choose.</p>
+    <figure xml:id="reed-trig-triangle-figure">
+      <caption>Divide every side by the hypotenuse <m>r</m>. The angle stays
+      the same, and the new hypotenuse is a radius of the unit circle.</caption>
+      <image source="reed-algebra-lessons/right-triangle.svg" width="100%">
+        <shortdescription>Two similar right triangles with angle theta at the
+        lower left. The first has adjacent leg a, opposite leg b, and
+        hypotenuse r. The second is scaled by one over r, with hypotenuse 1,
+        horizontal leg a over r equal to cosine theta, and vertical leg b over
+        r equal to sine theta. Its upper vertex lies on the unit circle.</shortdescription>
+      </image>
+    </figure>
+    <p>Place the chosen angle at the origin and the adjacent side along the
+    positive horizontal axis. If the adjacent, opposite, and hypotenuse
+    lengths are <m>a</m>, <m>b</m>, and <m>r</m>, the upper vertex is
+    <m>(a,b)</m>. Shrink the triangle by dividing every length by <m>r</m>.
+    The new vertex <m>(a/r,b/r)</m> is on the unit circle, at the same angle
+    <m>\theta</m>. Its coordinates must therefore be
+    <m>(\cos\theta,\sin\theta)</m>. This gives</p>
+    <p><md>\boxed{\cos\theta=\frac{\text{adjacent}}{\text{hypotenuse}}
+    =\frac{a}{r}},\qquad
+    \boxed{\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}}
+    =\frac{b}{r}}.</md></p>
+    <p>These ratios depend on the angle, not the size of the triangle.
+    Triangles with the same angles are similar: doubling all three side
+    lengths leaves both ratios unchanged. This is why one value of
+    <m>\sin\theta</m> or <m>\cos\theta</m> works for every right triangle
+    with that angle.</p>
+    <example xml:id="reed-trig-triangle-ratios">
+      <title>A 3–4–5 triangle becomes a point on the circle</title>
+      <statement><p>A right triangle has adjacent side <m>4</m>, opposite
+      side <m>3</m>, and hypotenuse <m>5</m>, relative to <m>\theta</m>.
+      Find its sine and cosine, and describe the corresponding point on the
+      unit circle.</p></statement>
+      <solution><p>Divide by the hypotenuse:
+      <m>\cos\theta=4/5</m> and <m>\sin\theta=3/5</m>. The point is
+      <m>(4/5,3/5)</m>. A triangle with sides <m>8,6,10</m> gives exactly
+      the same point, since <m>8/10=4/5</m> and <m>6/10=3/5</m>.</p></solution>
+    </example>
+    <paragraphs>
+      <title>Use an angle to find a missing length</title>
+      <p>Multiplying the ratios by the hypotenuse gives</p>
+      <p><md>\text{adjacent}=r\cos\theta,\qquad
+      \text{opposite}=r\sin\theta.</md></p>
+      <p>Draw the triangle, mark the chosen angle, and label its sides before
+      selecting a formula. If the hypotenuse is unknown, solve the same
+      equation for <m>r</m>. For example,
+      <m>r=\text{opposite}/\sin\theta</m>.</p>
+    </paragraphs>
+    <example xml:id="reed-trig-ladder">
+      <title>A ladder against a wall</title>
+      <statement><p>A <m>10</m>-foot ladder makes a <m>60^\circ</m>
+      angle with level ground and rests against a vertical wall. How high
+      does it reach, and how far is its foot from the wall?</p></statement>
+      <solution><p>The ladder is the hypotenuse. Height is opposite the
+      angle at the ground; horizontal distance is adjacent. Therefore</p>
+      <p><md>\text{height}=10\sin60^\circ=5\sqrt{3}\text{ ft},\qquad
+      \text{distance}=10\cos60^\circ=5\text{ ft}.</md></p>
+      <p>The height is about <m>8.66</m> feet. Check the lengths with
+      <m>5^2+(5\sqrt{3})^2=100=10^2</m>. When using a calculator,
+      select degree mode for <m>60^\circ</m>, or enter <m>\pi/3</m> in
+      radian mode.</p></solution>
+    </example>
+    <p>The two acute angles add to <m>90^\circ</m>. Switching to the
+    other acute angle swaps opposite and adjacent, so
+    <m>\sin\theta=\cos(90^\circ-\theta)</m>. In radians this is
+    <m>\sin\theta=\cos(\pi/2-\theta)</m>.</p>
+    <p>Right-triangle side lengths are positive. For an angle in another
+    quadrant, use its acute reference angle to find the coordinate
+    magnitudes, then use the quadrant for signs. For instance,
+    <m>150^\circ</m> has reference angle <m>30^\circ</m>, so its
+    unit-circle point is <m>(-\sqrt{3}/2,1/2)</m>. The horizontal coordinate
+    is negative; the triangle's horizontal side length is positive.</p>
+    <exercise xml:id="reed-trig-triangle-check">
+      <title>Connect lengths, ratios, and coordinates</title>
+      <statement><p><ol>
+        <li><p>Relative to <m>\theta</m>, a right triangle has opposite
+        side <m>5</m> and adjacent side <m>12</m>. Find the hypotenuse,
+        <m>\sin\theta</m>, <m>\cos\theta</m>, and the corresponding
+        unit-circle point. Explain why tripling all sides changes neither ratio.</p></li>
+        <li><p>A ramp rises <m>2</m> meters and makes an angle of
+        <m>30^\circ</m> with the ground. Find its sloping length and
+        horizontal run.</p></li>
+        <li><p>In the first triangle, let <m>\phi</m> be the other acute
+        angle. Find <m>\sin\phi</m> and <m>\cos\phi</m>.</p></li>
+      </ol></p></statement>
+      <solution><p><ol>
+        <li><p>The hypotenuse is <m>\sqrt{5^2+12^2}=13</m>, so
+        <m>\sin\theta=5/13</m>, <m>\cos\theta=12/13</m>, and the point
+        is <m>(12/13,5/13)</m>. Tripling gives ratios <m>15/39</m> and
+        <m>36/39</m>; the common factor cancels.</p></li>
+        <li><p>Since <m>\sin30^\circ=2/r=1/2</m>, the ramp length is
+        <m>r=4</m> meters. The horizontal run is
+        <m>4\cos30^\circ=2\sqrt{3}</m> meters.</p></li>
+        <li><p>The legs swap roles: <m>\sin\phi=12/13</m> and
+        <m>\cos\phi=5/13</m>.</p></li>
+      </ol></p></solution>
     </exercise>
   </subsection>
 
@@ -379,6 +493,122 @@
           Changing the angle changes the point, not the radius.</p></li>
         </ol></p>
       </solution>
+    </exercise>
+  </subsection>
+  <subsection xml:id="reed-trig-other-functions">
+    <title>Four more functions: tangent, cotangent, secant, and cosecant</title>
+    <p>Sine and cosine give the coordinates of a point on the unit circle.
+    The other four trigonometric functions are ratios or reciprocals of
+    those same coordinates. They do not require a new circle or a new kind
+    of angle.</p>
+    <table>
+      <title>Build the other four functions from sine and cosine</title>
+      <tabular halign="center">
+        <row header="yes"><cell>Function</cell><cell>Definition</cell><cell>Right-triangle ratio</cell><cell>Defined when</cell></row>
+        <row><cell>Tangent</cell><cell><m>\tan\theta=\sin\theta/\cos\theta</m></cell><cell>opposite / adjacent</cell><cell><m>\cos\theta\ne0</m></cell></row>
+        <row><cell>Cotangent</cell><cell><m>\cot\theta=\cos\theta/\sin\theta</m></cell><cell>adjacent / opposite</cell><cell><m>\sin\theta\ne0</m></cell></row>
+        <row><cell>Secant</cell><cell><m>\sec\theta=1/\cos\theta</m></cell><cell>hypotenuse / adjacent</cell><cell><m>\cos\theta\ne0</m></cell></row>
+        <row><cell>Cosecant</cell><cell><m>\csc\theta=1/\sin\theta</m></cell><cell>hypotenuse / opposite</cell><cell><m>\sin\theta\ne0</m></cell></row>
+      </tabular>
+    </table>
+    <p>The triangle ratios apply to acute angles in a right triangle. For
+    example, dividing <m>\sin\theta=b/r</m> by <m>\cos\theta=a/r</m>
+    cancels the hypotenuse and gives <m>\tan\theta=b/a</m>. Together with
+    sine and cosine, tangent completes the mnemonic <em>SOH–CAH–TOA</em>:
+    sine is opposite over hypotenuse, cosine is adjacent over hypotenuse,
+    and tangent is opposite over adjacent.</p>
+    <p>On the unit circle, write the point as <m>(u,v)</m>. Then tangent
+    is <m>v/u</m>: the slope of the line from the origin to the point.
+    Cotangent is <m>u/v</m>, secant is <m>1/u</m>, and cosecant is
+    <m>1/v</m>. These coordinate formulas work in all quadrants wherever
+    their denominators are nonzero.</p>
+    <example xml:id="reed-trig-tangent-height">
+      <title>Find a height without knowing the hypotenuse</title>
+      <statement><p>You stand <m>20</m> meters horizontally from a tower.
+      From a point at ground level, the angle up to its top is
+      <m>30^\circ</m>. Find the tower's height.</p></statement>
+      <solution><p>The height <m>h</m> is opposite the angle, and the
+      known distance <m>20</m> is adjacent. Use tangent:</p>
+      <p><md>\tan30^\circ=\frac{h}{20},\qquad
+      h=20\frac{1/2}{\sqrt{3}/2}=\frac{20\sqrt{3}}{3}\text{ m}.</md></p>
+      <p>The height is about <m>11.55</m> meters. No hypotenuse length
+      was needed.</p></solution>
+    </example>
+    <example xml:id="reed-trig-six-values">
+      <title>One point determines all six values</title>
+      <statement><p>The unit-circle point for <m>\theta</m> is
+      <m>(-3/5,4/5)</m>. Find all six trigonometric values.</p></statement>
+      <solution><p>Read cosine and sine first, then take ratios and
+      reciprocals:</p>
+      <p><md>\cos\theta=-\frac35,\quad \sin\theta=\frac45,\quad
+      \tan\theta=-\frac43,\quad \cot\theta=-\frac34,\quad
+      \sec\theta=-\frac53,\quad \csc\theta=\frac54.</md></p>
+      <p>In quadrant II, sine and cosecant are positive; cosine, secant,
+      tangent, and cotangent are negative.</p></solution>
+    </example>
+    <paragraphs>
+      <title>Undefined values and reciprocals</title>
+      <p>Division by zero is undefined. At <m>\theta=\pi/2</m>, the
+      point is <m>(0,1)</m>: tangent and secant are undefined, while
+      cotangent is <m>0</m> and cosecant is <m>1</m>. At <m>\theta=0</m>,
+      tangent is <m>0</m> and secant is <m>1</m>, but cotangent and
+      cosecant are undefined.</p>
+      <p>In general, tangent and secant are undefined at
+      <m>\theta=\pi/2+k\pi</m>; cotangent and cosecant are undefined at
+      <m>\theta=k\pi</m>, where <m>k</m> is any integer. An undefined
+      value is not a value of infinity.</p>
+      <p>Where both are defined, tangent and cotangent are reciprocals.
+      But <m>\cot\theta=\cos\theta/\sin\theta</m> also defines cotangent
+      at angles such as <m>\pi/2</m>, where tangent itself is undefined.</p>
+      <p>Reciprocal is different from inverse function:
+      <m>\csc\theta=1/\sin\theta</m>, whereas <m>\arcsin(t)</m>
+      asks for an angle whose sine is <m>t</m>. Calculator notation
+      <m>\sin^{-1}(t)</m> usually means arcsine, not cosecant.</p>
+    </paragraphs>
+    <paragraphs>
+      <title>How their graphs differ from sine and cosine</title>
+      <p>After a half turn, both circle coordinates change sign. Their
+      ratio stays the same, so tangent and cotangent have period
+      <m>\pi</m>. Secant and cosecant have period <m>2\pi</m>.
+      Each function has vertical asymptotes at the angles where its
+      denominator is zero, and each is unbounded. Thus none has an
+      amplitude like a sine or cosine wave.</p>
+      <p>There are two more identities hiding in the original one.
+      Dividing <m>\sin^2\theta+\cos^2\theta=1</m> by
+      <m>\cos^2\theta</m>, when cosine is nonzero, gives
+      <m>\tan^2\theta+1=\sec^2\theta</m>. Dividing by
+      <m>\sin^2\theta</m>, when sine is nonzero, gives
+      <m>1+\cot^2\theta=\csc^2\theta</m>.</p>
+    </paragraphs>
+    <exercise xml:id="reed-trig-other-functions-check">
+      <title>Use ratios, signs, and domains</title>
+      <statement><p><ol>
+        <li><p>A right triangle has opposite side <m>8</m>, adjacent
+        side <m>15</m>, and hypotenuse <m>17</m>, relative to
+        <m>\theta</m>. Find all six trigonometric values.</p></li>
+        <li><p>Find <m>\tan(5\pi/6)</m>, <m>\cot(5\pi/6)</m>,
+        <m>\sec(5\pi/6)</m>, and <m>\csc(5\pi/6)</m>.</p></li>
+        <li><p>At <m>\theta=\pi</m>, which of the six functions are
+        undefined? Give the values of the other four.</p></li>
+        <li><p>Someone says <m>\sec\theta</m> must lie between
+        <m>-1</m> and <m>1</m> because cosine does. Give a counterexample
+        and explain why taking a reciprocal changes the bound.</p></li>
+      </ol></p></statement>
+      <solution><p><ol>
+        <li><p><m>\sin\theta=8/17</m>, <m>\cos\theta=15/17</m>,
+        <m>\tan\theta=8/15</m>, <m>\cot\theta=15/8</m>,
+        <m>\sec\theta=17/15</m>, <m>\csc\theta=17/8</m>.</p></li>
+        <li><p>Since cosine is <m>-\sqrt{3}/2</m> and sine is
+        <m>1/2</m>, the values are respectively <m>-\sqrt{3}/3</m>,
+        <m>-\sqrt{3}</m>, <m>-2\sqrt{3}/3</m>, and <m>2</m>.</p></li>
+        <li><p>The point is <m>(-1,0)</m>. Cotangent and cosecant are
+        undefined. The others are <m>\sin\pi=0</m>, <m>\cos\pi=-1</m>,
+        <m>\tan\pi=0</m>, and <m>\sec\pi=-1</m>.</p></li>
+        <li><p><m>\sec(\pi/3)=1/(1/2)=2</m>. For nonzero cosine,
+        <m>0&lt;|\cos\theta|\le1</m>, so
+        <m>|\sec\theta|\ge1</m>. A nonzero denominator close to zero
+        makes the reciprocal's magnitude very large.</p></li>
+      </ol></p></solution>
     </exercise>
   </subsection>
 </section>

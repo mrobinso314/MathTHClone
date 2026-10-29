@@ -43,6 +43,21 @@
 
 <xsl:import href="./core/pretext-html.xsl"/>
 
+<!-- Give each Reed trigonometry subsection its own page. Keep the section
+     URL as an overview and preserve the rest of the book's page boundaries. -->
+<xsl:template match="section[@xml:id = 'reed-trigonometry']" mode="is-chunk">
+    <xsl:text>false</xsl:text>
+</xsl:template>
+<xsl:template match="section[@xml:id = 'reed-trigonometry']" mode="is-intermediate">
+    <xsl:text>true</xsl:text>
+</xsl:template>
+<xsl:template match="subsection[parent::section[@xml:id = 'reed-trigonometry']]" mode="is-chunk">
+    <xsl:text>true</xsl:text>
+</xsl:template>
+<xsl:template match="subsection[parent::section[@xml:id = 'reed-trigonometry']]" mode="is-intermediate">
+    <xsl:text>false</xsl:text>
+</xsl:template>
+
 <!-- Keep instruction and practice visible while reading the Reed lesson.
      Written-checkpoint solutions retain the usual reveal controls. -->
 <xsl:template match="example[ancestor::section[@xml:id = 'reed-trigonometry']] | exercise[ancestor::section[@xml:id = 'reed-trigonometry']] | example[ancestor::section[@xml:id = 'reed-trigonometry']]/solution" mode="is-hidden">

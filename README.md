@@ -38,9 +38,10 @@ The Math 111, Stat 141, and Econ 201 diagnostic sections are in
 
 The **Reed Algebra Lessons** chapter is part of the main book. Its
 [`Trigonometry`](source/activities/reed-algebra-lessons/trigonometry.ptx)
-section is a self-contained lesson on the unit circle, the Pythagorean
-identity, and the family `A cos(wx + T)`, using existing WeBWorK exercises
-alongside written checkpoints. Its illustrations live in
+section has an overview and a separate page for each subsection. It connects
+the unit circle to right triangles, derives the Pythagorean identity, develops
+the family `A cos(wx + T)`, and introduces tangent, cotangent, secant, and
+cosecant. Existing WeBWorK exercises accompany written checkpoints. Its illustrations live in
 [`assets/reed-algebra-lessons`](assets/reed-algebra-lessons).
 
 The separate blank lesson book is in [`lessons`](lessons). Its first section,
