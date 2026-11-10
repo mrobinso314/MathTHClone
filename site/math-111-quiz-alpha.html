@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math 111 Readiness Quiz | Math Trailhead</title>
+<style>
+  :root { color-scheme: light; font: 100%/1.55 system-ui, sans-serif; color: #202b26; background: #f3f6f2; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  header { background: #173a30; color: white; padding: 2.5rem 1.25rem; }
+  .wrap { max-width: 48rem; margin: auto; }
+  header a { color: #d8f4df; }
+  h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: .6rem 0; }
+  h2 { font-size: 1.25rem; margin: 0 0 .75rem; }
+  main { padding: 1.5rem 1rem 3rem; }
+  .card { background: white; border: 1px solid #ccd9d1; border-radius: .8rem; padding: 1.25rem; margin-bottom: 1rem; }
+  .progress { color: #245543; font-weight: 650; margin: 0 0 1rem; }
+  .status { margin: .75rem 0 0; }
+  .status:empty { display: none; }
+  .error { color: #9a271e; }
+  button { background: #245543; color: white; border: 1px solid transparent; padding: .55rem .85rem; font: inherit; font-weight: 650; border-radius: .35rem; cursor: pointer; }
+  button:disabled { opacity: .65; cursor: default; }
+  :focus-visible { outline: 3px solid #366c98; outline-offset: 3px; }
+  .problem { margin-bottom: .85rem; overflow-wrap: anywhere; }
+  .problem input { max-width: 100%; width: 12rem; margin: .25rem .2rem; font: inherit; padding: .35rem .45rem; border: 1px solid #6f8478; border-radius: .25rem; }
+  .problem input:read-only { background: #f2f5f3; }
+  .problem li + li { margin-top: .35rem; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="https://mrobinso314.github.io/MathTHClone/math-111.html">Math Trailhead · Math 111 practice</a>
+    <h1>Math 111 Readiness Quiz</h1>
+    <p>Alpha · 3 questions · One graded submission per question</p>
+  </div>
+</header>
+<main class="wrap">
+  <p>Enter your answers using plain text, such as <code>3/4</code> or <code>x^2</code>. Submit each question when you’re ready. Your results are saved in this browser.</p>
+  <noscript><p>Enable JavaScript to submit the quiz.</p></noscript>
+  <p id="storage-warning" class="error" role="status" hidden>This browser is blocking local storage. Keep this tab open until you download your results.</p>
+  <p id="progress" class="progress" aria-live="polite"></p>
+  <div id="questions"></div>
+  <section class="card" aria-labelledby="results-heading">
+    <h2 id="results-heading">Your results</h2>
+    <p id="summary">Finish when you’re ready to download your results. Skipped questions receive zero points.</p>
+    <button id="finish" type="button" disabled>Finish quiz</button>
+    <button id="download" type="button" hidden>Download results PDF</button>
+  </section>
+</main>
+<!-- These statements and field names come from the fixed WeBWorK seeds below.
+     Keep each template paired with its source path and seed when editing the quiz. -->
+<template id="functions-11">
+  <p>Evaluate <var>f</var>(<var>x</var>) = 2<var>x</var><sup>2</sup> + 6 at the following values.</p>
+  <ul>
+    <li><label><var>f</var>(−1) = <input name="AnSwEr0001"></label></li>
+    <li><label><var>f</var>(7) = <input name="AnSwEr0002"></label></li>
+    <li><label><var>f</var>(<var>a</var>) = <input name="AnSwEr0003"></label></li>
+    <li><label><var>f</var>(2<var>a</var>) = <input name="AnSwEr0004"></label></li>
+    <li><label><var>f</var>(<var>a</var> + 2) = <input name="AnSwEr0005"></label></li>
+  </ul>
+</template>
+<template id="composition-1">
+  <p>Let <var>f</var>(<var>x</var>) = −7<var>x</var><sup>2</sup> − 8 and <var>g</var>(<var>x</var>) = 2<var>x</var> − 3.</p>
+  <ul>
+    <li><label>(<var>f</var> ∘ <var>g</var>)(<var>x</var>) = <input name="AnSwEr0001"></label></li>
+    <li><label>(<var>g</var> ∘ <var>f</var>)(<var>x</var>) = <input name="AnSwEr0002"></label></li>
+    <li><label>(<var>f</var> ∘ <var>g</var>)(3) = <input name="AnSwEr0003"></label></li>
+  </ul>
+</template>
+<template id="lines-2">
+  <p>Find an equation of the line with slope 1/3 that passes through the point (4, 3).
+     Write your solution in slope-intercept form.</p>
+  <label>Equation <input name="AnSwEr0001"></label>
+</template>
+<script>
+'use strict';
+
+const quiz = [
+  {
+    id: 'functions-11', seed: 1, title: 'Evaluate a function at given inputs',
+    path: 'Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg'
+  },
+  {
+    id: 'composition-1', seed: 3, title: 'Compose two functions',
+    path: 'Contrib/CCCS/CollegeAlgebra/3.4/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_4_11.pg'
+  },
+  {
+    id: 'lines-2', seed: 5, title: 'Write a line from its slope and a point',
+    path: 'Contrib/Fitchburg/Algebra/lines/line-1.pg'
+  }
+];
+
+const endpoint = 'https://webwork-ptx.aimath.org/webwork2/render_rpc';
+const storageKey = 'math-trailhead:math111-quiz-alpha:v1';
+const questions = document.querySelector('#questions');
+const finish = document.querySelector('#finish');
+const download = document.querySelector('#download');
+const summary = document.querySelector('#summary');
+let state = { results: {}, finished: null };
+let grading = 0;
+
+try {
+  const saved = JSON.parse(localStorage.getItem(storageKey));
+  if (saved?.results) state = saved;
+} catch {
+  document.querySelector('#storage-warning').hidden = false;
+}
+
+function save() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  } catch {
+    document.querySelector('#storage-warning').hidden = false;
+  }
+}
+
+async function gradeProblem(problem, answers) {
+  // Grade the same fixed seed in the public course used by the Trailhead.
+  const body = new URLSearchParams(answers);
+  const params = {
+    sourceFilePath: problem.path, problemSeed: problem.seed,
+    problemUUID: 'math111-quiz-alpha-' + problem.id,
+    courseID: 'anonymous', courseName: 'anonymous', user: 'anonymous',
+    userID: 'anonymous', passwd: 'anonymous', displayMode: 'MathJax',
+    disableCookies: '1', outputformat: 'raw', showHints: '0', showSolutions: '0',
+    answersSubmitted: '1', WWsubmit: '1'
+  };
+  for (const [name, value] of Object.entries(params)) body.set(name, value);
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST', body, credentials: 'omit', signal: controller.signal
+    });
+    if (!response.ok) throw new Error('WeBWorK HTTP ' + response.status);
+    const data = await response.json();
+    const rawScore = data.rh_result?.problem_result?.score;
+    const score = Number(rawScore);
+    if (data.error || rawScore == null || rawScore === '' || !Number.isFinite(score) || score < 0 || score > 1) {
+      throw new Error('WeBWorK returned no usable score.');
+    }
+    return score;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function points(value) {
+  return String(Math.round(value * 100) / 100);
+}
+
+function outcome(result) {
+  if (!result) return 'Skipped';
+  if (result.score === 1) return 'Correct';
+  return result.score > 0 ? 'Partly correct' : 'Incorrect';
+}
+
+function updateSummary() {
+  const results = quiz.map(problem => state.results[problem.id]);
+  const count = results.filter(Boolean).length;
+  const total = results.reduce((sum, result) => sum + (result?.score ?? 0), 0);
+  document.querySelector('#progress').textContent = count + ' of ' + quiz.length + ' questions submitted';
+  finish.hidden = Boolean(state.finished);
+  finish.disabled = grading > 0 || count === 0;
+  download.hidden = !state.finished;
+  if (state.finished) summary.textContent = 'Quiz finished. Score ' + points(total) + ' / ' + quiz.length + '.';
+}
+
+function addQuestion(problem, index) {
+  const card = document.createElement('section');
+  card.className = 'card';
+  card.innerHTML = '<h2></h2><form autocomplete="off"><div class="problem"></div>'
+    + '<button>Submit answer</button></form><p class="status" role="status"></p>';
+  const heading = card.querySelector('h2');
+  const form = card.querySelector('form');
+  const body = card.querySelector('.problem');
+  const submit = form.querySelector('button');
+  const status = card.querySelector('.status');
+  heading.textContent = (index + 1) + '. ' + problem.title;
+  body.append(document.getElementById(problem.id).content.cloneNode(true));
+  const fields = [...body.querySelectorAll('input')];
+  for (const field of fields) {
+    field.required = true;
+    field.spellcheck = false;
+  }
+  questions.append(card);
+
+  function showStatus(message, error = false) {
+    status.textContent = message;
+    status.classList.toggle('error', error);
+  }
+
+  function lock() {
+    const result = state.results[problem.id];
+    for (const field of fields) field.readOnly = true;
+    submit.hidden = true;
+    showStatus(result ? outcome(result) + ' · ' + points(result.score) + ' / 1 point' : 'Skipped');
+  }
+
+  card.addEventListener('quiz-finished', lock);
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (submit.hidden || submit.disabled || state.finished || state.results[problem.id]) return;
+    if (fields.some(field => !field.value.trim())) {
+      showStatus('Fill in each answer blank before submitting.', true);
+      return;
+    }
+    const answers = new FormData(form);
+    submit.disabled = true;
+    for (const field of fields) field.readOnly = true;
+    grading += 1;
+    updateSummary();
+    showStatus('Grading…');
+    try {
+      const score = await gradeProblem(problem, answers);
+      state.results[problem.id] = { score };
+      save();
+      lock();
+    } catch (error) {
+      console.error(error);
+      for (const field of fields) field.readOnly = false;
+      showStatus('WeBWorK could not grade this submission. Your attempt is still available. '
+        + 'If you opened the quiz in a file preview, open the HTML in your browser and try again.', true);
+    } finally {
+      submit.disabled = false;
+      grading -= 1;
+      updateSummary();
+    }
+  });
+
+  if (state.finished || state.results[problem.id]) lock();
+}
+
+function makePdf(lines) {
+  // A single-page report using PDF's built-in Helvetica fonts and ASCII text.
+  const escape = value => value.replace(/[\\()]/g, '\\$&').replace(/[^\x20-\x7e]/g, ' ');
+  const content = lines.map(({ text, y, size = 11, bold = false }) =>
+    'BT /' + (bold ? 'F2' : 'F1') + ' ' + size + ' Tf 52 ' + y + ' Td (' + escape(text) + ') Tj ET'
+  ).join('\n') + '\n';
+  const objects = [
+    '<< /Type /Catalog /Pages 2 0 R >>',
+    '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
+    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>',
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
+    '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>',
+    '<< /Length ' + content.length + ' >>\nstream\n' + content + 'endstream'
+  ];
+  let pdf = '%PDF-1.4\n';
+  const offsets = [0];
+  objects.forEach((object, index) => {
+    offsets.push(pdf.length);
+    pdf += (index + 1) + ' 0 obj\n' + object + '\nendobj\n';
+  });
+  const xref = pdf.length;
+  pdf += 'xref\n0 ' + offsets.length + '\n0000000000 65535 f \n';
+  pdf += offsets.slice(1).map(offset => String(offset).padStart(10, '0') + ' 00000 n \n').join('');
+  pdf += 'trailer\n<< /Size ' + offsets.length + ' /Root 1 0 R >>\nstartxref\n' + xref + '\n%%EOF\n';
+  return pdf;
+}
+
+finish.addEventListener('click', () => {
+  if (finish.disabled || state.finished) return;
+  const skipped = quiz.filter(problem => !state.results[problem.id]).length;
+  if (skipped && !confirm('Finish with ' + skipped + ' unanswered question(s)?')) return;
+  state.finished = new Date().toISOString();
+  save();
+  for (const card of questions.children) card.dispatchEvent(new Event('quiz-finished'));
+  updateSummary();
+  download.focus();
+});
+
+download.addEventListener('click', () => {
+  if (!state.finished) return;
+  const total = quiz.reduce((sum, problem) => sum + (state.results[problem.id]?.score ?? 0), 0);
+  const date = new Date(state.finished).toLocaleDateString('en-US', { dateStyle: 'long' });
+  const lines = [
+    { text: 'MATH TRAILHEAD / READINESS DIAGNOSTIC', y: 737, size: 10, bold: true },
+    { text: 'Math 111 Quiz Results', y: 706, size: 25, bold: true },
+    { text: 'Completed ' + date + '  |  Three-question alpha', y: 681 },
+    { text: 'Total score: ' + points(total) + ' / ' + quiz.length, y: 637, size: 15, bold: true }
+  ];
+  quiz.forEach((problem, index) => {
+    const result = state.results[problem.id];
+    const y = 591 - index * 58;
+    lines.push(
+      { text: (index + 1) + '. ' + problem.title, y, size: 13, bold: true },
+      { text: outcome(result) + '  |  ' + points(result?.score ?? 0) + ' / 1 point', y: y - 20 }
+    );
+  });
+  lines.push({ text: 'Student self-check generated by Math Trailhead.', y: 396 });
+  const pdf = new Blob([makePdf(lines)], { type: 'application/pdf' });
+  const url = URL.createObjectURL(pdf);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'math-111-quiz-results.pdf';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+quiz.forEach(addQuestion);
+updateSummary();
+</script>
+</body>
+</html>
