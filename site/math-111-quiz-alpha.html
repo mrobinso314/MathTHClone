@@ -34,11 +34,11 @@
   <div class="wrap">
     <a href="https://mrobinso314.github.io/MathTHClone/math-111.html">Math Trailhead · Math 111 practice</a>
     <h1>Math 111 Readiness Quiz</h1>
-    <p>Alpha · 3 questions · One graded submission per question</p>
+    <p>Alpha · 2 questions · One graded submission per question</p>
   </div>
 </header>
 <main class="wrap">
-  <p>Enter your answers using plain text, such as <code>3/4</code> or <code>x^2</code>. Submit each question when you’re ready. Your results are saved in this browser.</p>
+  <p>Enter your answers using plain text, such as <code>sqrt(5)</code> or <code>3/4</code>. Submit each question when you’re ready. Your results are saved in this browser.</p>
   <noscript><p>Enable JavaScript to submit the quiz.</p></noscript>
   <p id="storage-warning" class="error" role="status" hidden>This browser is blocking local storage. Keep this tab open until you download your results.</p>
   <p id="progress" class="progress" aria-live="polite"></p>
@@ -46,59 +46,90 @@
   <section class="card" aria-labelledby="results-heading">
     <h2 id="results-heading">Your results</h2>
     <p id="summary">Finish when you’re ready to download your results. Skipped questions receive zero points.</p>
+    <ul id="lesson-links" hidden></ul>
     <button id="finish" type="button" disabled>Finish quiz</button>
     <button id="download" type="button" hidden>Download results PDF</button>
   </section>
 </main>
 <!-- These statements and field names come from the fixed WeBWorK seeds below.
      Keep each template paired with its source path and seed when editing the quiz. -->
-<template id="functions-11">
-  <p>Evaluate <var>f</var>(<var>x</var>) = 2<var>x</var><sup>2</sup> + 6 at the following values.</p>
+<template id="quadratic-formula">
+  <p>Use the quadratic formula to solve 3<var>x</var><sup>2</sup> + 3<var>x</var> − 3 = 0.
+     Give the discriminant and both exact solutions.</p>
   <ul>
-    <li><label><var>f</var>(−1) = <input name="AnSwEr0001"></label></li>
-    <li><label><var>f</var>(7) = <input name="AnSwEr0002"></label></li>
-    <li><label><var>f</var>(<var>a</var>) = <input name="AnSwEr0003"></label></li>
-    <li><label><var>f</var>(2<var>a</var>) = <input name="AnSwEr0004"></label></li>
-    <li><label><var>f</var>(<var>a</var> + 2) = <input name="AnSwEr0005"></label></li>
+    <li><label>Discriminant <var>D</var> <input name="AnSwEr0001"></label></li>
+    <li><label>Solution using the plus sign <input name="AnSwEr0002"></label></li>
+    <li><label>Solution using the minus sign <input name="AnSwEr0003"></label></li>
   </ul>
 </template>
-<template id="composition-1">
-  <p>Let <var>f</var>(<var>x</var>) = −7<var>x</var><sup>2</sup> − 8 and <var>g</var>(<var>x</var>) = 2<var>x</var> − 3.</p>
+<template id="unit-circle">
+  <p>Use the signs of sine and cosine to identify the quadrant of the terminal point on the unit circle.
+     Enter I, II, III, or IV for each pair.</p>
   <ul>
-    <li><label>(<var>f</var> ∘ <var>g</var>)(<var>x</var>) = <input name="AnSwEr0001"></label></li>
-    <li><label>(<var>g</var> ∘ <var>f</var>)(<var>x</var>) = <input name="AnSwEr0002"></label></li>
-    <li><label>(<var>f</var> ∘ <var>g</var>)(3) = <input name="AnSwEr0003"></label></li>
+    <li><label>sin(<var>t</var>) &lt; 0 and cos(<var>t</var>) &lt; 0 <input name="AnSwEr0001"></label></li>
+    <li><label>sin(<var>t</var>) &gt; 0 and cos(<var>t</var>) &lt; 0 <input name="AnSwEr0002"></label></li>
+    <li><label>sin(<var>t</var>) &gt; 0 and cos(<var>t</var>) &gt; 0 <input name="AnSwEr0003"></label></li>
+    <li><label>sin(<var>t</var>) &lt; 0 and cos(<var>t</var>) &gt; 0 <input name="AnSwEr0004"></label></li>
   </ul>
 </template>
-<template id="lines-2">
-  <p>Find an equation of the line with slope 1/3 that passes through the point (4, 3).
-     Write your solution in slope-intercept form.</p>
-  <label>Equation <input name="AnSwEr0001"></label>
-</template>
+<!-- Grading code from the Trailhead's reed-quadratic-live-formula exercise. -->
+<script type="text/plain" id="quadratic-pg">
+DOCUMENT();
+loadMacros("PGstandard.pl", "PGML.pl", "AnswerFormatHelp.pl", "contextForm.pl", "PGcourse.pl");
+TEXT(beginproblem());
+
+Context("Numeric");
+$a = random(1,4,1);
+$b = non_zero_random(-7,7,1);
+# A negative constant gives two real roots. Avoid a square discriminant so
+# this practice calls for the quadratic formula rather than integer factoring.
+do {
+    $c = random(-6,-1,1);
+    $D = $b*$b - 4*$a*$c;
+} while (int(sqrt($D))**2 == $D);
+$f = Formula("$a*x^2+($b)*x+($c)")->reduce;
+$disc = Real($D);
+$xplus = Compute("(-($b)+sqrt($D))/(2*$a)");
+$xminus = Compute("(-($b)-sqrt($D))/(2*$a)");
+
+BEGIN_PGML
+Use the quadratic formula to solve
+
+[```[$f]=0.```]
+
+Discriminant: [_]{$disc}{8}.
+
+Solution using the plus sign: [_]{$xplus}{25}.
+
+Solution using the minus sign: [_]{$xminus}{25}.
+END_PGML
+
+ENDDOCUMENT();
+</script>
 <script>
 'use strict';
 
+const trailhead = 'https://mrobinso314.github.io/MathTHClone/';
 const quiz = [
   {
-    id: 'functions-11', seed: 1, title: 'Evaluate a function at given inputs',
-    path: 'Contrib/CCCS/AlgebraicLiteracy/IA_3.5/OpenStax_IA_3.5_Functions1.pg'
+    id: 'quadratic-formula', seed: 657, title: 'Solve using the quadratic formula',
+    source: { rawProblemSource: document.querySelector('#quadratic-pg').textContent.trim() },
+    lesson: { title: 'Solving with the quadratic formula', url: trailhead + 'reed-quadratic-solving.html' }
   },
   {
-    id: 'composition-1', seed: 3, title: 'Compose two functions',
-    path: 'Contrib/CCCS/CollegeAlgebra/3.4/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_3_4_11.pg'
-  },
-  {
-    id: 'lines-2', seed: 5, title: 'Write a line from its slope and a point',
-    path: 'Contrib/Fitchburg/Algebra/lines/line-1.pg'
+    id: 'unit-circle', seed: 645, title: 'Find quadrants using sine and cosine',
+    source: { sourceFilePath: 'Library/Rochester/setTrig02FunctionsUnitCircle/srw5_2_47.pg' },
+    lesson: { title: 'The unit circle: angles become coordinates', url: trailhead + 'reed-trig-circle.html' }
   }
 ];
 
 const endpoint = 'https://webwork-ptx.aimath.org/webwork2/render_rpc';
-const storageKey = 'math-trailhead:math111-quiz-alpha:v1';
+const storageKey = 'math-trailhead:math111-quiz-alpha:v2';
 const questions = document.querySelector('#questions');
 const finish = document.querySelector('#finish');
 const download = document.querySelector('#download');
 const summary = document.querySelector('#summary');
+const lessonLinks = document.querySelector('#lesson-links');
 let state = { results: {}, finished: null };
 let grading = 0;
 
@@ -121,7 +152,7 @@ async function gradeProblem(problem, answers) {
   // Grade the same fixed seed in the public course used by the Trailhead.
   const body = new URLSearchParams(answers);
   const params = {
-    sourceFilePath: problem.path, problemSeed: problem.seed,
+    ...problem.source, problemSeed: problem.seed,
     problemUUID: 'math111-quiz-alpha-' + problem.id,
     courseID: 'anonymous', courseName: 'anonymous', user: 'anonymous',
     userID: 'anonymous', passwd: 'anonymous', displayMode: 'MathJax',
@@ -159,6 +190,10 @@ function outcome(result) {
   return result.score > 0 ? 'Partly correct' : 'Incorrect';
 }
 
+function needsReview(result) {
+  return result != null && result.score < 1;
+}
+
 function updateSummary() {
   const results = quiz.map(problem => state.results[problem.id]);
   const count = results.filter(Boolean).length;
@@ -167,7 +202,19 @@ function updateSummary() {
   finish.hidden = Boolean(state.finished);
   finish.disabled = grading > 0 || count === 0;
   download.hidden = !state.finished;
-  if (state.finished) summary.textContent = 'Quiz finished. Score ' + points(total) + ' / ' + quiz.length + '.';
+  if (!state.finished) return;
+  summary.textContent = 'Quiz finished. Score ' + points(total) + ' / ' + quiz.length + '.';
+  lessonLinks.replaceChildren();
+  quiz.forEach((problem, index) => {
+    if (!needsReview(results[index])) return;
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = problem.lesson.url;
+    link.textContent = problem.lesson.title;
+    item.append('Question ' + (index + 1) + ' · For a refresher, try ', link);
+    lessonLinks.append(item);
+  });
+  lessonLinks.hidden = !lessonLinks.childElementCount;
 }
 
 function addQuestion(problem, index) {
@@ -238,17 +285,26 @@ function addQuestion(problem, index) {
 function makePdf(lines) {
   // A single-page report using PDF's built-in Helvetica fonts and ASCII text.
   const escape = value => value.replace(/[\\()]/g, '\\$&').replace(/[^\x20-\x7e]/g, ' ');
-  const content = lines.map(({ text, y, size = 11, bold = false }) =>
-    'BT /' + (bold ? 'F2' : 'F1') + ' ' + size + ' Tf 52 ' + y + ' Td (' + escape(text) + ') Tj ET'
+  const content = lines.map(({ text, y, size = 11, bold = false, url }) =>
+    (url ? '0.10 0.31 0.58 rg ' : '0 g ')
+      + 'BT /' + (bold ? 'F2' : 'F1') + ' ' + size + ' Tf 52 ' + y + ' Td (' + escape(text) + ') Tj ET'
   ).join('\n') + '\n';
+  const links = lines.filter(line => line.url);
+  const annotations = links.length
+    ? ' /Annots [' + links.map((_, index) => (index + 7) + ' 0 R').join(' ') + ']'
+    : '';
   const objects = [
     '<< /Type /Catalog /Pages 2 0 R >>',
     '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
-    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>',
+    '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R' + annotations + ' >>',
     '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',
     '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>',
     '<< /Length ' + content.length + ' >>\nstream\n' + content + 'endstream'
   ];
+  for (const { y, url } of links) {
+    objects.push('<< /Type /Annot /Subtype /Link /Rect [52 ' + (y - 3) + ' 400 ' + (y + 12)
+      + '] /Border [0 0 0] /A << /S /URI /URI (' + escape(url) + ') >> >>');
+  }
   let pdf = '%PDF-1.4\n';
   const offsets = [0];
   objects.forEach((object, index) => {
@@ -280,16 +336,19 @@ download.addEventListener('click', () => {
   const lines = [
     { text: 'MATH TRAILHEAD / READINESS DIAGNOSTIC', y: 737, size: 10, bold: true },
     { text: 'Math 111 Quiz Results', y: 706, size: 25, bold: true },
-    { text: 'Completed ' + date + '  |  Three-question alpha', y: 681 },
+    { text: 'Completed ' + date + '  |  Two-question alpha', y: 681 },
     { text: 'Total score: ' + points(total) + ' / ' + quiz.length, y: 637, size: 15, bold: true }
   ];
   quiz.forEach((problem, index) => {
     const result = state.results[problem.id];
-    const y = 591 - index * 58;
+    const y = 591 - index * 82;
     lines.push(
       { text: (index + 1) + '. ' + problem.title, y, size: 13, bold: true },
       { text: outcome(result) + '  |  ' + points(result?.score ?? 0) + ' / 1 point', y: y - 20 }
     );
+    if (needsReview(result)) {
+      lines.push({ text: 'For a refresher, try ' + problem.lesson.title, y: y - 39, url: problem.lesson.url });
+    }
   });
   lines.push({ text: 'Student self-check generated by Math Trailhead.', y: 396 });
   const pdf = new Blob([makePdf(lines)], { type: 'application/pdf' });
