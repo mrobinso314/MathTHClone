@@ -21,20 +21,13 @@
   .error { color: #9a271e; }
   button { background: #245543; color: white; border: 1px solid transparent; padding: .55rem .85rem; font: inherit; font-weight: 650; border-radius: .35rem; cursor: pointer; }
   button:disabled { opacity: .65; cursor: default; }
-  button.secondary { background: white; color: #245543; border-color: #245543; }
   :focus-visible { outline: 3px solid #366c98; outline-offset: 3px; }
   .problem { margin-bottom: .85rem; overflow-wrap: anywhere; }
   .problem input { max-width: 100%; width: 12rem; margin: .25rem .2rem; font: inherit; padding: .35rem .45rem; border: 1px solid #6f8478; border-radius: .25rem; }
   .problem input:read-only { background: #f2f5f3; }
-  .problem .answer-inline { display: inline-block; }
-  .problem .paragraph-gap { height: .65rem; }
   .problem li + li { margin-top: .35rem; }
   [hidden] { display: none !important; }
 </style>
-<script>
-  window.MathJax = { options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] } };
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header>
@@ -46,7 +39,7 @@
 </header>
 <main class="wrap">
   <p>Enter your answers using plain text, such as <code>3/4</code> or <code>x^2</code>. Submit each question when you’re ready. Your results are saved in this browser.</p>
-  <noscript><p>Enable JavaScript to load and submit the quiz.</p></noscript>
+  <noscript><p>Enable JavaScript to submit the quiz.</p></noscript>
   <p id="storage-warning" class="error" role="status" hidden>This browser is blocking local storage. Keep this tab open until you download your results.</p>
   <p id="progress" class="progress" aria-live="polite"></p>
   <div id="questions"></div>
@@ -57,6 +50,31 @@
     <button id="download" type="button" hidden>Download results PDF</button>
   </section>
 </main>
+<!-- These statements and field names come from the fixed WeBWorK seeds below.
+     Keep each template paired with its source path and seed when editing the quiz. -->
+<template id="functions-11">
+  <p>Evaluate <var>f</var>(<var>x</var>) = 2<var>x</var><sup>2</sup> + 6 at the following values.</p>
+  <ul>
+    <li><label><var>f</var>(−1) = <input name="AnSwEr0001"></label></li>
+    <li><label><var>f</var>(7) = <input name="AnSwEr0002"></label></li>
+    <li><label><var>f</var>(<var>a</var>) = <input name="AnSwEr0003"></label></li>
+    <li><label><var>f</var>(2<var>a</var>) = <input name="AnSwEr0004"></label></li>
+    <li><label><var>f</var>(<var>a</var> + 2) = <input name="AnSwEr0005"></label></li>
+  </ul>
+</template>
+<template id="composition-1">
+  <p>Let <var>f</var>(<var>x</var>) = −7<var>x</var><sup>2</sup> − 8 and <var>g</var>(<var>x</var>) = 2<var>x</var> − 3.</p>
+  <ul>
+    <li><label>(<var>f</var> ∘ <var>g</var>)(<var>x</var>) = <input name="AnSwEr0001"></label></li>
+    <li><label>(<var>g</var> ∘ <var>f</var>)(<var>x</var>) = <input name="AnSwEr0002"></label></li>
+    <li><label>(<var>f</var> ∘ <var>g</var>)(3) = <input name="AnSwEr0003"></label></li>
+  </ul>
+</template>
+<template id="lines-2">
+  <p>Find an equation of the line with slope 1/3 that passes through the point (4, 3).
+     Write your solution in slope-intercept form.</p>
+  <label>Equation <input name="AnSwEr0001"></label>
+</template>
 <script>
 'use strict';
 
@@ -99,8 +117,8 @@ function save() {
   }
 }
 
-async function requestProblem(problem, answers, context) {
-  // Use the same public course and raw JSON response as the Trailhead's PreTeXt embed.
+async function gradeProblem(problem, answers) {
+  // Grade the same fixed seed in the public course used by the Trailhead.
   const body = new URLSearchParams(answers);
   const params = {
     sourceFilePath: problem.path, problemSeed: problem.seed,
@@ -108,73 +126,27 @@ async function requestProblem(problem, answers, context) {
     courseID: 'anonymous', courseName: 'anonymous', user: 'anonymous',
     userID: 'anonymous', passwd: 'anonymous', displayMode: 'MathJax',
     disableCookies: '1', outputformat: 'raw', showHints: '0', showSolutions: '0',
-    answersSubmitted: answers ? '1' : '0'
+    answersSubmitted: '1', WWsubmit: '1'
   };
-  if (answers) {
-    params.WWsubmit = '1';
-    for (const [name, value] of Object.entries(context)) {
-      if (value != null) params[name] = value;
-    }
-  }
   for (const [name, value] of Object.entries(params)) body.set(name, value);
 
-  const response = await fetch(endpoint, {
-    method: 'POST', body, credentials: 'omit', signal: AbortSignal.timeout(15000)
-  });
-  if (!response.ok) throw new Error('WeBWorK HTTP ' + response.status);
-  const data = await response.json();
-  if (data.error || !data.rh_result) throw new Error('WeBWorK returned no result.');
-  return data;
-}
-
-const problemTags = new Set([
-  'p', 'div', 'span', 'br', 'ul', 'ol', 'li', 'b', 'strong', 'em', 'i',
-  'sup', 'sub', 'table', 'tbody', 'thead', 'tr', 'td', 'th', 'label'
-]);
-
-function renderProblem(target, html, number) {
-  const remote = new DOMParser().parseFromString(html, 'text/html');
-  const fields = [];
-
-  // Keep the basic HTML and text answer blanks needed by these three problems.
-  // Build fresh controls instead of running markup or scripts supplied by the renderer.
-  function copy(node, parent) {
-    if (node.nodeType === Node.TEXT_NODE) {
-      parent.append(node.textContent);
-      return;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST', body, credentials: 'omit', signal: controller.signal
+    });
+    if (!response.ok) throw new Error('WeBWorK HTTP ' + response.status);
+    const data = await response.json();
+    const rawScore = data.rh_result?.problem_result?.score;
+    const score = Number(rawScore);
+    if (data.error || rawScore == null || rawScore === '' || !Number.isFinite(score) || score < 0 || score > 1) {
+      throw new Error('WeBWorK returned no usable score.');
     }
-    if (node.nodeType !== Node.ELEMENT_NODE) return;
-    const tag = node.localName;
-    if (tag === 'script' && ['math/tex', 'math/tex; mode=display'].includes(node.type)) {
-      const display = node.type.includes('mode=display');
-      parent.append((display ? '\\[' : '\\(') + node.textContent + (display ? '\\]' : '\\)'));
-    } else if (tag === 'input' && node.type === 'text' && node.name.startsWith('AnSwEr')) {
-      const field = document.createElement('input');
-      field.name = node.name;
-      field.autocomplete = 'off';
-      field.spellcheck = false;
-      field.required = true;
-      field.setAttribute('aria-label', 'Question ' + number + ', answer ' + (fields.length + 1));
-      parent.append(field);
-      fields.push(field);
-    } else if (problemTags.has(tag)) {
-      const element = document.createElement(tag);
-      if (node.classList.contains('d-inline')) element.className = 'answer-inline';
-      if (tag === 'div' && !node.childNodes.length && node.style.marginTop) element.className = 'paragraph-gap';
-      parent.append(element);
-      for (const child of node.childNodes) copy(child, element);
-    } else if (tag === 'a' || tag === 'font') {
-      for (const child of node.childNodes) copy(child, parent);
-    }
+    return score;
+  } finally {
+    clearTimeout(timer);
   }
-
-  const fragment = document.createDocumentFragment();
-  const statement = remote.querySelector('.PGML') ?? remote.body;
-  for (const child of statement.childNodes) copy(child, fragment);
-  if (!fields.length) throw new Error('No supported answer blanks found.');
-  target.replaceChildren(fragment);
-  window.MathJax?.startup?.promise?.then(() => window.MathJax.typesetPromise([target])).catch(console.error);
-  return fields;
 }
 
 function points(value) {
@@ -201,18 +173,21 @@ function updateSummary() {
 function addQuestion(problem, index) {
   const card = document.createElement('section');
   card.className = 'card';
-  card.innerHTML = '<h2></h2><form><div class="problem"></div><button hidden>Submit answer</button></form>'
-    + '<button type="button" class="secondary" hidden>Retry loading</button><p class="status" role="status"></p>';
+  card.innerHTML = '<h2></h2><form autocomplete="off"><div class="problem"></div>'
+    + '<button>Submit answer</button></form><p class="status" role="status"></p>';
   const heading = card.querySelector('h2');
   const form = card.querySelector('form');
   const body = card.querySelector('.problem');
   const submit = form.querySelector('button');
-  const retry = card.querySelector('.secondary');
   const status = card.querySelector('.status');
   heading.textContent = (index + 1) + '. ' + problem.title;
+  body.append(document.getElementById(problem.id).content.cloneNode(true));
+  const fields = [...body.querySelectorAll('input')];
+  for (const field of fields) {
+    field.required = true;
+    field.spellcheck = false;
+  }
   questions.append(card);
-  let fields = [];
-  let context;
 
   function showStatus(message, error = false) {
     status.textContent = message;
@@ -223,37 +198,9 @@ function addQuestion(problem, index) {
     const result = state.results[problem.id];
     for (const field of fields) field.readOnly = true;
     submit.hidden = true;
-    retry.hidden = true;
     showStatus(result ? outcome(result) + ' · ' + points(result.score) + ' / 1 point' : 'Skipped');
   }
 
-  async function load() {
-    retry.hidden = true;
-    showStatus('Loading question…');
-    try {
-      const data = await requestProblem(problem);
-      if (state.finished || state.results[problem.id]) {
-        lock();
-        return;
-      }
-      fields = renderProblem(body, data.rh_result.text, index + 1);
-      context = {
-        psvn: data.inputs_ref?.psvn,
-        session_key: data.rh_result.session_key,
-        language: data.formLanguage,
-        forcePortNumber: data.forcePortNumber
-      };
-      showStatus('');
-      submit.hidden = false;
-    } catch (error) {
-      if (state.finished) return;
-      console.error(error);
-      showStatus('The question could not load from WeBWorK. Try again.', true);
-      retry.hidden = false;
-    }
-  }
-
-  retry.addEventListener('click', load);
   card.addEventListener('quiz-finished', lock);
   form.addEventListener('submit', async event => {
     event.preventDefault();
@@ -269,19 +216,15 @@ function addQuestion(problem, index) {
     updateSummary();
     showStatus('Grading…');
     try {
-      const data = await requestProblem(problem, answers, context);
-      const rawScore = data.rh_result.problem_result?.score;
-      const score = Number(rawScore);
-      if (rawScore == null || rawScore === '' || !Number.isFinite(score) || score < 0 || score > 1) {
-        throw new Error('WeBWorK returned no usable score.');
-      }
+      const score = await gradeProblem(problem, answers);
       state.results[problem.id] = { score };
       save();
       lock();
     } catch (error) {
       console.error(error);
       for (const field of fields) field.readOnly = false;
-      showStatus('WeBWorK could not grade this submission. You can try submitting again.', true);
+      showStatus('WeBWorK could not grade this submission. Your attempt is still available. '
+        + 'If you opened the quiz in a file preview, open the HTML in your browser and try again.', true);
     } finally {
       submit.disabled = false;
       grading -= 1;
@@ -290,7 +233,6 @@ function addQuestion(problem, index) {
   });
 
   if (state.finished || state.results[problem.id]) lock();
-  else load();
 }
 
 function makePdf(lines) {
